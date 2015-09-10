@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://WSfrs/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WSfrs" targetNamespace="http://WSfrs/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="C:\Users\L33525\Desktop\frs.xsd" namespace="http://WSfrs/" />
+    </xsd:schema>
+  </types>
+  <message name="delFRSEntries">
+    <part name="parameters" element="tns:delFRSEntries" />
+  </message>
+  <message name="delFRSEntriesResponse">
+    <part name="parameters" element="tns:delFRSEntriesResponse" />
+  </message>
+  <message name="getFRSBookingXML">
+    <part name="parameters" element="tns:getFRSBookingXML" />
+  </message>
+  <message name="getFRSBookingXMLResponse">
+    <part name="parameters" element="tns:getFRSBookingXMLResponse" />
+  </message>
+  <message name="getFRSUserXML">
+    <part name="parameters" element="tns:getFRSUserXML" />
+  </message>
+  <message name="getFRSUserXMLResponse">
+    <part name="parameters" element="tns:getFRSUserXMLResponse" />
+  </message>
+  <message name="getFRSLocationXML">
+    <part name="parameters" element="tns:getFRSLocationXML" />
+  </message>
+  <message name="getFRSLocationXMLResponse">
+    <part name="parameters" element="tns:getFRSLocationXMLResponse" />
+  </message>
+  <message name="getFRSTypeXML">
+    <part name="parameters" element="tns:getFRSTypeXML" />
+  </message>
+  <message name="getFRSTypeXMLResponse">
+    <part name="parameters" element="tns:getFRSTypeXMLResponse" />
+  </message>
+  <message name="getFRSCodeXML">
+    <part name="parameters" element="tns:getFRSCodeXML" />
+  </message>
+  <message name="getFRSCodeXMLResponse">
+    <part name="parameters" element="tns:getFRSCodeXMLResponse" />
+  </message>
+  <message name="getFRSSubCodeXML">
+    <part name="parameters" element="tns:getFRSSubCodeXML" />
+  </message>
+  <message name="getFRSSubCodeXMLResponse">
+    <part name="parameters" element="tns:getFRSSubCodeXMLResponse" />
+  </message>
+  <message name="getFRSListXML">
+    <part name="parameters" element="tns:getFRSListXML" />
+  </message>
+  <message name="getFRSListXMLResponse">
+    <part name="parameters" element="tns:getFRSListXMLResponse" />
+  </message>
+  <message name="getFRSEntriesXML">
+    <part name="parameters" element="tns:getFRSEntriesXML" />
+  </message>
+  <message name="getFRSEntriesXMLResponse">
+    <part name="parameters" element="tns:getFRSEntriesXMLResponse" />
+  </message>
+  <message name="saveFRSEntries">
+    <part name="parameters" element="tns:saveFRSEntries" />
+  </message>
+  <message name="saveFRSEntriesResponse">
+    <part name="parameters" element="tns:saveFRSEntriesResponse" />
+  </message>
+  <portType name="WSfrs">
+    <operation name="delFRSEntries">
+      <input message="tns:delFRSEntries" />
+      <output message="tns:delFRSEntriesResponse" />
+    </operation>
+    <operation name="getFRSBookingXML">
+      <input message="tns:getFRSBookingXML" />
+      <output message="tns:getFRSBookingXMLResponse" />
+    </operation>
+    <operation name="getFRSUserXML">
+      <input message="tns:getFRSUserXML" />
+      <output message="tns:getFRSUserXMLResponse" />
+    </operation>
+    <operation name="getFRSLocationXML">
+      <input message="tns:getFRSLocationXML" />
+      <output message="tns:getFRSLocationXMLResponse" />
+    </operation>
+    <operation name="getFRSTypeXML">
+      <input message="tns:getFRSTypeXML" />
+      <output message="tns:getFRSTypeXMLResponse" />
+    </operation>
+    <operation name="getFRSCodeXML">
+      <input message="tns:getFRSCodeXML" />
+      <output message="tns:getFRSCodeXMLResponse" />
+    </operation>
+    <operation name="getFRSSubCodeXML">
+      <input message="tns:getFRSSubCodeXML" />
+      <output message="tns:getFRSSubCodeXMLResponse" />
+    </operation>
+    <operation name="getFRSListXML">
+      <input message="tns:getFRSListXML" />
+      <output message="tns:getFRSListXMLResponse" />
+    </operation>
+    <operation name="getFRSEntriesXML">
+      <input message="tns:getFRSEntriesXML" />
+      <output message="tns:getFRSEntriesXMLResponse" />
+    </operation>
+    <operation name="saveFRSEntries">
+      <input message="tns:saveFRSEntries" />
+      <output message="tns:saveFRSEntriesResponse" />
+    </operation>
+  </portType>
+  <binding name="frsBinding" type="tns:WSfrs">
+    <soap12:binding transport="http://www.w3.org/2003/05/soap/bindings/HTTP/" />
+    <operation name="delFRSEntries">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFRSBookingXML">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFRSUserXML">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFRSLocationXML">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFRSTypeXML">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFRSCodeXML">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFRSSubCodeXML">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFRSListXML">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFRSEntriesXML">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="saveFRSEntries">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WSfrs">
+    <port name="frs" binding="tns:frsBinding">
+      <soap12:address location="https://staffappsdv.nyp.edu.sg:8443/WSfrs_devtest/frs" />
+    </port>
+  </service>
+</definitions>
