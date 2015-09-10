@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facility Reservation Kiosk", "Facility Reservation Kiosk\Facility Reservation Kiosk.csproj", "{1EE3CEAC-F3A3-49F2-8E05-F85F14B2B789}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadFacilityService", "ReadFacilityService\ReadFacilityService.csproj", "{54B7F56A-8E7B-45D5-B4EA-6D8F31A76FFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadFacilityReservationService", "ReadFacilityReservationService\ReadFacilityReservationService.csproj", "{8D976496-DC64-4828-97D0-3D9572BB51C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1EE3CEAC-F3A3-49F2-8E05-F85F14B2B789}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EE3CEAC-F3A3-49F2-8E05-F85F14B2B789}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EE3CEAC-F3A3-49F2-8E05-F85F14B2B789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54B7F56A-8E7B-45D5-B4EA-6D8F31A76FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B7F56A-8E7B-45D5-B4EA-6D8F31A76FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B7F56A-8E7B-45D5-B4EA-6D8F31A76FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B7F56A-8E7B-45D5-B4EA-6D8F31A76FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D976496-DC64-4828-97D0-3D9572BB51C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D976496-DC64-4828-97D0-3D9572BB51C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D976496-DC64-4828-97D0-3D9572BB51C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D976496-DC64-4828-97D0-3D9572BB51C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
