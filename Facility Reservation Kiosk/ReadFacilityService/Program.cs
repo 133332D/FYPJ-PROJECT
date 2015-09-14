@@ -28,17 +28,18 @@ namespace ReadFacilityService
                 doc.AppendChild(docNode);
 
                 //load xml to xml doc object
-                doc.LoadXml(HttpUtility.UrlDecode(ws.getFRSLocationXML(args[1])));
+                string xml = HttpUtility.UrlDecode(ws.getFRSLocationXML(args[1]));
+                doc.LoadXml(xml);
 
                 //set settings to indent the output
                 XmlWriterSettings settings = new XmlWriterSettings();
                 settings.Indent = true;
 
                 //save document to a file
-                XmlWriter writer = XmlWriter.Create("GetFRSLocation.xml", settings);
-                doc.Save(writer);
+                //XmlWriter writer = XmlWriter.Create("GetFRSLocation.xml", settings);
+                //doc.Save(writer);
                 doc.Save(@"C:\test\GetFRSLocation.xml");
-                //Console.WriteLine(writer);
+                //Console.WriteLine();
 
             }
             if (args[0] == "getFRSListXML")
