@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="261a37ef-de41-4e94-a9e8-d7f9f65518a4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bcb872d9-8db4-4bbe-9135-292d28d9e8d7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="C:\Users\L33525\Desktop\frs.wsdl" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="frs.xsd" MetadataType="Schema" ID="86880d06-06d0-4a7e-a42a-fd39c5b90a3f" SourceId="1" SourceUrl="file:///C:/Users/L33525/Desktop/frs.xsd" />
-    <MetadataFile FileName="WSfrs.wsdl" MetadataType="Wsdl" ID="17691dee-48b7-41f6-96fa-f7934b281af3" SourceId="1" SourceUrl="file:///C:/Users/L33525/Desktop/frs.wsdl" />
+    <MetadataFile FileName="frs.xsd" MetadataType="Schema" ID="fab760d8-1e0f-4e85-b29e-0e715072cad0" SourceId="1" SourceUrl="file:///C:/Users/L33525/Desktop/frs.xsd" />
+    <MetadataFile FileName="WSfrs.wsdl" MetadataType="Wsdl" ID="950b00f0-4993-4b4e-b79b-64ed8fe69014" SourceId="1" SourceUrl="file:///C:/Users/L33525/Desktop/frs.wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
