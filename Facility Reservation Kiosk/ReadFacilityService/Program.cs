@@ -6,9 +6,27 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Net;
 using System.Xml;
+using System.Data.Entity;
 
 namespace ReadFacilityService
 {
+    public class DepartmentContext : DbContext
+    {
+        public DbSet<Department> Departments { get; set; }
+    }
+
+    //establish a generic facility class, and define necessary methods
+    class FacilityObject
+    {
+        public string code { get; set; }
+        public string desc { get; set; }
+ 
+        public FacilityObject(string c, string d)
+        {
+            this.code = c;
+            this.desc = d;
+        }
+    }
     class Program
     {
         static void Main(string[] args)
@@ -41,6 +59,43 @@ namespace ReadFacilityService
                 doc.Save(@"C:\test\GetFRSLocation.xml");
                 //Console.WriteLine();
 
+
+                //**Extract the values from XML
+                // Declare the xpath for finding objects inside the XML file
+                XmlNodeList XmlDocNodes = doc.SelectNodes("/facility/faclocation");
+
+                // Define a new List, to store the objects we pull out of the XML
+                List<FacilityObject> FacilityList = new List<FacilityObject>();
+
+                // Loop through the nodes, extracting Facility information.
+                // We can then define a facility object and add it to the list.
+                foreach (XmlNode node in XmlDocNodes)
+                {
+                    FacilityObject obj = new FacilityObject(node["code"].InnerText,
+                                                        node["desc"].InnerText);
+                    FacilityList.Add(obj);
+                }
+
+                // Loop through the list, and print all the FacilityObjects to screen
+                int ListSize = FacilityList.Count;
+                for (int i = 0; i < ListSize; i++)
+                {
+                    //Console.WriteLine("------------------------------------------");
+                    Console.WriteLine(FacilityList[i].code);
+                    Console.WriteLine(FacilityList[i].desc);
+                    Console.Write("\n");
+
+                    //insert the facility codes into the database dbo.department (DepartmentID)
+                    using (var db = new DepartmentContext())
+                    {
+                        var departmentID = FacilityList[i].code;
+
+                        var department = new Department { DepartmentID = departmentID };
+                        db.Departments.Add(department);
+                        db.SaveChanges();
+                    }
+
+                }
             }
             if (args[0] == "getFRSListXML")
             {
