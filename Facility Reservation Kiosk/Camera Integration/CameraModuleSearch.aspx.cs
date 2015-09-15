@@ -18,5 +18,20 @@ namespace Camera_Integration
         {
 
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GrdCamera_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
     }
 }

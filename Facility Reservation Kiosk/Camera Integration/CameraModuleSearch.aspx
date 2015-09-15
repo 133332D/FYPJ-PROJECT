@@ -99,7 +99,7 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-info" OnClick="LinkButton1_Click">
+                                    <asp:LinkButton ID="btnSearch" runat="server" CssClass="btn btn-info" OnClick="LinkButton1_Click">
                             <span class="glyphicon glyphicon-search">Search</span>
 
                                     </asp:LinkButton>
@@ -111,7 +111,7 @@
                                 <asp:Label ID="lblResult" runat="server"></asp:Label>
                             </div>
                         </div>
-                        <asp:GridView ID="GrdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="262px" Width="649px">
+                        <asp:GridView ID="GrdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="262px" Width="649px" OnPageIndexChanging="GrdCamera_PageIndexChanging">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
                                 <asp:BoundField DataField="Facility Name" HeaderText=" Facility Name" />
