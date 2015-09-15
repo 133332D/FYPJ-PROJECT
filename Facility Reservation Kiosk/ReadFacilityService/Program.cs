@@ -12,6 +12,11 @@ namespace ReadFacilityService
 {
     public class DepartmentContext : DbContext
     {
+        //using the FacilityReservationKioskEntities Connection string
+        public DepartmentContext()
+            : base("name=FacilityReservationKioskEntities")
+        {
+        }
         public DbSet<Department> Departments { get; set; }
     }
 
