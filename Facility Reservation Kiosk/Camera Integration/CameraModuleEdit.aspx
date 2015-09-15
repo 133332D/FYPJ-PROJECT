@@ -34,9 +34,11 @@
                                     <div class="form-group">
                                          <label style="color: #000000"><span class="glyphicon glyphicon-cutlery">&nbsp;Facility:</span></label>
                                          <br />
-                                         <asp:DropDownList ID="ddlFacilityID" runat="server" AppendDataBoundItems="True" CssClass="form-control">
+                                         <asp:DropDownList ID="ddlFacilityID" runat="server" AppendDataBoundItems="True" CssClass="form-control" OnSelectedIndexChanged="ddlFacilityID_SelectedIndexChanged">
                                              <asp:ListItem>-Select-</asp:ListItem>
                                          </asp:DropDownList>
+                                         <asp:RequiredFieldValidator ID="RequireddlFacility" runat="server" ControlToValidate="ddlFacilityID" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
+                                         <br />
                                         </div>
                                     </td>
                                 </tr>
@@ -47,6 +49,9 @@
                                   <asp:Label ID="Label1" runat="server" Text="Camera IP Address:"></asp:Label>
                                   <br />
                                   <asp:TextBox ID="txtIPAddress" runat="server"></asp:TextBox>
+                                  <br />
+
+                                  <asp:RequiredFieldValidator ID="RequiredtxtIPAddress" runat="server" ControlToValidate="txtIPAddress" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
                                   <br />
 
                               </div>
@@ -60,6 +65,8 @@
                                   <br />
                                   <asp:TextBox ID="txtMinDensity" runat="server"></asp:TextBox>
                                   <br />
+                                  <asp:RequiredFieldValidator ID="RequiredtxtMinDensity" runat="server" ControlToValidate="txtMinDensity" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
+                                  <br />
 
                               </div>
                             </td>
@@ -71,6 +78,8 @@
                                   <asp:Label ID="Label3" runat="server" Text="Maximum Density"></asp:Label>
                                   <br />
                                   <asp:TextBox ID="txtMaxDensity" runat="server"></asp:TextBox>
+                                  <br />
+                                  <asp:RequiredFieldValidator ID="RequiredtxtMaxDensity" runat="server" ControlToValidate="txtMaxDensity" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
                                   <br />
 
                               </div>
@@ -94,7 +103,6 @@
                                  
         </div>
    </div>
-
   </section> 
 </asp:Content>
 

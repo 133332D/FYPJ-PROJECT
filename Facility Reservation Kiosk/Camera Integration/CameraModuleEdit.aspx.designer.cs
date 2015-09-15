@@ -40,6 +40,15 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.DropDownList ddlFacilityID;
         
         /// <summary>
+        /// RequireddlFacility control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequireddlFacility;
+        
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace Camera_Integration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtIPAddress;
+        
+        /// <summary>
+        /// RequiredtxtIPAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredtxtIPAddress;
         
         /// <summary>
         /// Label2 control.
@@ -76,6 +94,15 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.TextBox txtMinDensity;
         
         /// <summary>
+        /// RequiredtxtMinDensity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredtxtMinDensity;
+        
+        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -92,6 +119,15 @@ namespace Camera_Integration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMaxDensity;
+        
+        /// <summary>
+        /// RequiredtxtMaxDensity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredtxtMaxDensity;
         
         /// <summary>
         /// LinkButton1 control.
