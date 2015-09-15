@@ -18,5 +18,10 @@ namespace Camera_Integration
         {
 
         }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

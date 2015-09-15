@@ -11,6 +11,15 @@ namespace Camera_Integration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblPages.Text = "";
+            if (!IsPostBack)
+            {
+                BindGridView();
+            }
+        }
+
+        private void BindGridView()
+        {
 
         }
 
@@ -31,7 +40,8 @@ namespace Camera_Integration
 
         protected void GrdCamera_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            GrdCamera.PageIndex = e.NewPageIndex;
+            BindGridView();
         }
     }
 }

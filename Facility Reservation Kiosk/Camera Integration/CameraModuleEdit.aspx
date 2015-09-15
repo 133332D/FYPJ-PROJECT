@@ -34,10 +34,10 @@
                                     <div class="form-group">
                                          <label style="color: #000000"><span class="glyphicon glyphicon-cutlery">&nbsp;Facility:</span></label>
                                          <br />
-                                         <asp:DropDownList ID="ddlFacilityID" runat="server" AppendDataBoundItems="True" CssClass="form-control" OnSelectedIndexChanged="ddlFacilityID_SelectedIndexChanged">
+                                         <asp:DropDownList ID="ddlFacilityID" runat="server" AppendDataBoundItems="True" CssClass="form-control" OnSelectedIndexChanged="ddlFacilityID_SelectedIndexChanged" Width="667px">
                                              <asp:ListItem>-Select-</asp:ListItem>
                                          </asp:DropDownList>
-                                         <asp:RequiredFieldValidator ID="RequireddlFacility" runat="server" ControlToValidate="ddlFacilityID" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
+                                         <asp:RequiredFieldValidator ID="RequireddlFacility" runat="server" ControlToValidate="ddlFacilityID" Display="None" ErrorMessage="This field is required" ></asp:RequiredFieldValidator>
                                          <br />
                                         </div>
                                     </td>
@@ -48,7 +48,7 @@
 
                                   <asp:Label ID="Label1" runat="server" Text="Camera IP Address:"></asp:Label>
                                   <br />
-                                  <asp:TextBox ID="txtIPAddress" runat="server"></asp:TextBox>
+                                  <asp:TextBox ID="txtIPAddress" runat="server" CssClass="form-control" Height="19px" Width="644px"></asp:TextBox>
                                   <br />
 
                                   <asp:RequiredFieldValidator ID="RequiredtxtIPAddress" runat="server" ControlToValidate="txtIPAddress" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
@@ -63,7 +63,7 @@
 
                                   <asp:Label ID="Label2" runat="server" Text="Minimum Density"></asp:Label>
                                   <br />
-                                  <asp:TextBox ID="txtMinDensity" runat="server"></asp:TextBox>
+                                  <asp:TextBox ID="txtMinDensity" runat="server" CssClass="form-control" Width="641px"></asp:TextBox>
                                   <br />
                                   <asp:RequiredFieldValidator ID="RequiredtxtMinDensity" runat="server" ControlToValidate="txtMinDensity" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
                                   <br />
@@ -77,7 +77,7 @@
 
                                   <asp:Label ID="Label3" runat="server" Text="Maximum Density"></asp:Label>
                                   <br />
-                                  <asp:TextBox ID="txtMaxDensity" runat="server"></asp:TextBox>
+                                  <asp:TextBox ID="txtMaxDensity" runat="server" Width="666px"></asp:TextBox>
                                   <br />
                                   <asp:RequiredFieldValidator ID="RequiredtxtMaxDensity" runat="server" ControlToValidate="txtMaxDensity" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
                                   <br />
@@ -88,19 +88,7 @@
                             </table>
                         </div>
                     </div>
-                             <div class="box-footer">
-                        <asp:LinkButton ID="LinkButton1" runat="server" ValidationGroup="SignUp" OnClick="btnRegister_Click" 
-                            CssClass="btn btn-primary pull-left">
-                            <span class="glyphicon glyphicon-save">&nbsp;Save</span>
-                        </asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-primary pull-right" OnClick="LinkButton2_Click"><span class="glyphicon 
-                            glyphicon-remove">&nbsp;Close</span>
-
-                        </asp:LinkButton>
-                        <br />
-
-                    </div>
-                                 
+                                   
         </div>
    </div>
   </section> 
