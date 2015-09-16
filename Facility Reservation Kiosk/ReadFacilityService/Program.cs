@@ -94,8 +94,9 @@ namespace ReadFacilityService
                     using (var db = new DepartmentContext())
                     {
                         var departmentID = FacilityList[i].code;
+                        var description = FacilityList[i].desc;
 
-                        var department = new Department { DepartmentID = departmentID };
+                        var department = new Department { DepartmentID = departmentID, Description = description};
                         db.Departments.Add(department);
                         db.SaveChanges();
                     }

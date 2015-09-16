@@ -4,12 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FacilityReservationKioskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FacilityReservationKioskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Department">
           <Key>
             <PropertyRef Name="DepartmentID" />
           </Key>
           <Property Name="DepartmentID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="DepartmentFilters">
           <Key>
@@ -34,6 +35,12 @@
           <Property Name="Map" Type="nvarchar" MaxLength="50" />
           <Property Name="MapPositionX" Type="nvarchar" MaxLength="50" />
           <Property Name="MapPositionY" Type="nvarchar" MaxLength="50" />
+          <Property Name="OpenHours" Type="nvarchar" MaxLength="50" />
+          <Property Name="CloseHours" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaxBkTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaxBkUnits" Type="nvarchar" MaxLength="50" />
+          <Property Name="MinBkTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="MinBkUnits" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="FacilityReservation">
           <Key>
@@ -46,18 +53,6 @@
           <Property Name="UseShortDescription" Type="nvarchar" MaxLength="50" />
           <Property Name="UseDescription" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <Association Name="FK_DepartmentFilters_Department">
-          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
-          <End Role="DepartmentFilters" Type="Self.DepartmentFilters" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="DepartmentID" />
-            </Principal>
-            <Dependent Role="DepartmentFilters">
-              <PropertyRef Name="DepartmentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Facility_Department">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Facility" Type="Self.Facility" Multiplicity="*" />
@@ -87,10 +82,6 @@
           <EntitySet Name="DepartmentFilters" EntityType="Self.DepartmentFilters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facility" EntityType="Self.Facility" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FacilityReservation" EntityType="Self.FacilityReservation" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_DepartmentFilters_Department" Association="Self.FK_DepartmentFilters_Department">
-            <End Role="Department" EntitySet="Department" />
-            <End Role="DepartmentFilters" EntitySet="DepartmentFilters" />
-          </AssociationSet>
           <AssociationSet Name="FK_Facility_Department" Association="Self.FK_Facility_Department">
             <End Role="Department" EntitySet="Department" />
             <End Role="Facility" EntitySet="Facility" />
@@ -100,8 +91,7 @@
             <End Role="FacilityReservation" EntitySet="FacilityReservation" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FacilityReservationKioskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -112,6 +102,7 @@
           <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="DepartmentFilters" Relationship="Self.FK_DepartmentFilters_Department" FromRole="Department" ToRole="DepartmentFilters" />
           <NavigationProperty Name="Facilities" Relationship="Self.FK_Facility_Department" FromRole="Department" ToRole="Facility" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DepartmentFilter">
           <Key>
@@ -139,6 +130,12 @@
           <Property Name="MapPositionY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Facility_Department" FromRole="Facility" ToRole="Department" />
           <NavigationProperty Name="FacilityReservations" Relationship="Self.FK_FacilityReservation_Facility" FromRole="Facility" ToRole="FacilityReservation" />
+          <Property Name="OpenHours" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CloseHours" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaxBkTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaxBkUnits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MinBkTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MinBkUnits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="FacilityReservation">
           <Key>
@@ -215,6 +212,7 @@
           <EntitySetMapping Name="Departments">
             <EntityTypeMapping TypeName="FacilityReservationKioskModel.Department">
               <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -234,6 +232,12 @@
           <EntitySetMapping Name="Facilities">
             <EntityTypeMapping TypeName="FacilityReservationKioskModel.Facility">
               <MappingFragment StoreEntitySet="Facility">
+                <ScalarProperty Name="MinBkUnits" ColumnName="MinBkUnits" />
+                <ScalarProperty Name="MinBkTime" ColumnName="MinBkTime" />
+                <ScalarProperty Name="MaxBkUnits" ColumnName="MaxBkUnits" />
+                <ScalarProperty Name="MaxBkTime" ColumnName="MaxBkTime" />
+                <ScalarProperty Name="CloseHours" ColumnName="CloseHours" />
+                <ScalarProperty Name="OpenHours" ColumnName="OpenHours" />
                 <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
                 <ScalarProperty Name="Block" ColumnName="Block" />
