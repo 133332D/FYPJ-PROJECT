@@ -28,6 +28,13 @@ namespace ReadFacilityService
         public string Map { get; set; }
         public string MapPositionX { get; set; }
         public string MapPositionY { get; set; }
+        public string OpenHours { get; set; }
+        public string CloseHours { get; set; }
+        public string MaxBkTime { get; set; }
+        public string MaxBkUnits { get; set; }
+        public string MinBkTime { get; set; }
+        public string MinBkUnits { get; set; }
+        public string Description { get; set; }
     
         public virtual Department Department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
