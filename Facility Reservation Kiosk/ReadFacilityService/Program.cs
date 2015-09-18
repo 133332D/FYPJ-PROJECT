@@ -26,7 +26,7 @@ namespace ReadFacilityService
     {
         public string code { get; set; }
         public string desc { get; set; }
- 
+
         public DepartmentObject(string c, string d)
         {
             this.code = c;
@@ -65,7 +65,7 @@ namespace ReadFacilityService
         public string minbktime { get; set; }
         public string minbkunits { get; set; }
 
-        public FacilityObject(string fc, string fd, string open, string close, 
+        public FacilityObject(string fc, string fd, string open, string close,
             string maxbt, string maxbu, string minbt, string minbu)
         {
             this.faccode = fc;
@@ -135,7 +135,7 @@ namespace ReadFacilityService
                 //Insert, update and delete accordingly
                 //B
                 //create a list of string of department object
-                List<string> sqlDepartmentListString = new List<string>(); 
+                List<string> sqlDepartmentListString = new List<string>();
                 //create a list of object (SQL database)
                 List<SqlObject> sqlDepartmentList = new List<SqlObject>();
 
@@ -194,7 +194,7 @@ namespace ReadFacilityService
                 int ListSizeSQL = sqlDepartmentList.Count;
                 for (int i = 0; i < ListSizeSQL; i++)
                 {
-                    if(DepartmentListString.Contains(sqlDepartmentList[i].departmentID) == false)
+                    if (DepartmentListString.Contains(sqlDepartmentList[i].departmentID) == false)
                     {
                         //delete the extra record found
                         using (var db = new KioskContext())
@@ -205,14 +205,14 @@ namespace ReadFacilityService
                             db.SaveChanges();
                         }
                     }
-                }         
+                }
             }
             if (args[0] == "getFRSListXML")
             {
                 Console.WriteLine(args[0]);
                 Console.WriteLine("Result:");
                 //Console.WriteLine(HttpUtility.UrlDecode(ws.getFRSListXML(
-                    //args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8], args[9], args[10])));
+                //args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8], args[9], args[10])));
 
                 //create an xml to store the XML document from the web service
                 XmlDocument doc = new XmlDocument();
@@ -398,7 +398,7 @@ namespace ReadFacilityService
                             db.SaveChanges();
                         }
                     }
-                }  
+                }
             }
         }
     }
