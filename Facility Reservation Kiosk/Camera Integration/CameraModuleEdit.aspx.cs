@@ -11,7 +11,18 @@ namespace Camera_Integration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                BindDDL();
+            }
+        }
+        
+        private void BindDDL()
+        {
+            ddlFacilityID.DataTextField = "facilityName";
+            ddlFacilityID.DataValueField = "facilityID";
+            ddlFacilityID.DataBind();
+           
         }
 
         protected void ddlFacilityID_SelectedIndexChanged(object sender, EventArgs e)
@@ -21,7 +32,9 @@ namespace Camera_Integration
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-
+            string ipAddress = txtIPAddress.Text;
+            decimal minimumDensity = Convert.ToDecimal(txtMinDensity);
+            decimal maximumDensity = Convert.ToDecimal(txtMaxDensity);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Camera.Master" AutoEventWireup="true" CodeBehind="CameraModuleSearch.aspx.cs" Inherits="Camera_Integration.CameraModuleSearch" %>
+﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Camera.Master" AutoEventWireup="true" CodeBehind="CameraModuleSearch.aspx.cs" Inherits="Camera_Integration.CameraModuleSearch" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -64,7 +64,7 @@
                                 <li><a href="UserSearch.aspx"><i class="fa fa-circle-o"></i>Search/Delete</a></li>            
                             </ul>--%>
                         </li>
-
+                        </ul>
                 </section>
                 <!-- /.sidebar -->
             </aside>
@@ -73,7 +73,7 @@
             &nbsp;
           &nbsp;
           &nbsp;
-              <asp:Button ID="Button1" OnClick="Button1_Click" CssClass="btn btn-info" runat="server" Text="Create" />
+              <asp:Button ID="btnCreate" runat="server" Height="30px" OnClick="btnCreate_Click" Text="Create" Width="73px" />
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
@@ -99,10 +99,7 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <asp:LinkButton ID="btnSearch" runat="server" CssClass="btn btn-info" OnClick="LinkButton1_Click">
-                            <span class="glyphicon glyphicon-search">Search</span>
-
-                                    </asp:LinkButton>
+                                    <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="Search" />
                                 </div>
                             </div>
                         </div>
@@ -111,7 +108,7 @@
                                 <asp:Label ID="lblResult" runat="server"></asp:Label>
                             </div>
                         </div>
-                        <asp:GridView ID="GrdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="262px" Width="649px" OnPageIndexChanging="GrdCamera_PageIndexChanging">
+                        <asp:GridView ID="grdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="262px" Width="649px" OnPageIndexChanging="GrdCamera_PageIndexChanging" OnRowCancelingEdit="GrdCamera_RowCancelingEdit" OnRowDeleting="GrdCamera_RowDeleting" OnRowEditing="GrdCamera_RowEditing" OnRowUpdating="GrdCamera_RowUpdating" OnSelectedIndexChanged="GrdCamera_SelectedIndexChanged" OnSorting="GrdCamera_Sorting" OnRowCommand="grdCamera_RowCommand">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
                                 <asp:BoundField DataField="Facility Name" HeaderText=" Facility Name" />

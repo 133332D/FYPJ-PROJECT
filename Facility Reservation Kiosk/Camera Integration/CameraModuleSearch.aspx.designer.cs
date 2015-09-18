@@ -13,13 +13,13 @@ namespace Camera_Integration {
     public partial class CameraModuleSearch {
         
         /// <summary>
-        /// Button1 control.
+        /// btnCreate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnCreate;
         
         /// <summary>
         /// txtSearch control.
@@ -37,7 +37,7 @@ namespace Camera_Integration {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnSearch;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
         /// setDisplayNone control.
@@ -58,13 +58,13 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.Label lblResult;
         
         /// <summary>
-        /// GrdCamera control.
+        /// grdCamera control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GrdCamera;
+        protected global::System.Web.UI.WebControls.GridView grdCamera;
         
         /// <summary>
         /// lblPages control.
