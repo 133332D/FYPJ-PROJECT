@@ -2,11 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager runat="server">
+    <br />
+<asp:ScriptManager runat="server">
      
     </asp:ScriptManager>
     <section class="content-header">
-        <h1>Edit Camera
+        <h1>Edit / Create Camera
 
         </h1>
          <ol class="breadcrumb">
@@ -48,7 +49,7 @@
 
                                   <asp:Label ID="Label1" runat="server" Text="Camera IP Address:"></asp:Label>
                                   <br />
-                                  <asp:TextBox ID="txtIPAddress" runat="server" CssClass="form-control" Height="19px" Width="644px"></asp:TextBox>
+                                  <asp:TextBox ID="txtIPAddress" runat="server" CssClass="form-control" Height="24px" Width="644px" OnTextChanged="txtIPAddress_TextChanged"></asp:TextBox>
 
                                   <asp:RequiredFieldValidator ID="RequiredtxtIPAddress" runat="server" ControlToValidate="txtIPAddress" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
                                   <br />
@@ -78,6 +79,12 @@
                                   <asp:TextBox ID="txtMaxDensity" runat="server" Width="666px"></asp:TextBox>
                                   <br />
                                   <asp:RequiredFieldValidator ID="RequiredtxtMaxDensity" runat="server" ControlToValidate="txtMaxDensity" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
+                                  <br />
+                                  <br />
+                                  <asp:Button ID="btnEdit" runat="server" Height="35px" Text="Edit" Width="95px" OnClick="btnEdit_Click" />
+                                  <br />
+                                  <br />
+                                  <asp:Label ID="lblDisplay" runat="server"></asp:Label>
                                   <br />
 
                               </div>
