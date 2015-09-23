@@ -47,6 +47,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -65,13 +67,76 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ApprovalPage.aspx" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap\js\bootstrap-paginator.js" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\npm.js" />
+    <Content Include="DeviceSecurity.aspx" />
+    <Content Include="RejectPage.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApprovalPage.aspx.cs">
+      <DependentUpon>ApprovalPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApprovalPage.aspx.designer.cs">
+      <DependentUpon>ApprovalPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>DeviceSecurity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentFilter.cs">
+      <DependentUpon>DeviceSecurity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Device.cs">
+      <DependentUpon>DeviceSecurity.tt</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Device.Master.cs">
+      <DependentUpon>Device.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Device.Master.designer.cs">
+      <DependentUpon>Device.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceSecurity.aspx.cs">
+      <DependentUpon>DeviceSecurity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeviceSecurity.aspx.designer.cs">
+      <DependentUpon>DeviceSecurity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceSecurity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeviceSecurity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceSecurity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeviceSecurity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceSecurity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeviceSecurity.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RejectPage.aspx.cs">
+      <DependentUpon>RejectPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RejectPage.aspx.designer.cs">
+      <DependentUpon>RejectPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -82,12 +147,38 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Device.Master" />
+    <Content Include="bootstrap\css\bootstrap.css.map" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <EntityDeploy Include="DeviceSecurity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DeviceSecurity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DeviceSecurity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DeviceSecurity.edmx</DependentUpon>
+      <LastGenOutput>DeviceSecurity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DeviceSecurity.edmx.diagram">
+      <DependentUpon>DeviceSecurity.edmx</DependentUpon>
+    </Content>
+    <Content Include="DeviceSecurity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DeviceSecurity.edmx</DependentUpon>
+      <LastGenOutput>DeviceSecurity.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

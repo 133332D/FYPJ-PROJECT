@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FacilityReservationKioskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DepartmentFilters">
+          <Key>
+            <PropertyRef Name="DepartmentFilterID" />
+          </Key>
+          <Property Name="DepartmentFilterID" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="varchar" MaxLength="10" />
+          <Property Name="FilterName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Block" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="varchar" MaxLength="10" />
+          <Property Name="DefaultDepartmentFilterID" Type="int" />
+          <Property Name="DeviceGeneratedUniqueID" Type="nvarchar" MaxLength="30" />
+          <Property Name="PublicKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="varchar" MaxLength="6" />
+          <Property Name="ApprovedDateTime" Type="datetime" />
+          <Property Name="RejectedOrRevokedDateTime" Type="datetime" />
+          <Property Name="RejectedOrRevokedReason" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_Device_DepartmentFilters">
+          <End Role="DepartmentFilters" Type="Self.DepartmentFilters" Multiplicity="0..1" />
+          <End Role="Device" Type="Self.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentFilters">
+              <PropertyRef Name="DepartmentFilterID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="DefaultDepartmentFilterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FacilityReservationKioskModelStoreContainer">
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DepartmentFilters" EntityType="Self.DepartmentFilters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Device_DepartmentFilters" Association="Self.FK_Device_DepartmentFilters">
+            <End Role="DepartmentFilters" EntitySet="DepartmentFilters" />
+            <End Role="Device" EntitySet="Device" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FacilityReservationKioskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DepartmentFilter">
+          <Key>
+            <PropertyRef Name="DepartmentFilterID" />
+          </Key>
+          <Property Name="DepartmentFilterID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FilterName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Block" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Devices" Relationship="Self.FK_Device_DepartmentFilters" FromRole="DepartmentFilters" ToRole="Device" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultDepartmentFilterID" Type="Int32" />
+          <Property Name="DeviceGeneratedUniqueID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PublicKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="RejectedOrRevokedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="RejectedOrRevokedReason" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DepartmentFilter" Relationship="Self.FK_Device_DepartmentFilters" FromRole="Device" ToRole="DepartmentFilters" />
+        </EntityType>
+        <Association Name="FK_Device_DepartmentFilters">
+          <End Role="DepartmentFilters" Type="Self.DepartmentFilter" Multiplicity="0..1" />
+          <End Role="Device" Type="Self.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentFilters">
+              <PropertyRef Name="DepartmentFilterID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="DefaultDepartmentFilterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FacilityReservationKioskEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="DepartmentFilters" EntityType="Self.DepartmentFilter" />
+          <EntitySet Name="Devices" EntityType="Self.Device" />
+          <AssociationSet Name="FK_Device_DepartmentFilters" Association="Self.FK_Device_DepartmentFilters">
+            <End Role="DepartmentFilters" EntitySet="DepartmentFilters" />
+            <End Role="Device" EntitySet="Devices" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FacilityReservationKioskModelStoreContainer" CdmEntityContainer="FacilityReservationKioskEntities">
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="FacilityReservationKioskModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepartmentFilters">
+            <EntityTypeMapping TypeName="FacilityReservationKioskModel.DepartmentFilter">
+              <MappingFragment StoreEntitySet="DepartmentFilters">
+                <ScalarProperty Name="DepartmentFilterID" ColumnName="DepartmentFilterID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="FilterName" ColumnName="FilterName" />
+                <ScalarProperty Name="Block" ColumnName="Block" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Devices">
+            <EntityTypeMapping TypeName="FacilityReservationKioskModel.Device">
+              <MappingFragment StoreEntitySet="Device">
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DefaultDepartmentFilterID" ColumnName="DefaultDepartmentFilterID" />
+                <ScalarProperty Name="DeviceGeneratedUniqueID" ColumnName="DeviceGeneratedUniqueID" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ApprovedDateTime" ColumnName="ApprovedDateTime" />
+                <ScalarProperty Name="RejectedOrRevokedDateTime" ColumnName="RejectedOrRevokedDateTime" />
+                <ScalarProperty Name="RejectedOrRevokedReason" ColumnName="RejectedOrRevokedReason" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
