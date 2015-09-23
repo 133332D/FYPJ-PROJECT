@@ -7,6 +7,7 @@ using System.Web;
 using System.Net;
 using System.Xml;
 using System.Data.Entity;
+using log4net;
 
 namespace ReadFacilityService
 {
@@ -80,6 +81,10 @@ namespace ReadFacilityService
     }
     class Program
     {
+        //logging declaration
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
+        (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         static void Main(string[] args)
         {
             FRSWS.WSfrsClient ws = new FRSWS.WSfrsClient();
@@ -400,6 +405,13 @@ namespace ReadFacilityService
                     }
                 }
             }
+            log4net.Config.BasicConfigurator.Configure();
+            ILog log = log4net.LogManager.GetLogger(typeof(Program));
+            log.Debug("This is a debug message");
+            log.Warn("This is a warn message");
+            log.Error("This is a error message");
+            log.Fatal("This is a fatal message");
+            Console.ReadLine();
         }
     }
 }
