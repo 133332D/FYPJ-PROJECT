@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facility Reservation Kiosk"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadFacilityService", "ReadFacilityService\ReadFacilityService.csproj", "{54B7F56A-8E7B-45D5-B4EA-6D8F31A76FFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadFacilityReservationService", "ReadFacilityReservationService\ReadFacilityReservationService.csproj", "{8D976496-DC64-4828-97D0-3D9572BB51C3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camera Integration", "Camera Integration\Camera Integration.csproj", "{B3E9BA03-D866-4EAF-9F13-32A6DB8964E1}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{54B7F56A-8E7B-45D5-B4EA-6D8F31A76FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54B7F56A-8E7B-45D5-B4EA-6D8F31A76FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54B7F56A-8E7B-45D5-B4EA-6D8F31A76FFD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D976496-DC64-4828-97D0-3D9572BB51C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D976496-DC64-4828-97D0-3D9572BB51C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D976496-DC64-4828-97D0-3D9572BB51C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D976496-DC64-4828-97D0-3D9572BB51C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B3E9BA03-D866-4EAF-9F13-32A6DB8964E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B3E9BA03-D866-4EAF-9F13-32A6DB8964E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3E9BA03-D866-4EAF-9F13-32A6DB8964E1}.Release|Any CPU.ActiveCfg = Release|Any CPU

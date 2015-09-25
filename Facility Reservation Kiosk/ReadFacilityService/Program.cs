@@ -7,7 +7,7 @@ using System.Web;
 using System.Net;
 using System.Xml;
 using System.Data.Entity;
-using log4net;
+using System.IO;
 
 namespace ReadFacilityService
 {
@@ -81,16 +81,23 @@ namespace ReadFacilityService
     }
     class Program
     {
-        //logging declaration
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
-        (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public static int depinsertCount = 0;
+        public static int depupdateCount = 0;
+        public static int depdeleteCount = 0;
+
+        public static int facinsertCount = 0;
+        public static int facupdateCount = 0;
+        public static int facdeleteCount = 0;
 
         static void Main(string[] args)
         {
             FRSWS.WSfrsClient ws = new FRSWS.WSfrsClient();
 
+            string exerror = "";
+            string exline = "";
 
-            if (args[0] == "getFRSLocationXML")
+            //if (args[0] == "getFRSLocationXML")
+            try
             {
                 Console.WriteLine(args[0]);
                 Console.WriteLine("Result:");
@@ -171,6 +178,7 @@ namespace ReadFacilityService
                     if (sqlDepartmentListString.Contains(DepartmentList[i].code) == false)
                     {
                         //insert the facility codes into the database dbo.department (DepartmentID)
+                        depinsertCount = depinsertCount + 1;
                         using (var db = new KioskContext())
                         {
                             var departmentID = DepartmentList[i].code;
@@ -183,6 +191,7 @@ namespace ReadFacilityService
                     }
                     else
                     {
+                        depupdateCount = depupdateCount + 1;
                         //update the record
                         using (var db = new KioskContext())
                         {
@@ -201,6 +210,7 @@ namespace ReadFacilityService
                 {
                     if (DepartmentListString.Contains(sqlDepartmentList[i].departmentID) == false)
                     {
+                        depdeleteCount = depdeleteCount + 1;
                         //delete the extra record found
                         using (var db = new KioskContext())
                         {
@@ -212,7 +222,18 @@ namespace ReadFacilityService
                     }
                 }
             }
-            if (args[0] == "getFRSListXML")
+            catch(Exception ex)
+            {
+                exerror = "[Department] Message :" + ex.Message + "<br/>" + Environment.NewLine + "StackTrace :" + ex.StackTrace +
+                    "" + Environment.NewLine + "Date :" + DateTime.Now.ToString();
+                exline = Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine;
+            }
+
+            string ecerror = "";
+            string ecline = "";
+
+            //if (args[0] == "getFRSListXML")
+            try
             {
                 Console.WriteLine(args[0]);
                 Console.WriteLine("Result:");
@@ -331,6 +352,7 @@ namespace ReadFacilityService
                     if (sqlFacilityListString.Contains(FacilityList[i].faccode) == false)
                     {
                         //insert the facility codes into the database dbo.department (DepartmentID)
+                        facinsertCount = facinsertCount + 1;
                         using (var db = new KioskContext())
                         {
                             var facilityID = FacilityList[i].faccode;
@@ -368,6 +390,7 @@ namespace ReadFacilityService
                     else
                     {
                         //update the record
+                        facupdateCount = facupdateCount + 1;
                         using (var db = new KioskContext())
                         {
                             Facility facility = db.Facilitys.Find(FacilityList[i].faccode);
@@ -394,6 +417,7 @@ namespace ReadFacilityService
                 {
                     if (FacilityListString.Contains(sqlFacilityList[i].facilityID) == false)
                     {
+                        facdeleteCount = facdeleteCount + 1;
                         //delete the extra record found
                         using (var db = new KioskContext())
                         {
@@ -405,13 +429,58 @@ namespace ReadFacilityService
                     }
                 }
             }
-            log4net.Config.BasicConfigurator.Configure();
-            ILog log = log4net.LogManager.GetLogger(typeof(Program));
-            log.Debug("This is a debug message");
-            log.Warn("This is a warn message");
-            log.Error("This is a error message");
-            log.Fatal("This is a fatal message");
-            Console.ReadLine();
-        }
+            catch (Exception ec) 
+            {
+                ecerror = "[Facility] Message :" + ec.Message + "<br/>" + Environment.NewLine + "StackTrace :" + ec.StackTrace +
+                    "" + Environment.NewLine + "Date :" + DateTime.Now.ToString();
+                ecline = Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine;
+            }
+            
+            //logging
+            string year = DateTime.Now.Year.ToString();
+            string month = DateTime.Now.Month.ToString();
+            string day = DateTime.Now.Day.ToString();
+
+            string fulldateTime = DateTime.Now.ToString();
+            string full = "[Executed on " + fulldateTime + " ]";
+
+            string path = "c:\\Log\\ReadFacilityService-" + year + "-" + month + "-" + day + ".txt";
+
+            string facinsertRecord = facinsertCount.ToString();
+            string facupdateRecord = facupdateCount.ToString();
+            string facdeleteRecord = facdeleteCount.ToString();
+
+            string depinsertRecord = depinsertCount.ToString();
+            string depupdateRecord = depupdateCount.ToString();
+            string depdeleteRecord = depdeleteCount.ToString();
+
+            string facinsert = "[FacilityTable] " + facinsertRecord + " rows are inserted to database.";
+            string facupdate = "[FacilityTable] " + facupdateRecord + " rows are updated to database.";
+            string facdelete = "[FacilityTable] " + facdeleteRecord + " rows are deleted from database.";
+
+            string depinsert = "[DepartmentTable] " + depinsertRecord + " rows are inserted to database.";
+            string depupdate = "[DepartmentTable] " + depupdateRecord + " rows are updated to database.";
+            string depdelete = "[DepartmentTable] " + depdeleteRecord + " rows are deleted from database.";
+
+            string line = "-----------------------------------------------------";
+
+            using (StreamWriter file = (File.Exists(path)) ? File.AppendText(path) : File.CreateText(path))
+            {
+                file.WriteLine(full);
+                file.WriteLine(depinsert);
+                file.WriteLine(depupdate);
+                file.WriteLine(depdelete);
+                file.WriteLine(facinsert);
+                file.WriteLine(facupdate);
+                file.WriteLine(facdelete);
+                file.WriteLine(line);
+                file.WriteLine(exerror);
+                file.WriteLine(exline);
+                file.WriteLine(ecerror);
+                file.WriteLine(ecline);
+
+                file.Close();
+            }
+        }            
     }
 }
