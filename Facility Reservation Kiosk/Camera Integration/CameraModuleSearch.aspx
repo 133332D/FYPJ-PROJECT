@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <asp:ScriptManager runat="server"></asp:ScriptManager>
+    <asp:ScriptManager runat="server"></asp:ScriptManager>
 
     <aside class="main-sidebar">
                 <!-- sidebar: style can be found in sidebar.less -->
@@ -111,10 +111,11 @@
                         <asp:GridView ID="grdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="262px" Width="649px" OnPageIndexChanging="GrdCamera_PageIndexChanging" OnRowCancelingEdit="GrdCamera_RowCancelingEdit" OnRowDeleting="GrdCamera_RowDeleting" OnRowEditing="GrdCamera_RowEditing" OnRowUpdating="GrdCamera_RowUpdating" OnSelectedIndexChanged="GrdCamera_SelectedIndexChanged" OnSorting="GrdCamera_Sorting" OnRowCommand="grdCamera_RowCommand">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
-                                <asp:BoundField DataField="Facility Name" HeaderText=" Facility Name" />
+                                <asp:BoundField DataField="FacilityName" HeaderText=" Facility Name" />
                                 <asp:BoundField DataField="IPAddress" HeaderText="Camera IP Address" />
                                 <asp:BoundField DataField="MinimumDensity" HeaderText="Minimum Density" />
                                 <asp:BoundField DataField="MaximumDensity" HeaderText="Maximum Density" />
+                                <asp:CommandField ShowDeleteButton="True" />
                             </Columns>
                             <EditRowStyle BackColor="#999999" />
                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

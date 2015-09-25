@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Data.Entity;
 
 namespace Camera_Integration
 {
+    
     public partial class CameraModuleSearch : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             lblPages.Text = "";
@@ -28,6 +31,8 @@ namespace Camera_Integration
 
             grdCamera.DataSource = facilityresults;
             grdCamera.DataBind();
+
+            
            
         }
 
@@ -68,7 +73,16 @@ namespace Camera_Integration
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+           string search = txtSearch.Text;
+           using ( var db = new FacilityReservationKioskEntities())
+           {
+               var Search = from b in db.Facilities where b.FacilityID == search orderby b.FacilityID select new { b.FacilityID};
 
+               //loop through to print out
+               grdCamera.DataSource = Search.ToList();
+               grdCamera.DataBind();
+           }
+           
         }
 
         protected void GrdCamera_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
