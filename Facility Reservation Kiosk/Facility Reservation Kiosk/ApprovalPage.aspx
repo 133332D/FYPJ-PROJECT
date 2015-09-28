@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Device.Master" AutoEventWireup="true" CodeBehind="ApprovalPage.aspx.cs" Inherits="Facility_Reservation_Kiosk.ApprovalPage" %>
+﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Device.Master" AutoEventWireup="true" CodeBehind="ApprovalPage.aspx.cs" Inherits="Facility_Reservation_Kiosk.ApprovalPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {

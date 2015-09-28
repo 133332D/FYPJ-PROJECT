@@ -11,11 +11,29 @@ namespace Facility_Reservation_Kiosk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblDeviceID.Text = Request.QueryString["searchID"];
             lblDateTime.Text = DateTime.Now.ToString("M/dd/yy");
+         
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
+            int ID = System.Convert.ToInt32(lblDeviceID.Text);
+               
+            using (var db = new FacilityReservationKioskEntities())
+            {
+                //Load up and update 
+                Device device = db.Devices.Find(ID);
+                
+
+                //Modify fields
+                device.Description = tbDescription.Text;
+                device.DepartmentID = tbDepartment.Text;
+                device.DefaultDepartmentFilterID = System.Convert.ToInt32(tbDefaultFilter.Text);
+
+                db.SaveChanges();
+
+            }
 
         }
 
