@@ -4,8 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.Entity;
+
 
 namespace Camera_Integration
 {
@@ -18,37 +17,36 @@ namespace Camera_Integration
             lblPages.Text = "";
             if (!IsPostBack)
             {
-                ViewState["SortDirection"] = "ASC";
-                ViewState["SortExpression"] = "facilityName"; 
-                BindGridView();
-            }
+                
+                //BindGridView();
+           }
         }
 
-        private void BindGridView()
-        {
-            DataTable facilityresults = new DataTable();
-            string sortExpression = String.Format ("{0} {1}",ViewState["SortExpression"], ViewState["SortDirection"]);
+       // private void BindGridView()
+        //{
+         //   DataTable facilityresults = new DataTable();
+          //  string sortExpression = String.Format ("{0} {1}",ViewState["SortExpression"], ViewState["SortDirection"]);
 
-            grdCamera.DataSource = facilityresults;
-            grdCamera.DataBind();
+           // grdCamera.DataSource = facilityresults;
+           // grdCamera.DataBind();
 
             
            
-        }
+       // }
 
    
         protected void GrdCamera_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            grdCamera.PageIndex = e.NewPageIndex;
-            BindGridView();
+           // grdCamera.PageIndex = e.NewPageIndex;
+           // BindGridView();
         }
 
         protected void GrdCamera_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int selectedRow = e.RowIndex;
-            Label FacilityID = (Label)grdCamera.Rows[selectedRow].FindControl("cameraID1");
-            string facilityID = FacilityID.Text;
-            BindGridView();
+            //int selectedRow = e.RowIndex;
+            //Label FacilityID = (Label)grdCamera.Rows[selectedRow].FindControl("cameraID1");
+            //string facilityID = FacilityID.Text;
+          //  BindGridView();
         }
 
         protected void GrdCamera_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,8 +65,8 @@ namespace Camera_Integration
 
         protected void GrdCamera_Sorting(object sender, GridViewSortEventArgs e)
         {
-            grdCamera.PageIndex = 0;
-            BindGridView();
+           // grdCamera.PageIndex = 0;
+           // BindGridView();
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -76,7 +74,7 @@ namespace Camera_Integration
            string search = txtSearch.Text;
            using ( var db = new FacilityReservationKioskEntities())
            {
-               var Search = from b in db.Facilities where b.FacilityID == search orderby b.FacilityID select new { b.FacilityID};
+               var Search = from b in db.Cameras where b.FacilityID == search orderby b.FacilityID select new { b.FacilityID, b.MinimumDensity, b.MaximumDensity};
 
                //loop through to print out
                grdCamera.DataSource = Search.ToList();
@@ -93,9 +91,9 @@ namespace Camera_Integration
 
         protected void GrdCamera_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            Label IDcamera = (Label)grdCamera.Rows[e.NewEditIndex].FindControl("cameraID1");
-            string camID = IDcamera.Text;
-            Session["cameraIDEdit"] = camID;
+            //Label IDcamera = (Label)grdCamera.Rows[e.NewEditIndex].FindControl("cameraID1");
+            //string camID = IDcamera.Text;
+            //Session["cameraIDEdit"] = camID;
 
             //grdCamera.EditIndex = e.NewEditIndex;
             // BindGridView();
@@ -115,33 +113,10 @@ namespace Camera_Integration
 
         protected void grdCamera_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Sort"))
-            {
-                if (ViewState["SortExpression"] != null)
-                {
-                    if (this.ViewState["SortExpression"].ToString() == e.CommandArgument.ToString())
-                    {
-                        if (ViewState["SortDirection"].ToString() =="ASC")
-                            ViewState["SortDirection"] = "DESC";
-                        else
-                            ViewState["SortDirection"] = "ASC";
-                    }
-                    else
-                    {
-                         ViewState["SortDirection"] = "ASC";
-                        ViewState["SortExpression"] = e.CommandArgument.ToString();
-                    }
-                }
-                else
-                {
-                     ViewState["SortExpression"] = e.CommandArgument.ToString();
-                    ViewState["SortDirection"] = "ASC";
-                }
-
-            }
+           
              
        }
-            
+
    }
 }   
 

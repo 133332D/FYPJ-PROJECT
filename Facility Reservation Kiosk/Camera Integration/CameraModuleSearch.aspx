@@ -92,9 +92,9 @@
                             <div class="col-sm-12">
 
                                 <div class="form-group">
-                                    Search by Faciltiy / Camera IP Address:  
+                                    Search by Facility / Camera IP Address:  
                                     <br />
-                                    <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtSearch" runat="server" Height="24px" Width="128px"></asp:TextBox>
                                     <br />
 
                                 </div>
@@ -111,7 +111,7 @@
                         <asp:GridView ID="grdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="262px" Width="649px" OnPageIndexChanging="GrdCamera_PageIndexChanging" OnRowCancelingEdit="GrdCamera_RowCancelingEdit" OnRowDeleting="GrdCamera_RowDeleting" OnRowEditing="GrdCamera_RowEditing" OnRowUpdating="GrdCamera_RowUpdating" OnSelectedIndexChanged="GrdCamera_SelectedIndexChanged" OnSorting="GrdCamera_Sorting" OnRowCommand="grdCamera_RowCommand">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
-                                <asp:BoundField DataField="FacilityName" HeaderText=" Facility Name" />
+                                <asp:BoundField DataField="FacilityID" HeaderText=" Facility Name" />
                                 <asp:BoundField DataField="IPAddress" HeaderText="Camera IP Address" />
                                 <asp:BoundField DataField="MinimumDensity" HeaderText="Minimum Density" />
                                 <asp:BoundField DataField="MaximumDensity" HeaderText="Maximum Density" />

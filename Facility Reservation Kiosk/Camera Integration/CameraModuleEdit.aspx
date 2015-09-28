@@ -49,7 +49,8 @@
 
                                   <asp:Label ID="Label1" runat="server" Text="Camera IP Address:"></asp:Label>
                                   <br />
-                                  <asp:TextBox ID="txtIPAddress" runat="server" CssClass="form-control" Height="24px" Width="644px" OnTextChanged="txtIPAddress_TextChanged"></asp:TextBox>
+                                  <asp:TextBox ID="txtIPAddress" runat="server"></asp:TextBox>
+                                  <br />
 
                                   <asp:RequiredFieldValidator ID="RequiredtxtIPAddress" runat="server" ControlToValidate="txtIPAddress" Display="None" ErrorMessage="This field is required"></asp:RequiredFieldValidator>
                                   <br />
