@@ -11,6 +11,7 @@ namespace Facility_Reservation_Kiosk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lbDeviceID.Text = Request.QueryString["searchID"];
             lblDateTime.Text = DateTime.Now.ToString("M/dd/yy");
         }
     }

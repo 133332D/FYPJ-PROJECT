@@ -27,7 +27,7 @@ namespace Facility_Reservation_Kiosk
             using (var db = new FacilityReservationKioskEntities())
             {
                 //Basic select query from a single table
-                var Search = from b in db.Devices where b.DeviceID == search orderby b.DeviceID select new { b.DeviceID, b.Status, b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason, b.Description };
+                var Search = from b in db.Devices where b.DeviceID == search orderby b.DeviceID + "%" select new { b.DeviceID, b.Status, b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason, b.Description };
 
                 //Loop through to print out 
                 GridViewSearch.DataSource = Search.ToList();
@@ -44,12 +44,12 @@ namespace Facility_Reservation_Kiosk
         {
             if (e.CommandName.CompareTo("Approve") == 0)
             {
-                Response.Redirect("ApprovalPage.aspx");
+                Response.Redirect("ApprovalPage.aspx?searchID=" + txtSearch.Text);
             }
             
             if (e.CommandName.CompareTo("Reject") == 0)
             {
-                Response.Redirect("RejectPage.aspx");
+                Response.Redirect("RejectPage.aspx?searchID=" + txtSearch.Text);
             }
 
         }

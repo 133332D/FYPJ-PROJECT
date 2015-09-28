@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\L33523\Source\Repos\FYPJ-PROJECT2\Facility Reservation Kiosk\Facility Reservation Kiosk\DeviceSecurity.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\L33524\Source\Repos\FYPJ-PROJECT2\Facility Reservation Kiosk\Facility Reservation Kiosk\DeviceSecurity.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
