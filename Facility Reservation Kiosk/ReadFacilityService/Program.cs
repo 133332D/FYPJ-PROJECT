@@ -8,6 +8,7 @@ using System.Net;
 using System.Xml;
 using System.Data.Entity;
 using System.IO;
+using System.Configuration;
 
 namespace ReadFacilityService
 {
@@ -99,7 +100,7 @@ namespace ReadFacilityService
             //if (args[0] == "getFRSLocationXML")
             try
             {
-                Console.WriteLine(args[0]);
+                //Console.WriteLine(args[0]);
                 Console.WriteLine("Result:");
                 //Console.WriteLine(HttpUtility.UrlDecode(ws.getFRSLocationXML(args[1])));
 
@@ -235,7 +236,7 @@ namespace ReadFacilityService
             //if (args[0] == "getFRSListXML")
             try
             {
-                Console.WriteLine(args[0]);
+                //Console.WriteLine(args[0]);
                 Console.WriteLine("Result:");
                 //Console.WriteLine(HttpUtility.UrlDecode(ws.getFRSListXML(
                 //args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8], args[9], args[10])));
@@ -246,7 +247,7 @@ namespace ReadFacilityService
                 doc.AppendChild(docNode);
 
                 //hardcode default to SIT
-                string school = "SIT";
+                string school = System.Configuration.ConfigurationManager.AppSettings["mySIT"]; ;
                 //load xml to xml doc object
                 //args[4] is the date in format DD-MMM-YYYY 09-SEP-2015
                 string xml = HttpUtility.UrlDecode(ws.getFRSListXML(
