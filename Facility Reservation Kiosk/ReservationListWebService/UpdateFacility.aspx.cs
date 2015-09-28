@@ -12,7 +12,7 @@ namespace ReservationListWebService
         protected void Page_Load(object sender, EventArgs e)
         {
             string departmentID = Request.QueryString["DepartmentID"];
-            string json = Request.Form["JSon"];
+            string json = Request.Form["Json"];
         }
     }
 }
