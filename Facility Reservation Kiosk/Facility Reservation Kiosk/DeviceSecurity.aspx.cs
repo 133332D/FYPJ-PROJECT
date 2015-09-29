@@ -45,6 +45,7 @@ namespace Facility_Reservation_Kiosk
             if (e.CommandName.CompareTo("Approve") == 0)
             {
                 Response.Redirect("ApprovalPage.aspx?searchID=" + txtSearch.Text);
+               
             }
             
             if (e.CommandName.CompareTo("Reject") == 0)
