@@ -25,12 +25,25 @@ namespace IPadKioskWebService
         {
             //To get the string to search in facility table
             string departmentID = Request.QueryString["DepartmentID"];
+            string block = Request.QueryString["Block"];
             string level = Request.QueryString["Level"];
             string name = Request.QueryString["Name"];
 
+            //test if correct 
+            //Only select from a certain department
+            //select the database for the list of facility that contains 
+            //block, level, name (%)
             using (var db = new KioskContext())
             {
-
+                var facilitys = from f in db.Facilitys
+                                where f.Department.DepartmentID.Contains(departmentID)
+                                && (f.Block.Contains("%" + block + "%") || f.Level.Contains("%" + level + "%")
+                                || f.Name.Contains("%" + name + "%"))
+                                
+                                orderby f.FacilityID
+                                select new { f.FacilityID, f.DepartmentID, f.Description, f.Block,
+                                f.Level, f.Name, f.Map, f.MapPositionX, f.MapPositionY, f.OpenHours,
+                                f.CloseHours, f.MaxBkTime, f.MaxBkUnits, f.MinBkTime, f.MinBkUnits};
             }
         }
     }

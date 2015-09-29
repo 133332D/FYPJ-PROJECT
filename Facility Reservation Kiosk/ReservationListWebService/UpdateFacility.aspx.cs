@@ -22,7 +22,7 @@ namespace ReservationListWebService
             public DbSet<Facility> Facilitys { get; set; }
             public DbSet<FacilityReservation> Reservations { get; set; }
         }
-        public class ReservationList
+        public class Reservation
         {
             public string facilityReservationID { get; set; }
             public string facilityID { get; set; }
@@ -31,29 +31,44 @@ namespace ReservationListWebService
             public string useShortDescription { get; set; }
             public string useDescription { get; set; }
         }
+        public class ReservationList
+        {
+            public List<Reservation> Reservations { get; set; }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Get the department ID and json string pass to my webservice
             string departmentID = Request.QueryString["DepartmentID"];
             string json = Request.Form["Json"];
-
+           
+            //store the deserialized json array to a list of reservations
             ReservationList list = JsonConvert.DeserializeObject<ReservationList>(json);
 
             using (var db = new KioskContext())
             {
+                //delete the whole FacilityReservation Table
                 db.Database.ExecuteSqlCommand(
                     "DELETE FacilityReservation FROM Department INNER JOIN Facility ON Department.DepartmentID = Facility.DepartmentID" +
                         "INNER JOIN FacilityReservation ON Facility.FacilityID = FacilityReservation.FacilityID WHERE Department.DepartmentID = '" + departmentID + "'");
 
-                //foreach(....)
+                //loop through each reservations and insert into the database
+                //record by record
+                foreach(Reservation res in list.Reservations)
                 {
-                    FacilityReservation res = new FacilityReservation();
+                    FacilityReservation reser = new FacilityReservation();
 
                     //set all fields here
-                    res.FacilityReservationID = list.facilityReservationID;
+                    reser.FacilityReservationID = res.facilityReservationID;
+                    reser.FacilityID = res.facilityID;
+                    reser.StartDateTime = res.startDateTime;
+                    reser.EndDateTime = res.endDateTime;
+                    reser.UseShortDescription = res.useShortDescription;
+                    reser.UseDescription = res.useDescription;
 
-                    db.Reservations.Add(res);
+                    db.Reservations.Add(reser);
                 }
+
                 db.SaveChanges();
             }
         }
