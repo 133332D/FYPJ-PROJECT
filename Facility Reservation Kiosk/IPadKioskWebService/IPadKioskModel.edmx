@@ -10,6 +10,7 @@
             <PropertyRef Name="DepartmentID" />
           </Key>
           <Property Name="DepartmentID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="DepartmentFilters">
           <Key>
@@ -28,12 +29,19 @@
           </Key>
           <Property Name="FacilityID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="DepartmentID" Type="varchar" MaxLength="10" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
           <Property Name="Block" Type="nvarchar" MaxLength="50" />
           <Property Name="Level" Type="nvarchar" MaxLength="50" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Map" Type="nvarchar" MaxLength="50" />
           <Property Name="MapPositionX" Type="nvarchar" MaxLength="50" />
           <Property Name="MapPositionY" Type="nvarchar" MaxLength="50" />
+          <Property Name="OpenHours" Type="nvarchar" MaxLength="50" />
+          <Property Name="CloseHours" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaxBkTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaxBkUnits" Type="nvarchar" MaxLength="50" />
+          <Property Name="MinBkTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="MinBkUnits" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="FacilityReservation">
           <Key>
@@ -46,6 +54,18 @@
           <Property Name="UseShortDescription" Type="nvarchar" MaxLength="50" />
           <Property Name="UseDescription" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <Association Name="FK_Department_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Department1" Type="Self.Department" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DepartmentFilters_Department">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="DepartmentFilters" Type="Self.DepartmentFilters" Multiplicity="*" />
@@ -87,6 +107,10 @@
           <EntitySet Name="DepartmentFilters" EntityType="Self.DepartmentFilters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facility" EntityType="Self.Facility" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FacilityReservation" EntityType="Self.FacilityReservation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Department_Department" Association="Self.FK_Department_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Department1" EntitySet="Department" />
+          </AssociationSet>
           <AssociationSet Name="FK_DepartmentFilters_Department" Association="Self.FK_DepartmentFilters_Department">
             <End Role="Department" EntitySet="Department" />
             <End Role="DepartmentFilters" EntitySet="DepartmentFilters" />
@@ -110,6 +134,9 @@
             <PropertyRef Name="DepartmentID" />
           </Key>
           <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Department1" Relationship="Self.FK_Department_Department" FromRole="Department" ToRole="Department1" />
+          <NavigationProperty Name="Department2" Relationship="Self.FK_Department_Department" FromRole="Department1" ToRole="Department" />
           <NavigationProperty Name="DepartmentFilters" Relationship="Self.FK_DepartmentFilters_Department" FromRole="Department" ToRole="DepartmentFilters" />
           <NavigationProperty Name="Facilities" Relationship="Self.FK_Facility_Department" FromRole="Department" ToRole="Facility" />
         </EntityType>
@@ -131,12 +158,19 @@
           </Key>
           <Property Name="FacilityID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Block" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Level" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Map" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MapPositionX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MapPositionY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OpenHours" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CloseHours" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaxBkTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaxBkUnits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MinBkTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MinBkUnits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Facility_Department" FromRole="Facility" ToRole="Department" />
           <NavigationProperty Name="FacilityReservations" Relationship="Self.FK_FacilityReservation_Facility" FromRole="Facility" ToRole="FacilityReservation" />
         </EntityType>
@@ -152,6 +186,18 @@
           <Property Name="UseDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Facility" Relationship="Self.FK_FacilityReservation_Facility" FromRole="FacilityReservation" ToRole="Facility" />
         </EntityType>
+        <Association Name="FK_Department_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Department1" Type="Self.Department" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DepartmentFilters_Department">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="DepartmentFilters" Type="Self.DepartmentFilter" Multiplicity="*" />
@@ -193,6 +239,10 @@
           <EntitySet Name="DepartmentFilters" EntityType="Self.DepartmentFilter" />
           <EntitySet Name="Facilities" EntityType="Self.Facility" />
           <EntitySet Name="FacilityReservations" EntityType="Self.FacilityReservation" />
+          <AssociationSet Name="FK_Department_Department" Association="Self.FK_Department_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Department1" EntitySet="Departments" />
+          </AssociationSet>
           <AssociationSet Name="FK_DepartmentFilters_Department" Association="Self.FK_DepartmentFilters_Department">
             <End Role="Department" EntitySet="Departments" />
             <End Role="DepartmentFilters" EntitySet="DepartmentFilters" />
@@ -216,6 +266,7 @@
             <EntityTypeMapping TypeName="FacilityReservationKioskModel.Department">
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -236,12 +287,19 @@
               <MappingFragment StoreEntitySet="Facility">
                 <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Block" ColumnName="Block" />
                 <ScalarProperty Name="Level" ColumnName="Level" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Map" ColumnName="Map" />
                 <ScalarProperty Name="MapPositionX" ColumnName="MapPositionX" />
                 <ScalarProperty Name="MapPositionY" ColumnName="MapPositionY" />
+                <ScalarProperty Name="OpenHours" ColumnName="OpenHours" />
+                <ScalarProperty Name="CloseHours" ColumnName="CloseHours" />
+                <ScalarProperty Name="MaxBkTime" ColumnName="MaxBkTime" />
+                <ScalarProperty Name="MaxBkUnits" ColumnName="MaxBkUnits" />
+                <ScalarProperty Name="MinBkTime" ColumnName="MinBkTime" />
+                <ScalarProperty Name="MinBkUnits" ColumnName="MinBkUnits" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F06FD604-E9B0-4E9D-9740-C6DEC62F4782}</ProjectGuid>
+    <ProjectGuid>{A222E0C2-B850-4DDD-9A4C-BF558A1FD7BC}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReservationListWebService</RootNamespace>
-    <AssemblyName>ReservationListWebService</AssemblyName>
+    <RootNamespace>IPadKioskWebService</RootNamespace>
+    <AssemblyName>IPadKioskWebService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -47,7 +47,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -68,65 +67,65 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UpdateFacility.aspx" />
+    <Content Include="GetFacilities.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Department.cs">
-      <DependentUpon>ReservationListModel.tt</DependentUpon>
+      <DependentUpon>IPadKioskModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DepartmentFilter.cs">
-      <DependentUpon>ReservationListModel.tt</DependentUpon>
+      <DependentUpon>IPadKioskModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Facility.cs">
-      <DependentUpon>ReservationListModel.tt</DependentUpon>
+      <DependentUpon>IPadKioskModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FacilityReservation.cs">
-      <DependentUpon>ReservationListModel.tt</DependentUpon>
+      <DependentUpon>IPadKioskModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReservationListModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReservationListModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ReservationListModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReservationListModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ReservationListModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReservationListModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateFacility.aspx.cs">
-      <DependentUpon>UpdateFacility.aspx</DependentUpon>
+    <Compile Include="GetFacilities.aspx.cs">
+      <DependentUpon>GetFacilities.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UpdateFacility.aspx.designer.cs">
-      <DependentUpon>UpdateFacility.aspx</DependentUpon>
+    <Compile Include="GetFacilities.aspx.designer.cs">
+      <DependentUpon>GetFacilities.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IPadKioskModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IPadKioskModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPadKioskModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IPadKioskModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPadKioskModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IPadKioskModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ReservationListModel.edmx">
+    <EntityDeploy Include="IPadKioskModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ReservationListModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>IPadKioskModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="IPadKioskModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IPadKioskModel.edmx</DependentUpon>
+      <LastGenOutput>IPadKioskModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="IPadKioskModel.edmx.diagram">
+      <DependentUpon>IPadKioskModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="IPadKioskModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IPadKioskModel.edmx</DependentUpon>
+      <LastGenOutput>IPadKioskModel.cs</LastGenOutput>
+    </Content>
     <Content Include="packages.config" />
-    <Content Include="ReservationListModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ReservationListModel.edmx</DependentUpon>
-      <LastGenOutput>ReservationListModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ReservationListModel.edmx.diagram">
-      <DependentUpon>ReservationListModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="ReservationListModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ReservationListModel.edmx</DependentUpon>
-      <LastGenOutput>ReservationListModel.cs</LastGenOutput>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -150,9 +149,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1419</DevelopmentServerPort>
+          <DevelopmentServerPort>19603</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:18177/</IISUrl>
+          <IISUrl>http://localhost:19603/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

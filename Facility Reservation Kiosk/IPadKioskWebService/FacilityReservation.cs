@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReadFacilityReservationService
+namespace IPadKioskWebService
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class DepartmentFilter
+    public partial class FacilityReservation
     {
-        public int DepartmentFilterID { get; set; }
-        public string DepartmentID { get; set; }
-        public string FilterName { get; set; }
-        public string Block { get; set; }
-        public string Level { get; set; }
-        public string Name { get; set; }
+        public string FacilityReservationID { get; set; }
+        public string FacilityID { get; set; }
+        public Nullable<System.DateTime> StartDateTime { get; set; }
+        public Nullable<System.DateTime> EndDateTime { get; set; }
+        public string UseShortDescription { get; set; }
+        public string UseDescription { get; set; }
     
-        public virtual Department Department { get; set; }
+        public virtual Facility Facility { get; set; }
     }
 }

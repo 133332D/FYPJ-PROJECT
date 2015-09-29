@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReadFacilityReservationService
+namespace IPadKioskWebService
 {
     using System;
     using System.Data.Entity;

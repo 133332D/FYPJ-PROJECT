@@ -300,12 +300,12 @@ namespace ReadFacilityService
                 //the rows
                 //Insert, update and delete accordingly
                 //B
-                //create a list of string of department object
+                //create a list of string of facility object
                 List<string> sqlFacilityListString = new List<string>();
                 //create a list of object (SQL database)
                 List<SqlFacObject> sqlFacilityList = new List<SqlFacObject>();
 
-                //select from the database to insert to sqlDepartmentList
+                //select from the database to insert to sqlFacilityList
                 using (var db = new KioskContext())
                 {
                     var listoffac = from f in db.Facilitys

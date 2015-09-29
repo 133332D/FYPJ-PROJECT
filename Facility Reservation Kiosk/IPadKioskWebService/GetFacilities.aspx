@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateFacility.aspx.cs" Inherits="ReservationListWebService.UpdateFacility" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetFacilities.aspx.cs" Inherits="IPadKioskWebService.GetFacilities" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-
+    
     </div>
     </form>
 </body>

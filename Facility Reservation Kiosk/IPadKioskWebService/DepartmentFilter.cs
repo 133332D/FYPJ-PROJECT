@@ -7,30 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReadFacilityReservationService
+namespace IPadKioskWebService
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Facility
+    public partial class DepartmentFilter
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Facility()
-        {
-            this.FacilityReservations = new HashSet<FacilityReservation>();
-        }
-    
-        public string FacilityID { get; set; }
+        public int DepartmentFilterID { get; set; }
         public string DepartmentID { get; set; }
+        public string FilterName { get; set; }
         public string Block { get; set; }
         public string Level { get; set; }
         public string Name { get; set; }
-        public string Map { get; set; }
-        public string MapPositionX { get; set; }
-        public string MapPositionY { get; set; }
     
         public virtual Department Department { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FacilityReservation> FacilityReservations { get; set; }
     }
 }
