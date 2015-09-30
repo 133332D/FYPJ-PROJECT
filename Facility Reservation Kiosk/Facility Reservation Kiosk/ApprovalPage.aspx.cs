@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.Entity;
 
 namespace Facility_Reservation_Kiosk
 {
@@ -19,12 +20,12 @@ namespace Facility_Reservation_Kiosk
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
             int ID = System.Convert.ToInt32(lblDeviceID.Text);
-               
+                          
             using (var db = new FacilityReservationKioskEntities())
             {
                 //Load up and update 
-                Device device = db.Devices.Find(ID);
-                
+
+                var device = db.Devices.Find(ID);
 
                 //Modify fields
                 device.Description = tbDescription.Text;
