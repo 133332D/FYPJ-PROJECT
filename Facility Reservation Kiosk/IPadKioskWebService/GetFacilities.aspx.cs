@@ -92,7 +92,8 @@ namespace IPadKioskWebService
             string json = JsonConvert.SerializeObject(sqlFacList, Formatting.Indented);
 
 
-            //****write codes to pass back the json string to the iPad!!!!***
+            //codes to pass back the json string to the iPad
+            Response.Write(json);
         }
     }
 }

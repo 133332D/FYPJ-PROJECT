@@ -43,35 +43,46 @@ namespace ReservationListWebService
             //Get the department ID and json string pass to my webservice
             string departmentID = Request.QueryString["DepartmentID"];
             string json = Request.Form["Json"];
-           
-            //store the deserialized json array to a list of reservations
-            ReservationList list = JsonConvert.DeserializeObject<ReservationList>(json);
 
-            using (var db = new KioskContext())
+            if (departmentID != null && json != null)
             {
-                //delete the whole FacilityReservation Table
-                db.Database.ExecuteSqlCommand(
-                    "DELETE FacilityReservation FROM Department INNER JOIN Facility ON Department.DepartmentID = Facility.DepartmentID" +
-                        "INNER JOIN FacilityReservation ON Facility.FacilityID = FacilityReservation.FacilityID WHERE Department.DepartmentID = '" + departmentID + "'");
 
-                //loop through each reservations and insert into the database
-                //record by record
-                foreach(Reservation res in list.Reservations)
+                //store the deserialized json array to a list of reservations
+                ReservationList list = JsonConvert.DeserializeObject<ReservationList>(json);
+
+                using (var db = new KioskContext())
                 {
-                    FacilityReservation reser = new FacilityReservation();
+                    //delete the whole FacilityReservation Table
+                    db.Database.ExecuteSqlCommand(
+                        "DELETE FacilityReservation FROM Department INNER JOIN Facility ON Department.DepartmentID = Facility.DepartmentID" +
+                            "INNER JOIN FacilityReservation ON Facility.FacilityID = FacilityReservation.FacilityID WHERE Department.DepartmentID = '" + departmentID + "'");
 
-                    //set all fields here
-                    reser.FacilityReservationID = res.facilityReservationID;
-                    reser.FacilityID = res.facilityID;
-                    reser.StartDateTime = res.startDateTime;
-                    reser.EndDateTime = res.endDateTime;
-                    reser.UseShortDescription = res.useShortDescription;
-                    reser.UseDescription = res.useDescription;
+                    //loop through each reservations and insert into the database
+                    //record by record
+                    foreach (Reservation res in list.Reservations)
+                    {
+                        FacilityReservation reser = new FacilityReservation();
 
-                    db.Reservations.Add(reser);
+                        //set all fields here
+                        reser.FacilityReservationID = res.facilityReservationID;
+                        reser.FacilityID = res.facilityID;
+                        reser.StartDateTime = res.startDateTime;
+                        reser.EndDateTime = res.endDateTime;
+                        reser.UseShortDescription = res.useShortDescription;
+                        reser.UseDescription = res.useDescription;
+
+                        db.Reservations.Add(reser);
+                    }
+
+                    db.SaveChanges();
                 }
-
-                db.SaveChanges();
+                Response.Write("Result: OK");
+                Response.Write("Message: The record is received and inserted into database successfully");
+            }
+            else 
+            {
+                Response.Write("Result: ERROR");
+                Response.Write("Message: There is an error occured and data cannot be received.");
             }
         }
     }
