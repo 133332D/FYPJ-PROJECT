@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -21,6 +22,39 @@ namespace IPadKioskWebService
             public DbSet<Facility> Facilitys { get; set; }
         }
 
+        public class FacObject
+        {
+            public string facilityID { get; set; }
+            public string departmentID { get; set; }
+            public string description { get; set; }
+            public string block { get; set; }
+            public string level { get; set; }
+            public string name { get; set; }
+            public string openHours { get; set; }
+            public string closeHours { get; set; }
+            public string maxBkTime { get; set; }
+            public string maxBkUnits { get; set; }
+            public string minBkTime { get; set; }
+            public string minBkUnits { get; set; }
+
+            public FacObject(string facid, string depid, string desc, string b, string l, string n
+                ,string o ,string c, string maxt, string maxu, string mint, string minu)
+            {
+                this.facilityID = facid;
+                this.departmentID = depid;
+                this.description = desc;
+                this.block = b;
+                this.level = l;
+                this.name = n;
+                this.openHours = o;
+                this.closeHours = c;
+                this.maxBkTime = maxt;
+                this.maxBkUnits = maxu;
+                this.minBkTime = mint;
+                this.minBkUnits = minu;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //To get the string to search in facility table
@@ -29,6 +63,8 @@ namespace IPadKioskWebService
             string level = Request.QueryString["Level"];
             string name = Request.QueryString["Name"];
 
+            //creates a list of fac object
+            List<FacObject> sqlFacList = new List<FacObject>();
             //test if correct 
             //Only select from a certain department
             //select the database for the list of facility that contains 
@@ -36,15 +72,27 @@ namespace IPadKioskWebService
             using (var db = new KioskContext())
             {
                 var facilitys = from f in db.Facilitys
-                                where f.Department.DepartmentID.Contains(departmentID)
-                                && (f.Block.Contains("%" + block + "%") || f.Level.Contains("%" + level + "%")
-                                || f.Name.Contains("%" + name + "%"))
+                                where f.Department.DepartmentID == departmentID
+                                && (f.Block.Contains(block) && f.Level.Contains(level)
+                                && f.Name.Contains(name))
                                 
                                 orderby f.FacilityID
                                 select new { f.FacilityID, f.DepartmentID, f.Description, f.Block,
-                                f.Level, f.Name, f.Map, f.MapPositionX, f.MapPositionY, f.OpenHours,
-                                f.CloseHours, f.MaxBkTime, f.MaxBkUnits, f.MinBkTime, f.MinBkUnits};
+                                f.Level, f.Name, f.OpenHours, f.CloseHours, f.MaxBkTime, f.MaxBkUnits, f.MinBkTime, f.MinBkUnits};
+                
+                foreach (var fac in facilitys)
+                {
+                    FacObject facobject = new FacObject(fac.FacilityID, fac.DepartmentID, fac.Description, fac.Block, fac.Level,
+                        fac.Name, fac.OpenHours, fac.CloseHours, fac.MaxBkTime, fac.MaxBkUnits, fac.MinBkTime, fac.MinBkUnits);
+                    sqlFacList.Add(facobject);
+                }
             }
+
+            //Serialize into json format output (string)
+            string json = JsonConvert.SerializeObject(sqlFacList, Formatting.Indented);
+
+
+            //****write codes to pass back the json string to the iPad!!!!***
         }
     }
 }

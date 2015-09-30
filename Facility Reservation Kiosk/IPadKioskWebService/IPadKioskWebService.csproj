@@ -47,6 +47,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -68,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GetFacilities.aspx" />
+    <Content Include="GetFacilityReservations.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +94,13 @@
     </Compile>
     <Compile Include="GetFacilities.aspx.designer.cs">
       <DependentUpon>GetFacilities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetFacilityReservations.aspx.cs">
+      <DependentUpon>GetFacilityReservations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetFacilityReservations.aspx.designer.cs">
+      <DependentUpon>GetFacilityReservations.aspx</DependentUpon>
     </Compile>
     <Compile Include="IPadKioskModel.Context.cs">
       <AutoGen>True</AutoGen>

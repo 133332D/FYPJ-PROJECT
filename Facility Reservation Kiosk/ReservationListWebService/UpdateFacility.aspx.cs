@@ -36,6 +36,8 @@ namespace ReservationListWebService
             public List<Reservation> Reservations { get; set; }
         }
 
+        //******write codes to return OK/Error Message to the Mr Chow's console app!!!!!!****
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //Get the department ID and json string pass to my webservice
