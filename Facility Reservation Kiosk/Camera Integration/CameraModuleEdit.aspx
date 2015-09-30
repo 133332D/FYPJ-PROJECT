@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Camera.Master" AutoEventWireup="true" CodeBehind="CameraModuleEdit.aspx.cs" Inherits="Camera_Integration.CameraModuleEdit" %>
+﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Camera.Master" AutoEventWireup="true" CodeBehind="CameraModuleEdit.aspx.cs" Inherits="Camera_Integration.CameraModuleEdit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -7,7 +7,7 @@
      
     </asp:ScriptManager>
     <section class="content-header">
-        <h1>Edit / Create Camera
+        <h1>Edit&nbsp; Camera
 
         </h1>
          <ol class="breadcrumb">
@@ -35,10 +35,10 @@
                                     <div class="form-group">
                                          <label style="color: #000000"><span class="glyphicon glyphicon-cutlery">&nbsp;Facility:</span></label>
                                          <br />
-                                         <asp:DropDownList ID="ddlFacilityID" runat="server" AppendDataBoundItems="True" CssClass="form-control" OnSelectedIndexChanged="ddlFacilityID_SelectedIndexChanged" Width="667px">
-                                             <asp:ListItem>-Select-</asp:ListItem>
+                                         <asp:DropDownList ID="ddlFacilityID" runat="server" AppendDataBoundItems="True" CssClass="form-control" OnSelectedIndexChanged="ddlFacilityID_SelectedIndexChanged" Width="667px" AutoPostBack="True">
+                                             <asp:ListItem>~SELECT~</asp:ListItem>
                                          </asp:DropDownList>
-                                         <asp:RequiredFieldValidator ID="RequireddlFacility" runat="server" ControlToValidate="ddlFacilityID" Display="None" ErrorMessage="This field is required" ></asp:RequiredFieldValidator>
+                                         <asp:RequiredFieldValidator ID="RequireddlFacility" runat="server" ControlToValidate="ddlFacilityID" ErrorMessage="This field is required" ></asp:RequiredFieldValidator>
                                          <br />
                                         </div>
                                     </td>

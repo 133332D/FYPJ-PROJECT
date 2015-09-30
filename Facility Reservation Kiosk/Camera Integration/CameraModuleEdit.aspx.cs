@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient;
+using System.Configuration;
+
 
 namespace Camera_Integration
 {
@@ -21,12 +21,19 @@ namespace Camera_Integration
         
         private void BindDDL()
         {
-            ddlFacilityID.DataTextField = "facilityName";
-            ddlFacilityID.DataValueField = "facilityID";
-            ddlFacilityID.DataBind();
-           
-        }
+            using (var db = new FacilityReservationKioskEntities())
+            {
+                var facility = (from b in db.Cameras
+                                select new { b.FacilityID }).ToList();
 
+                ddlFacilityID.DataValueField = "FacilityID";
+                ddlFacilityID.DataTextField = "FacilityID";
+                ddlFacilityID.DataSource = facility;
+                ddlFacilityID.DataBind();
+            }
+                     
+        }
+      
         protected void ddlFacilityID_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -34,29 +41,31 @@ namespace Camera_Integration
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=L33525;Database=FacilityReservationKiosk;User Id=FRS;Password=123456";
-            
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            //ddlFacilityID.DataTextField = "FacilityID";
+           // string CameraIPAddress = txtIPAddress.Text;
+            //float MinimumDensity = float.Parse(txtMinDensity.Text);
+            //float MaximumDensity = float.Parse(txtMaxDensity.Text);
+
+            using (var db = new FacilityReservationKioskEntities())
             {
-                SqlCommand cmd = new SqlCommand();
+                              
+                Camera camera = db.Cameras.Find("ID");
 
-                cmd.CommandText = "INSERT INTO Camera(FacilityID, IPAddress,MinimumDensity,MaximumDensity) VALUES (" + txtIPAddress.Text + "," + txtMinDensity.Text + "," + txtMaxDensity.Text + ");";
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = connection;
-
-                connection.Open();
-                cmd.ExecuteNonQuery();
+                camera.IPAddress = "";
+                camera.MinimumDensity = float.Parse(txtMinDensity.Text);
+                camera.MaximumDensity = float.Parse(txtMaxDensity.Text);
+                db.SaveChanges();
+                
             }
-            string facilityID = ddlFacilityID.SelectedValue;
-            string ipAddress = txtIPAddress.Text;
-            decimal minDensity = Convert.ToDecimal(txtMinDensity.Text);
-            decimal maxDensity = Convert.ToDecimal(txtMaxDensity.Text);
 
-            lblDisplay.Text = "Data has been inserted";
+            lblDisplay.Text = "Update Record Successful!";
+     
+        }
+          
+           
           
         }
 
        
        
     }
-}

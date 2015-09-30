@@ -11,28 +11,30 @@ namespace Camera_Integration
     
     public partial class CameraModuleSearch : System.Web.UI.Page
     {
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             lblPages.Text = "";
             if (!IsPostBack)
             {
                 
-                //BindGridView();
+                BindGridView();
            }
         }
 
-       // private void BindGridView()
-        //{
-         //   DataTable facilityresults = new DataTable();
-          //  string sortExpression = String.Format ("{0} {1}",ViewState["SortExpression"], ViewState["SortDirection"]);
+        public void BindGridView()
+        {
+            using (var db = new FacilityReservationKioskEntities())
+            {
+                var result = from b in db.Cameras
+                             select new { b.FacilityID, b.IPAddress, b.MinimumDensity, b.MaximumDensity };
 
-           // grdCamera.DataSource = facilityresults;
-           // grdCamera.DataBind();
+                grdCamera.DataSource = result.ToList();
+                grdCamera.DataBind();
 
-            
+           }
            
-       // }
+        }
 
    
         protected void GrdCamera_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -71,15 +73,18 @@ namespace Camera_Integration
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-           string search = txtSearch.Text;
+           string search  = txtSearch.Text;
            using ( var db = new FacilityReservationKioskEntities())
            {
-               var Search = from b in db.Cameras where b.FacilityID == search orderby b.FacilityID select new { b.FacilityID, b.MinimumDensity, b.MaximumDensity};
+               var result = from b in db.Cameras
+                            where b.FacilityID == search 
+                           select new { b.FacilityID,b.IPAddress, b.MinimumDensity, b.MaximumDensity};
 
                //loop through to print out
-               grdCamera.DataSource = Search.ToList();
+               grdCamera.DataSource = result.ToList();
                grdCamera.DataBind();
            }
+
            
         }
 

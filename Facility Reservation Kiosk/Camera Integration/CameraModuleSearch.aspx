@@ -108,7 +108,7 @@
                                 <asp:Label ID="lblResult" runat="server"></asp:Label>
                             </div>
                         </div>
-                        <asp:GridView ID="grdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="262px" Width="649px" OnPageIndexChanging="GrdCamera_PageIndexChanging" OnRowCancelingEdit="GrdCamera_RowCancelingEdit" OnRowDeleting="GrdCamera_RowDeleting" OnRowEditing="GrdCamera_RowEditing" OnRowUpdating="GrdCamera_RowUpdating" OnSelectedIndexChanged="GrdCamera_SelectedIndexChanged" OnSorting="GrdCamera_Sorting" OnRowCommand="grdCamera_RowCommand">
+                        <asp:GridView ID="grdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="258px" Width="647px" OnPageIndexChanging="GrdCamera_PageIndexChanging" OnRowCancelingEdit="GrdCamera_RowCancelingEdit" OnRowDeleting="GrdCamera_RowDeleting" OnRowEditing="GrdCamera_RowEditing" OnRowUpdating="GrdCamera_RowUpdating" OnSelectedIndexChanged="GrdCamera_SelectedIndexChanged" OnSorting="GrdCamera_Sorting" OnRowCommand="grdCamera_RowCommand">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
                                 <asp:BoundField DataField="FacilityID" HeaderText=" Facility Name" />
@@ -128,6 +128,7 @@
                             <SortedDescendingCellStyle BackColor="#FFFDF8" />
                             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                         </asp:GridView>
+                        <br />
                         <br />
 
                     </div>
