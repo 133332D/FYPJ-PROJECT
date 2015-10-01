@@ -7,7 +7,7 @@
      
     </asp:ScriptManager>
     <section class="content-header">
-        <h1>Edit&nbsp; Camera
+        <h1>Create New&nbsp; Camera
 
         </h1>
          <ol class="breadcrumb">
@@ -35,10 +35,8 @@
                                     <div class="form-group">
                                          &nbsp;<asp:Label ID="Label4" runat="server" Font-Bold="False" Font-Size="Large" Text="Facility Name:"></asp:Label>
                                          <br />
-                                         <asp:DropDownList ID="ddlFacilityID" runat="server" AppendDataBoundItems="True" CssClass="form-control" OnSelectedIndexChanged="ddlFacilityID_SelectedIndexChanged" Width="667px" AutoPostBack="True">
-                                             <asp:ListItem>~SELECT~</asp:ListItem>
-                                         </asp:DropDownList>
-                                         <asp:RequiredFieldValidator ID="RequireddlFacility" runat="server" ControlToValidate="ddlFacilityID" ErrorMessage="This field is required" ></asp:RequiredFieldValidator>
+                                         <asp:TextBox ID="txtFacilityName" runat="server"></asp:TextBox>
+                                         <br />
                                          <br />
                                         </div>
                                     </td>

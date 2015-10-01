@@ -40,22 +40,13 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// ddlFacilityID control.
+        /// txtFacilityName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFacilityID;
-        
-        /// <summary>
-        /// RequireddlFacility control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequireddlFacility;
+        protected global::System.Web.UI.WebControls.TextBox txtFacilityName;
         
         /// <summary>
         /// Label1 control.

@@ -15,24 +15,11 @@ namespace Camera_Integration
         {
             if (!IsPostBack)
             {
-                BindDDL();
+                
             }
         }
         
-        private void BindDDL()
-        {
-            using (var db = new FacilityReservationKioskEntities())
-            {
-                var facility = (from b in db.Cameras
-                                select new { b.FacilityID }).ToList();
-
-                ddlFacilityID.DataValueField = "FacilityID";
-                ddlFacilityID.DataTextField = "FacilityID";
-                ddlFacilityID.DataSource = facility;
-                ddlFacilityID.DataBind();
-            }
-                     
-        }
+      
       
         protected void ddlFacilityID_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -41,36 +28,38 @@ namespace Camera_Integration
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            //ddlFacilityID.DataTextField = "FacilityID";
-           // string CameraIPAddress = txtIPAddress.Text;
-            //float MinimumDensity = float.Parse(txtMinDensity.Text);
-            //float MaximumDensity = float.Parse(txtMaxDensity.Text);
-
-            Camera camera;
+            string facilityname = txtFacilityName.Text;
+            string IPAddress = txtIPAddress.Text;
+            float MinDensity = float.Parse(txtMinDensity.Text);
+            float MaxDensity = float.Parse(txtMaxDensity.Text);
             
             using (var db = new FacilityReservationKioskEntities())
             {
-                camera = db.Cameras.Where(b => b.IPAddress == "New IPAddress").FirstOrDefault<Camera>();
-                        
-                   
-            }
 
-            if (camera != null)
-            {
-                camera.IPAddress = "Updated New IPAddress";
-            }
+                Camera c = new Camera();
+                    
+                        c.FacilityID = "L.426";
+                        c.IPAddress = "10.213.11.1";
+                        c.MinimumDensity = float.Parse(txtMinDensity.Text);
+                        c.MaximumDensity = float.Parse(txtMaxDensity.Text);
+                        db.Cameras.Add(c);
+                        db.SaveChanges();
+             }         
+                  
+         }                     
 
-
+                     
+       }      
+ 
+}
             
-
-            lblDisplay.Text = "Update Record Successful!";
      
-        }
+         
           
            
           
-        }
+       
 
        
        
-    }
+    

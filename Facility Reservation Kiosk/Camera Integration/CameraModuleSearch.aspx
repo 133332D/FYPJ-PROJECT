@@ -116,6 +116,7 @@
                                 <asp:BoundField DataField="MinimumDensity" HeaderText="Minimum Density" />
                                 <asp:BoundField DataField="MaximumDensity" HeaderText="Maximum Density" />
                                 <asp:CommandField ShowDeleteButton="True" />
+                                <asp:CommandField ShowEditButton="True" />
                             </Columns>
                             <EditRowStyle BackColor="#999999" />
                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
