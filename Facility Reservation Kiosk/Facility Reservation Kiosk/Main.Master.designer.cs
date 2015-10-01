@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Camera_Integration {
+namespace Facility_Reservation_Kiosk {
     
     
-    public partial class Camera {
+    public partial class Main {
         
         /// <summary>
         /// head control.

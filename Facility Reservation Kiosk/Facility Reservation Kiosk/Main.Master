@@ -1,5 +1,6 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Device.master.cs" Inherits="Facility_Reservation_Kiosk.Device" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Facility_Reservation_Kiosk.Main" %>
 
+<!DOCTYPE html>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
