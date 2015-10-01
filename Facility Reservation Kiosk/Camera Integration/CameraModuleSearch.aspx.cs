@@ -5,10 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
 namespace Camera_Integration
-{
-    
+{   
     public partial class CameraModuleSearch : System.Web.UI.Page
     {
 
@@ -16,8 +14,7 @@ namespace Camera_Integration
         {
             lblPages.Text = "";
             if (!IsPostBack)
-            {
-                
+            {                
                 BindGridView();
            }
         }
@@ -35,8 +32,7 @@ namespace Camera_Integration
            }
            
         }
-
-   
+ 
         protected void GrdCamera_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
            // grdCamera.PageIndex = e.NewPageIndex;

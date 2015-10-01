@@ -46,17 +46,22 @@ namespace Camera_Integration
             //float MinimumDensity = float.Parse(txtMinDensity.Text);
             //float MaximumDensity = float.Parse(txtMaxDensity.Text);
 
+            Camera camera;
+            
             using (var db = new FacilityReservationKioskEntities())
             {
-                              
-                Camera camera = db.Cameras.Find("ID");
-
-                camera.IPAddress = "";
-                camera.MinimumDensity = float.Parse(txtMinDensity.Text);
-                camera.MaximumDensity = float.Parse(txtMaxDensity.Text);
-                db.SaveChanges();
-                
+                camera = db.Cameras.Where(b => b.IPAddress == "New IPAddress").FirstOrDefault<Camera>();
+                        
+                   
             }
+
+            if (camera != null)
+            {
+                camera.IPAddress = "Updated New IPAddress";
+            }
+
+
+            
 
             lblDisplay.Text = "Update Record Successful!";
      
