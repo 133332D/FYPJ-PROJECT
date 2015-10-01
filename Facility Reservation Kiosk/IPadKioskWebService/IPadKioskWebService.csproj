@@ -72,6 +72,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CancelReservation.aspx" />
     <Content Include="CreateReservation.aspx" />
     <Content Include="GetDepartmentFilters.aspx" />
     <Content Include="GetFacilities.aspx" />
@@ -115,6 +116,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CancelReservation.aspx.cs">
+      <DependentUpon>CancelReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CancelReservation.aspx.designer.cs">
+      <DependentUpon>CancelReservation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateReservation.aspx.cs">
       <DependentUpon>CreateReservation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

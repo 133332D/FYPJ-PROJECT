@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Data.Entity.SqlServer;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -54,28 +56,27 @@ namespace IPadKioskWebService
             string block = Request.QueryString["Block"];
             string level = Request.QueryString["Level"];
             string name = Request.QueryString["Name"];
-            //format of date yyyy-MM-dd
+            //format of date yyyy-MMM-dd
             string date = Request.QueryString["Date"];
 
             var sqlResList = new ResList();
             sqlResList.Reservations = new List<ResObject>();
 
             //if date is blank, return current system date
-            if( date == null )
+            if( date == "" )
             {
-                string dateCurrentYear = DateTime.Now.Year.ToString("yyyy");
-                string dateCurrentMonth = DateTime.Now.Month.ToString("MM");
-                string dateCurrentDay = DateTime.Now.Day.ToString("dd");
+                DateTime dateToday = DateTime.Today;
 
                 //not sure if it really retuns a result
+                //don't work
                 using (var db = new KioskContext())
                 {
                     var facilityRes = from fr in db.FacilityReservations
                                     where fr.Facility.Department.DepartmentID == departmentID
                                     && fr.Facility.Block.Contains(block) && fr.Facility.Level.Contains(level)
-                                    && fr.Facility.Name.Contains(name) && fr.StartDateTime.Value.Year.ToString() == dateCurrentYear
-                                    && fr.StartDateTime.Value.Month.ToString() == dateCurrentMonth
-                                    && fr.StartDateTime.Value.Day.ToString() == dateCurrentDay
+                                    && fr.Facility.Name.Contains(name)
+                                    && DbFunctions.TruncateTime(fr.StartDateTime) <= dateToday
+                                    && DbFunctions.TruncateTime(fr.EndDateTime) >= dateToday
 
                                     orderby fr.FacilityReservationID
                                     select new
@@ -103,12 +104,51 @@ namespace IPadKioskWebService
 
                 //codes to pass back the json string to the iPad
                 Response.Write(json);
+                Response.End();
 
             }
             //else return only specified date
             else
             {
+                //convert string date to datetime
+                DateTime datePass = DateTime.ParseExact(date, "yyyy-MMM-dd", CultureInfo.InvariantCulture);
 
+                using (var db = new KioskContext())
+                {
+                    var facilityRes = from fr in db.FacilityReservations
+                                      where fr.Facility.Department.DepartmentID == departmentID
+                                      && fr.Facility.Block.Contains(block) && fr.Facility.Level.Contains(level)
+                                      && fr.Facility.Name.Contains(name)
+                                      && DbFunctions.TruncateTime(fr.StartDateTime) <= datePass
+                                      && DbFunctions.TruncateTime(fr.EndDateTime) >= datePass
+
+                                      orderby fr.FacilityReservationID
+                                      select new
+                                      {
+                                          fr.FacilityReservationID,
+                                          fr.FacilityID,
+                                          fr.StartDateTime,
+                                          fr.EndDateTime,
+                                          fr.UseShortDescription,
+                                          fr.UseDescription
+                                      };
+
+                    foreach (var res in facilityRes)
+                    {
+                        ResObject resobject = new ResObject(res.FacilityReservationID, res.FacilityID, res.StartDateTime.Value, res.EndDateTime.Value,
+                            res.UseShortDescription, res.UseDescription);
+
+                        sqlResList.Reservations.Add(resobject);
+                    }
+                }
+
+                //Serialize into json format output (string)
+                string json = JsonConvert.SerializeObject(sqlResList, Formatting.Indented);
+
+
+                //codes to pass back the json string to the iPad
+                Response.Write(json);
+                Response.End();
             }
         }
     }

@@ -76,13 +76,19 @@ namespace ReservationListWebService
 
                     db.SaveChanges();
                 }
-                Response.Write("Result: OK");
-                Response.Write("Message: The record is received and inserted into database successfully");
+                Response.Write("{");
+                Response.Write("     Result: OK");
+                Response.Write("     Message: The record is received and inserted into database successfully");
+                Response.Write("}");
+                Response.End();
             }
             else 
             {
-                Response.Write("Result: ERROR");
-                Response.Write("Message: There is an error occured and data cannot be received.");
+                Response.Write("{");
+                Response.Write("     Result: ERROR");
+                Response.Write("     Message: There is an error occured and data cannot be received.");
+                Response.Write("}");
+                Response.End();
             }
         }
     }

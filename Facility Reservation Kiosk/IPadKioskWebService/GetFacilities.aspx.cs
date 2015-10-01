@@ -100,6 +100,7 @@ namespace IPadKioskWebService
 
             //codes to pass back the json string to the iPad
             Response.Write(json);
+            Response.End();
         }
     }
 }
