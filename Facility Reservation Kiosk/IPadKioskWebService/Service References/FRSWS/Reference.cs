@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReadFacilityReservationService.FRSWS {
+namespace IPadKioskWebService.FRSWS {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17,73 +17,73 @@ namespace ReadFacilityReservationService.FRSWS {
         
         // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        ReadFacilityReservationService.FRSWS.delFRSEntriesResponse delFRSEntries(ReadFacilityReservationService.FRSWS.delFRSEntriesRequest request);
+        IPadKioskWebService.FRSWS.delFRSEntriesResponse delFRSEntries(IPadKioskWebService.FRSWS.delFRSEntriesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.delFRSEntriesResponse> delFRSEntriesAsync(ReadFacilityReservationService.FRSWS.delFRSEntriesRequest request);
-        
-        // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        ReadFacilityReservationService.FRSWS.getFRSBookingXMLResponse getFRSBookingXML(ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSBookingXMLResponse> getFRSBookingXMLAsync(ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequest request);
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.delFRSEntriesResponse> delFRSEntriesAsync(IPadKioskWebService.FRSWS.delFRSEntriesRequest request);
         
         // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        ReadFacilityReservationService.FRSWS.getFRSUserXMLResponse getFRSUserXML(ReadFacilityReservationService.FRSWS.getFRSUserXMLRequest request);
+        IPadKioskWebService.FRSWS.getFRSBookingXMLResponse getFRSBookingXML(IPadKioskWebService.FRSWS.getFRSBookingXMLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSUserXMLResponse> getFRSUserXMLAsync(ReadFacilityReservationService.FRSWS.getFRSUserXMLRequest request);
-        
-        // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        ReadFacilityReservationService.FRSWS.getFRSLocationXMLResponse getFRSLocationXML(ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSLocationXMLResponse> getFRSLocationXMLAsync(ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequest request);
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSBookingXMLResponse> getFRSBookingXMLAsync(IPadKioskWebService.FRSWS.getFRSBookingXMLRequest request);
         
         // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        ReadFacilityReservationService.FRSWS.getFRSTypeXMLResponse getFRSTypeXML(ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequest request);
+        IPadKioskWebService.FRSWS.getFRSUserXMLResponse getFRSUserXML(IPadKioskWebService.FRSWS.getFRSUserXMLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSTypeXMLResponse> getFRSTypeXMLAsync(ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequest request);
-        
-        // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        ReadFacilityReservationService.FRSWS.getFRSCodeXMLResponse getFRSCodeXML(ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSCodeXMLResponse> getFRSCodeXMLAsync(ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequest request);
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSUserXMLResponse> getFRSUserXMLAsync(IPadKioskWebService.FRSWS.getFRSUserXMLRequest request);
         
         // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLResponse getFRSSubCodeXML(ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequest request);
+        IPadKioskWebService.FRSWS.getFRSLocationXMLResponse getFRSLocationXML(IPadKioskWebService.FRSWS.getFRSLocationXMLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLResponse> getFRSSubCodeXMLAsync(ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequest request);
-        
-        // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        ReadFacilityReservationService.FRSWS.getFRSListXMLResponse getFRSListXML(ReadFacilityReservationService.FRSWS.getFRSListXMLRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSListXMLResponse> getFRSListXMLAsync(ReadFacilityReservationService.FRSWS.getFRSListXMLRequest request);
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSLocationXMLResponse> getFRSLocationXMLAsync(IPadKioskWebService.FRSWS.getFRSLocationXMLRequest request);
         
         // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        ReadFacilityReservationService.FRSWS.getFRSEntriesXMLResponse getFRSEntriesXML(ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequest request);
+        IPadKioskWebService.FRSWS.getFRSTypeXMLResponse getFRSTypeXML(IPadKioskWebService.FRSWS.getFRSTypeXMLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSEntriesXMLResponse> getFRSEntriesXMLAsync(ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequest request);
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSTypeXMLResponse> getFRSTypeXMLAsync(IPadKioskWebService.FRSWS.getFRSTypeXMLRequest request);
         
         // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        ReadFacilityReservationService.FRSWS.saveFRSEntriesResponse saveFRSEntries(ReadFacilityReservationService.FRSWS.saveFRSEntriesRequest request);
+        IPadKioskWebService.FRSWS.getFRSCodeXMLResponse getFRSCodeXML(IPadKioskWebService.FRSWS.getFRSCodeXMLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.saveFRSEntriesResponse> saveFRSEntriesAsync(ReadFacilityReservationService.FRSWS.saveFRSEntriesRequest request);
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSCodeXMLResponse> getFRSCodeXMLAsync(IPadKioskWebService.FRSWS.getFRSCodeXMLRequest request);
+        
+        // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        IPadKioskWebService.FRSWS.getFRSSubCodeXMLResponse getFRSSubCodeXML(IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSSubCodeXMLResponse> getFRSSubCodeXMLAsync(IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequest request);
+        
+        // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        IPadKioskWebService.FRSWS.getFRSListXMLResponse getFRSListXML(IPadKioskWebService.FRSWS.getFRSListXMLRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSListXMLResponse> getFRSListXMLAsync(IPadKioskWebService.FRSWS.getFRSListXMLRequest request);
+        
+        // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        IPadKioskWebService.FRSWS.getFRSEntriesXMLResponse getFRSEntriesXML(IPadKioskWebService.FRSWS.getFRSEntriesXMLRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSEntriesXMLResponse> getFRSEntriesXMLAsync(IPadKioskWebService.FRSWS.getFRSEntriesXMLRequest request);
+        
+        // CODEGEN: Generating message contract since element name arg0 from namespace  is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        IPadKioskWebService.FRSWS.saveFRSEntriesResponse saveFRSEntries(IPadKioskWebService.FRSWS.saveFRSEntriesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.saveFRSEntriesResponse> saveFRSEntriesAsync(IPadKioskWebService.FRSWS.saveFRSEntriesRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -93,12 +93,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class delFRSEntriesRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="delFRSEntries", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.delFRSEntriesRequestBody Body;
+        public IPadKioskWebService.FRSWS.delFRSEntriesRequestBody Body;
         
         public delFRSEntriesRequest() {
         }
         
-        public delFRSEntriesRequest(ReadFacilityReservationService.FRSWS.delFRSEntriesRequestBody Body) {
+        public delFRSEntriesRequest(IPadKioskWebService.FRSWS.delFRSEntriesRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -139,12 +139,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class delFRSEntriesResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="delFRSEntriesResponse", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.delFRSEntriesResponseBody Body;
+        public IPadKioskWebService.FRSWS.delFRSEntriesResponseBody Body;
         
         public delFRSEntriesResponse() {
         }
         
-        public delFRSEntriesResponse(ReadFacilityReservationService.FRSWS.delFRSEntriesResponseBody Body) {
+        public delFRSEntriesResponse(IPadKioskWebService.FRSWS.delFRSEntriesResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -173,12 +173,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSBookingXMLRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSBookingXML", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequestBody Body;
+        public IPadKioskWebService.FRSWS.getFRSBookingXMLRequestBody Body;
         
         public getFRSBookingXMLRequest() {
         }
         
-        public getFRSBookingXMLRequest(ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequestBody Body) {
+        public getFRSBookingXMLRequest(IPadKioskWebService.FRSWS.getFRSBookingXMLRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -219,12 +219,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSBookingXMLResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSBookingXMLResponse", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSBookingXMLResponseBody Body;
+        public IPadKioskWebService.FRSWS.getFRSBookingXMLResponseBody Body;
         
         public getFRSBookingXMLResponse() {
         }
         
-        public getFRSBookingXMLResponse(ReadFacilityReservationService.FRSWS.getFRSBookingXMLResponseBody Body) {
+        public getFRSBookingXMLResponse(IPadKioskWebService.FRSWS.getFRSBookingXMLResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -253,12 +253,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSUserXMLRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSUserXML", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSUserXMLRequestBody Body;
+        public IPadKioskWebService.FRSWS.getFRSUserXMLRequestBody Body;
         
         public getFRSUserXMLRequest() {
         }
         
-        public getFRSUserXMLRequest(ReadFacilityReservationService.FRSWS.getFRSUserXMLRequestBody Body) {
+        public getFRSUserXMLRequest(IPadKioskWebService.FRSWS.getFRSUserXMLRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -287,12 +287,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSUserXMLResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSUserXMLResponse", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSUserXMLResponseBody Body;
+        public IPadKioskWebService.FRSWS.getFRSUserXMLResponseBody Body;
         
         public getFRSUserXMLResponse() {
         }
         
-        public getFRSUserXMLResponse(ReadFacilityReservationService.FRSWS.getFRSUserXMLResponseBody Body) {
+        public getFRSUserXMLResponse(IPadKioskWebService.FRSWS.getFRSUserXMLResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -321,12 +321,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSLocationXMLRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSLocationXML", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequestBody Body;
+        public IPadKioskWebService.FRSWS.getFRSLocationXMLRequestBody Body;
         
         public getFRSLocationXMLRequest() {
         }
         
-        public getFRSLocationXMLRequest(ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequestBody Body) {
+        public getFRSLocationXMLRequest(IPadKioskWebService.FRSWS.getFRSLocationXMLRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -355,12 +355,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSLocationXMLResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSLocationXMLResponse", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSLocationXMLResponseBody Body;
+        public IPadKioskWebService.FRSWS.getFRSLocationXMLResponseBody Body;
         
         public getFRSLocationXMLResponse() {
         }
         
-        public getFRSLocationXMLResponse(ReadFacilityReservationService.FRSWS.getFRSLocationXMLResponseBody Body) {
+        public getFRSLocationXMLResponse(IPadKioskWebService.FRSWS.getFRSLocationXMLResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -389,12 +389,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSTypeXMLRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSTypeXML", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequestBody Body;
+        public IPadKioskWebService.FRSWS.getFRSTypeXMLRequestBody Body;
         
         public getFRSTypeXMLRequest() {
         }
         
-        public getFRSTypeXMLRequest(ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequestBody Body) {
+        public getFRSTypeXMLRequest(IPadKioskWebService.FRSWS.getFRSTypeXMLRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -431,12 +431,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSTypeXMLResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSTypeXMLResponse", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSTypeXMLResponseBody Body;
+        public IPadKioskWebService.FRSWS.getFRSTypeXMLResponseBody Body;
         
         public getFRSTypeXMLResponse() {
         }
         
-        public getFRSTypeXMLResponse(ReadFacilityReservationService.FRSWS.getFRSTypeXMLResponseBody Body) {
+        public getFRSTypeXMLResponse(IPadKioskWebService.FRSWS.getFRSTypeXMLResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -465,12 +465,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSCodeXMLRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSCodeXML", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequestBody Body;
+        public IPadKioskWebService.FRSWS.getFRSCodeXMLRequestBody Body;
         
         public getFRSCodeXMLRequest() {
         }
         
-        public getFRSCodeXMLRequest(ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequestBody Body) {
+        public getFRSCodeXMLRequest(IPadKioskWebService.FRSWS.getFRSCodeXMLRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -515,12 +515,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSCodeXMLResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSCodeXMLResponse", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSCodeXMLResponseBody Body;
+        public IPadKioskWebService.FRSWS.getFRSCodeXMLResponseBody Body;
         
         public getFRSCodeXMLResponse() {
         }
         
-        public getFRSCodeXMLResponse(ReadFacilityReservationService.FRSWS.getFRSCodeXMLResponseBody Body) {
+        public getFRSCodeXMLResponse(IPadKioskWebService.FRSWS.getFRSCodeXMLResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -549,12 +549,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSSubCodeXMLRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSSubCodeXML", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequestBody Body;
+        public IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequestBody Body;
         
         public getFRSSubCodeXMLRequest() {
         }
         
-        public getFRSSubCodeXMLRequest(ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequestBody Body) {
+        public getFRSSubCodeXMLRequest(IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -591,12 +591,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSSubCodeXMLResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSSubCodeXMLResponse", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLResponseBody Body;
+        public IPadKioskWebService.FRSWS.getFRSSubCodeXMLResponseBody Body;
         
         public getFRSSubCodeXMLResponse() {
         }
         
-        public getFRSSubCodeXMLResponse(ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLResponseBody Body) {
+        public getFRSSubCodeXMLResponse(IPadKioskWebService.FRSWS.getFRSSubCodeXMLResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -625,12 +625,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSListXMLRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSListXML", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSListXMLRequestBody Body;
+        public IPadKioskWebService.FRSWS.getFRSListXMLRequestBody Body;
         
         public getFRSListXMLRequest() {
         }
         
-        public getFRSListXMLRequest(ReadFacilityReservationService.FRSWS.getFRSListXMLRequestBody Body) {
+        public getFRSListXMLRequest(IPadKioskWebService.FRSWS.getFRSListXMLRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -695,12 +695,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSListXMLResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSListXMLResponse", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSListXMLResponseBody Body;
+        public IPadKioskWebService.FRSWS.getFRSListXMLResponseBody Body;
         
         public getFRSListXMLResponse() {
         }
         
-        public getFRSListXMLResponse(ReadFacilityReservationService.FRSWS.getFRSListXMLResponseBody Body) {
+        public getFRSListXMLResponse(IPadKioskWebService.FRSWS.getFRSListXMLResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -729,12 +729,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSEntriesXMLRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSEntriesXML", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequestBody Body;
+        public IPadKioskWebService.FRSWS.getFRSEntriesXMLRequestBody Body;
         
         public getFRSEntriesXMLRequest() {
         }
         
-        public getFRSEntriesXMLRequest(ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequestBody Body) {
+        public getFRSEntriesXMLRequest(IPadKioskWebService.FRSWS.getFRSEntriesXMLRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -783,12 +783,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class getFRSEntriesXMLResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getFRSEntriesXMLResponse", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.getFRSEntriesXMLResponseBody Body;
+        public IPadKioskWebService.FRSWS.getFRSEntriesXMLResponseBody Body;
         
         public getFRSEntriesXMLResponse() {
         }
         
-        public getFRSEntriesXMLResponse(ReadFacilityReservationService.FRSWS.getFRSEntriesXMLResponseBody Body) {
+        public getFRSEntriesXMLResponse(IPadKioskWebService.FRSWS.getFRSEntriesXMLResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -817,12 +817,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class saveFRSEntriesRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="saveFRSEntries", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.saveFRSEntriesRequestBody Body;
+        public IPadKioskWebService.FRSWS.saveFRSEntriesRequestBody Body;
         
         public saveFRSEntriesRequest() {
         }
         
-        public saveFRSEntriesRequest(ReadFacilityReservationService.FRSWS.saveFRSEntriesRequestBody Body) {
+        public saveFRSEntriesRequest(IPadKioskWebService.FRSWS.saveFRSEntriesRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -952,12 +952,12 @@ namespace ReadFacilityReservationService.FRSWS {
     public partial class saveFRSEntriesResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="saveFRSEntriesResponse", Namespace="http://WSfrs/", Order=0)]
-        public ReadFacilityReservationService.FRSWS.saveFRSEntriesResponseBody Body;
+        public IPadKioskWebService.FRSWS.saveFRSEntriesResponseBody Body;
         
         public saveFRSEntriesResponse() {
         }
         
-        public saveFRSEntriesResponse(ReadFacilityReservationService.FRSWS.saveFRSEntriesResponseBody Body) {
+        public saveFRSEntriesResponse(IPadKioskWebService.FRSWS.saveFRSEntriesResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -980,12 +980,12 @@ namespace ReadFacilityReservationService.FRSWS {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface WSfrsChannel : ReadFacilityReservationService.FRSWS.WSfrs, System.ServiceModel.IClientChannel {
+    public interface WSfrsChannel : IPadKioskWebService.FRSWS.WSfrs, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WSfrsClient : System.ServiceModel.ClientBase<ReadFacilityReservationService.FRSWS.WSfrs>, ReadFacilityReservationService.FRSWS.WSfrs {
+    public partial class WSfrsClient : System.ServiceModel.ClientBase<IPadKioskWebService.FRSWS.WSfrs>, IPadKioskWebService.FRSWS.WSfrs {
         
         public WSfrsClient() {
         }
@@ -1007,216 +1007,216 @@ namespace ReadFacilityReservationService.FRSWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ReadFacilityReservationService.FRSWS.delFRSEntriesResponse ReadFacilityReservationService.FRSWS.WSfrs.delFRSEntries(ReadFacilityReservationService.FRSWS.delFRSEntriesRequest request) {
+        IPadKioskWebService.FRSWS.delFRSEntriesResponse IPadKioskWebService.FRSWS.WSfrs.delFRSEntries(IPadKioskWebService.FRSWS.delFRSEntriesRequest request) {
             return base.Channel.delFRSEntries(request);
         }
         
         public string delFRSEntries(string arg0, string arg1, string arg2, string arg3) {
-            ReadFacilityReservationService.FRSWS.delFRSEntriesRequest inValue = new ReadFacilityReservationService.FRSWS.delFRSEntriesRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.delFRSEntriesRequestBody();
+            IPadKioskWebService.FRSWS.delFRSEntriesRequest inValue = new IPadKioskWebService.FRSWS.delFRSEntriesRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.delFRSEntriesRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
             inValue.Body.arg3 = arg3;
-            ReadFacilityReservationService.FRSWS.delFRSEntriesResponse retVal = ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).delFRSEntries(inValue);
+            IPadKioskWebService.FRSWS.delFRSEntriesResponse retVal = ((IPadKioskWebService.FRSWS.WSfrs)(this)).delFRSEntries(inValue);
             return retVal.Body.delFRSEntriesResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.delFRSEntriesResponse> ReadFacilityReservationService.FRSWS.WSfrs.delFRSEntriesAsync(ReadFacilityReservationService.FRSWS.delFRSEntriesRequest request) {
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.delFRSEntriesResponse> IPadKioskWebService.FRSWS.WSfrs.delFRSEntriesAsync(IPadKioskWebService.FRSWS.delFRSEntriesRequest request) {
             return base.Channel.delFRSEntriesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.delFRSEntriesResponse> delFRSEntriesAsync(string arg0, string arg1, string arg2, string arg3) {
-            ReadFacilityReservationService.FRSWS.delFRSEntriesRequest inValue = new ReadFacilityReservationService.FRSWS.delFRSEntriesRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.delFRSEntriesRequestBody();
+        public System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.delFRSEntriesResponse> delFRSEntriesAsync(string arg0, string arg1, string arg2, string arg3) {
+            IPadKioskWebService.FRSWS.delFRSEntriesRequest inValue = new IPadKioskWebService.FRSWS.delFRSEntriesRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.delFRSEntriesRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
             inValue.Body.arg3 = arg3;
-            return ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).delFRSEntriesAsync(inValue);
+            return ((IPadKioskWebService.FRSWS.WSfrs)(this)).delFRSEntriesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ReadFacilityReservationService.FRSWS.getFRSBookingXMLResponse ReadFacilityReservationService.FRSWS.WSfrs.getFRSBookingXML(ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequest request) {
+        IPadKioskWebService.FRSWS.getFRSBookingXMLResponse IPadKioskWebService.FRSWS.WSfrs.getFRSBookingXML(IPadKioskWebService.FRSWS.getFRSBookingXMLRequest request) {
             return base.Channel.getFRSBookingXML(request);
         }
         
         public string getFRSBookingXML(string arg0, string arg1, string arg2, string arg3) {
-            ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequestBody();
+            IPadKioskWebService.FRSWS.getFRSBookingXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSBookingXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSBookingXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
             inValue.Body.arg3 = arg3;
-            ReadFacilityReservationService.FRSWS.getFRSBookingXMLResponse retVal = ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSBookingXML(inValue);
+            IPadKioskWebService.FRSWS.getFRSBookingXMLResponse retVal = ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSBookingXML(inValue);
             return retVal.Body.getFRSBookingXMLResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSBookingXMLResponse> ReadFacilityReservationService.FRSWS.WSfrs.getFRSBookingXMLAsync(ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequest request) {
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSBookingXMLResponse> IPadKioskWebService.FRSWS.WSfrs.getFRSBookingXMLAsync(IPadKioskWebService.FRSWS.getFRSBookingXMLRequest request) {
             return base.Channel.getFRSBookingXMLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSBookingXMLResponse> getFRSBookingXMLAsync(string arg0, string arg1, string arg2, string arg3) {
-            ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSBookingXMLRequestBody();
+        public System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSBookingXMLResponse> getFRSBookingXMLAsync(string arg0, string arg1, string arg2, string arg3) {
+            IPadKioskWebService.FRSWS.getFRSBookingXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSBookingXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSBookingXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
             inValue.Body.arg3 = arg3;
-            return ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSBookingXMLAsync(inValue);
+            return ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSBookingXMLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ReadFacilityReservationService.FRSWS.getFRSUserXMLResponse ReadFacilityReservationService.FRSWS.WSfrs.getFRSUserXML(ReadFacilityReservationService.FRSWS.getFRSUserXMLRequest request) {
+        IPadKioskWebService.FRSWS.getFRSUserXMLResponse IPadKioskWebService.FRSWS.WSfrs.getFRSUserXML(IPadKioskWebService.FRSWS.getFRSUserXMLRequest request) {
             return base.Channel.getFRSUserXML(request);
         }
         
         public string getFRSUserXML(string arg0) {
-            ReadFacilityReservationService.FRSWS.getFRSUserXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSUserXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSUserXMLRequestBody();
+            IPadKioskWebService.FRSWS.getFRSUserXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSUserXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSUserXMLRequestBody();
             inValue.Body.arg0 = arg0;
-            ReadFacilityReservationService.FRSWS.getFRSUserXMLResponse retVal = ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSUserXML(inValue);
+            IPadKioskWebService.FRSWS.getFRSUserXMLResponse retVal = ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSUserXML(inValue);
             return retVal.Body.getFRSUserXMLResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSUserXMLResponse> ReadFacilityReservationService.FRSWS.WSfrs.getFRSUserXMLAsync(ReadFacilityReservationService.FRSWS.getFRSUserXMLRequest request) {
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSUserXMLResponse> IPadKioskWebService.FRSWS.WSfrs.getFRSUserXMLAsync(IPadKioskWebService.FRSWS.getFRSUserXMLRequest request) {
             return base.Channel.getFRSUserXMLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSUserXMLResponse> getFRSUserXMLAsync(string arg0) {
-            ReadFacilityReservationService.FRSWS.getFRSUserXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSUserXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSUserXMLRequestBody();
+        public System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSUserXMLResponse> getFRSUserXMLAsync(string arg0) {
+            IPadKioskWebService.FRSWS.getFRSUserXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSUserXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSUserXMLRequestBody();
             inValue.Body.arg0 = arg0;
-            return ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSUserXMLAsync(inValue);
+            return ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSUserXMLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ReadFacilityReservationService.FRSWS.getFRSLocationXMLResponse ReadFacilityReservationService.FRSWS.WSfrs.getFRSLocationXML(ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequest request) {
+        IPadKioskWebService.FRSWS.getFRSLocationXMLResponse IPadKioskWebService.FRSWS.WSfrs.getFRSLocationXML(IPadKioskWebService.FRSWS.getFRSLocationXMLRequest request) {
             return base.Channel.getFRSLocationXML(request);
         }
         
         public string getFRSLocationXML(string arg0) {
-            ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequestBody();
+            IPadKioskWebService.FRSWS.getFRSLocationXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSLocationXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSLocationXMLRequestBody();
             inValue.Body.arg0 = arg0;
-            ReadFacilityReservationService.FRSWS.getFRSLocationXMLResponse retVal = ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSLocationXML(inValue);
+            IPadKioskWebService.FRSWS.getFRSLocationXMLResponse retVal = ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSLocationXML(inValue);
             return retVal.Body.getFRSLocationXMLResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSLocationXMLResponse> ReadFacilityReservationService.FRSWS.WSfrs.getFRSLocationXMLAsync(ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequest request) {
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSLocationXMLResponse> IPadKioskWebService.FRSWS.WSfrs.getFRSLocationXMLAsync(IPadKioskWebService.FRSWS.getFRSLocationXMLRequest request) {
             return base.Channel.getFRSLocationXMLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSLocationXMLResponse> getFRSLocationXMLAsync(string arg0) {
-            ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSLocationXMLRequestBody();
+        public System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSLocationXMLResponse> getFRSLocationXMLAsync(string arg0) {
+            IPadKioskWebService.FRSWS.getFRSLocationXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSLocationXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSLocationXMLRequestBody();
             inValue.Body.arg0 = arg0;
-            return ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSLocationXMLAsync(inValue);
+            return ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSLocationXMLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ReadFacilityReservationService.FRSWS.getFRSTypeXMLResponse ReadFacilityReservationService.FRSWS.WSfrs.getFRSTypeXML(ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequest request) {
+        IPadKioskWebService.FRSWS.getFRSTypeXMLResponse IPadKioskWebService.FRSWS.WSfrs.getFRSTypeXML(IPadKioskWebService.FRSWS.getFRSTypeXMLRequest request) {
             return base.Channel.getFRSTypeXML(request);
         }
         
         public string getFRSTypeXML(string arg0, string arg1, string arg2) {
-            ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequestBody();
+            IPadKioskWebService.FRSWS.getFRSTypeXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSTypeXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSTypeXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
-            ReadFacilityReservationService.FRSWS.getFRSTypeXMLResponse retVal = ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSTypeXML(inValue);
+            IPadKioskWebService.FRSWS.getFRSTypeXMLResponse retVal = ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSTypeXML(inValue);
             return retVal.Body.getFRSTypeXMLResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSTypeXMLResponse> ReadFacilityReservationService.FRSWS.WSfrs.getFRSTypeXMLAsync(ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequest request) {
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSTypeXMLResponse> IPadKioskWebService.FRSWS.WSfrs.getFRSTypeXMLAsync(IPadKioskWebService.FRSWS.getFRSTypeXMLRequest request) {
             return base.Channel.getFRSTypeXMLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSTypeXMLResponse> getFRSTypeXMLAsync(string arg0, string arg1, string arg2) {
-            ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSTypeXMLRequestBody();
+        public System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSTypeXMLResponse> getFRSTypeXMLAsync(string arg0, string arg1, string arg2) {
+            IPadKioskWebService.FRSWS.getFRSTypeXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSTypeXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSTypeXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
-            return ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSTypeXMLAsync(inValue);
+            return ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSTypeXMLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ReadFacilityReservationService.FRSWS.getFRSCodeXMLResponse ReadFacilityReservationService.FRSWS.WSfrs.getFRSCodeXML(ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequest request) {
+        IPadKioskWebService.FRSWS.getFRSCodeXMLResponse IPadKioskWebService.FRSWS.WSfrs.getFRSCodeXML(IPadKioskWebService.FRSWS.getFRSCodeXMLRequest request) {
             return base.Channel.getFRSCodeXML(request);
         }
         
         public string getFRSCodeXML(string arg0, string arg1, string arg2, string arg3, string arg4) {
-            ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequestBody();
+            IPadKioskWebService.FRSWS.getFRSCodeXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSCodeXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSCodeXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
             inValue.Body.arg3 = arg3;
             inValue.Body.arg4 = arg4;
-            ReadFacilityReservationService.FRSWS.getFRSCodeXMLResponse retVal = ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSCodeXML(inValue);
+            IPadKioskWebService.FRSWS.getFRSCodeXMLResponse retVal = ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSCodeXML(inValue);
             return retVal.Body.getFRSCodeXMLResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSCodeXMLResponse> ReadFacilityReservationService.FRSWS.WSfrs.getFRSCodeXMLAsync(ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequest request) {
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSCodeXMLResponse> IPadKioskWebService.FRSWS.WSfrs.getFRSCodeXMLAsync(IPadKioskWebService.FRSWS.getFRSCodeXMLRequest request) {
             return base.Channel.getFRSCodeXMLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSCodeXMLResponse> getFRSCodeXMLAsync(string arg0, string arg1, string arg2, string arg3, string arg4) {
-            ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSCodeXMLRequestBody();
+        public System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSCodeXMLResponse> getFRSCodeXMLAsync(string arg0, string arg1, string arg2, string arg3, string arg4) {
+            IPadKioskWebService.FRSWS.getFRSCodeXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSCodeXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSCodeXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
             inValue.Body.arg3 = arg3;
             inValue.Body.arg4 = arg4;
-            return ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSCodeXMLAsync(inValue);
+            return ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSCodeXMLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLResponse ReadFacilityReservationService.FRSWS.WSfrs.getFRSSubCodeXML(ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequest request) {
+        IPadKioskWebService.FRSWS.getFRSSubCodeXMLResponse IPadKioskWebService.FRSWS.WSfrs.getFRSSubCodeXML(IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequest request) {
             return base.Channel.getFRSSubCodeXML(request);
         }
         
         public string getFRSSubCodeXML(string arg0, string arg1, string arg2) {
-            ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequestBody();
+            IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
-            ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLResponse retVal = ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSSubCodeXML(inValue);
+            IPadKioskWebService.FRSWS.getFRSSubCodeXMLResponse retVal = ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSSubCodeXML(inValue);
             return retVal.Body.getFRSSubCodeXMLResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLResponse> ReadFacilityReservationService.FRSWS.WSfrs.getFRSSubCodeXMLAsync(ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequest request) {
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSSubCodeXMLResponse> IPadKioskWebService.FRSWS.WSfrs.getFRSSubCodeXMLAsync(IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequest request) {
             return base.Channel.getFRSSubCodeXMLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLResponse> getFRSSubCodeXMLAsync(string arg0, string arg1, string arg2) {
-            ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSSubCodeXMLRequestBody();
+        public System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSSubCodeXMLResponse> getFRSSubCodeXMLAsync(string arg0, string arg1, string arg2) {
+            IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSSubCodeXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
-            return ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSSubCodeXMLAsync(inValue);
+            return ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSSubCodeXMLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ReadFacilityReservationService.FRSWS.getFRSListXMLResponse ReadFacilityReservationService.FRSWS.WSfrs.getFRSListXML(ReadFacilityReservationService.FRSWS.getFRSListXMLRequest request) {
+        IPadKioskWebService.FRSWS.getFRSListXMLResponse IPadKioskWebService.FRSWS.WSfrs.getFRSListXML(IPadKioskWebService.FRSWS.getFRSListXMLRequest request) {
             return base.Channel.getFRSListXML(request);
         }
         
         public string getFRSListXML(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
-            ReadFacilityReservationService.FRSWS.getFRSListXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSListXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSListXMLRequestBody();
+            IPadKioskWebService.FRSWS.getFRSListXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSListXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSListXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
@@ -1227,18 +1227,18 @@ namespace ReadFacilityReservationService.FRSWS {
             inValue.Body.arg7 = arg7;
             inValue.Body.arg8 = arg8;
             inValue.Body.arg9 = arg9;
-            ReadFacilityReservationService.FRSWS.getFRSListXMLResponse retVal = ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSListXML(inValue);
+            IPadKioskWebService.FRSWS.getFRSListXMLResponse retVal = ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSListXML(inValue);
             return retVal.Body.getFRSListXMLResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSListXMLResponse> ReadFacilityReservationService.FRSWS.WSfrs.getFRSListXMLAsync(ReadFacilityReservationService.FRSWS.getFRSListXMLRequest request) {
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSListXMLResponse> IPadKioskWebService.FRSWS.WSfrs.getFRSListXMLAsync(IPadKioskWebService.FRSWS.getFRSListXMLRequest request) {
             return base.Channel.getFRSListXMLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSListXMLResponse> getFRSListXMLAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
-            ReadFacilityReservationService.FRSWS.getFRSListXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSListXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSListXMLRequestBody();
+        public System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSListXMLResponse> getFRSListXMLAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
+            IPadKioskWebService.FRSWS.getFRSListXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSListXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSListXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
@@ -1249,46 +1249,46 @@ namespace ReadFacilityReservationService.FRSWS {
             inValue.Body.arg7 = arg7;
             inValue.Body.arg8 = arg8;
             inValue.Body.arg9 = arg9;
-            return ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSListXMLAsync(inValue);
+            return ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSListXMLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ReadFacilityReservationService.FRSWS.getFRSEntriesXMLResponse ReadFacilityReservationService.FRSWS.WSfrs.getFRSEntriesXML(ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequest request) {
+        IPadKioskWebService.FRSWS.getFRSEntriesXMLResponse IPadKioskWebService.FRSWS.WSfrs.getFRSEntriesXML(IPadKioskWebService.FRSWS.getFRSEntriesXMLRequest request) {
             return base.Channel.getFRSEntriesXML(request);
         }
         
         public string getFRSEntriesXML(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5) {
-            ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequestBody();
+            IPadKioskWebService.FRSWS.getFRSEntriesXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSEntriesXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSEntriesXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
             inValue.Body.arg3 = arg3;
             inValue.Body.arg4 = arg4;
             inValue.Body.arg5 = arg5;
-            ReadFacilityReservationService.FRSWS.getFRSEntriesXMLResponse retVal = ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSEntriesXML(inValue);
+            IPadKioskWebService.FRSWS.getFRSEntriesXMLResponse retVal = ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSEntriesXML(inValue);
             return retVal.Body.getFRSEntriesXMLResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSEntriesXMLResponse> ReadFacilityReservationService.FRSWS.WSfrs.getFRSEntriesXMLAsync(ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequest request) {
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSEntriesXMLResponse> IPadKioskWebService.FRSWS.WSfrs.getFRSEntriesXMLAsync(IPadKioskWebService.FRSWS.getFRSEntriesXMLRequest request) {
             return base.Channel.getFRSEntriesXMLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.getFRSEntriesXMLResponse> getFRSEntriesXMLAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5) {
-            ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequest inValue = new ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.getFRSEntriesXMLRequestBody();
+        public System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.getFRSEntriesXMLResponse> getFRSEntriesXMLAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5) {
+            IPadKioskWebService.FRSWS.getFRSEntriesXMLRequest inValue = new IPadKioskWebService.FRSWS.getFRSEntriesXMLRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.getFRSEntriesXMLRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
             inValue.Body.arg3 = arg3;
             inValue.Body.arg4 = arg4;
             inValue.Body.arg5 = arg5;
-            return ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).getFRSEntriesXMLAsync(inValue);
+            return ((IPadKioskWebService.FRSWS.WSfrs)(this)).getFRSEntriesXMLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ReadFacilityReservationService.FRSWS.saveFRSEntriesResponse ReadFacilityReservationService.FRSWS.WSfrs.saveFRSEntries(ReadFacilityReservationService.FRSWS.saveFRSEntriesRequest request) {
+        IPadKioskWebService.FRSWS.saveFRSEntriesResponse IPadKioskWebService.FRSWS.WSfrs.saveFRSEntries(IPadKioskWebService.FRSWS.saveFRSEntriesRequest request) {
             return base.Channel.saveFRSEntries(request);
         }
         
@@ -1314,8 +1314,8 @@ namespace ReadFacilityReservationService.FRSWS {
                     string arg18, 
                     string arg19, 
                     string arg20) {
-            ReadFacilityReservationService.FRSWS.saveFRSEntriesRequest inValue = new ReadFacilityReservationService.FRSWS.saveFRSEntriesRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.saveFRSEntriesRequestBody();
+            IPadKioskWebService.FRSWS.saveFRSEntriesRequest inValue = new IPadKioskWebService.FRSWS.saveFRSEntriesRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.saveFRSEntriesRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
@@ -1337,16 +1337,16 @@ namespace ReadFacilityReservationService.FRSWS {
             inValue.Body.arg18 = arg18;
             inValue.Body.arg19 = arg19;
             inValue.Body.arg20 = arg20;
-            ReadFacilityReservationService.FRSWS.saveFRSEntriesResponse retVal = ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).saveFRSEntries(inValue);
+            IPadKioskWebService.FRSWS.saveFRSEntriesResponse retVal = ((IPadKioskWebService.FRSWS.WSfrs)(this)).saveFRSEntries(inValue);
             return retVal.Body.saveFRSEntriesResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.saveFRSEntriesResponse> ReadFacilityReservationService.FRSWS.WSfrs.saveFRSEntriesAsync(ReadFacilityReservationService.FRSWS.saveFRSEntriesRequest request) {
+        System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.saveFRSEntriesResponse> IPadKioskWebService.FRSWS.WSfrs.saveFRSEntriesAsync(IPadKioskWebService.FRSWS.saveFRSEntriesRequest request) {
             return base.Channel.saveFRSEntriesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReadFacilityReservationService.FRSWS.saveFRSEntriesResponse> saveFRSEntriesAsync(
+        public System.Threading.Tasks.Task<IPadKioskWebService.FRSWS.saveFRSEntriesResponse> saveFRSEntriesAsync(
                     string arg0, 
                     string arg1, 
                     string arg2, 
@@ -1368,8 +1368,8 @@ namespace ReadFacilityReservationService.FRSWS {
                     string arg18, 
                     string arg19, 
                     string arg20) {
-            ReadFacilityReservationService.FRSWS.saveFRSEntriesRequest inValue = new ReadFacilityReservationService.FRSWS.saveFRSEntriesRequest();
-            inValue.Body = new ReadFacilityReservationService.FRSWS.saveFRSEntriesRequestBody();
+            IPadKioskWebService.FRSWS.saveFRSEntriesRequest inValue = new IPadKioskWebService.FRSWS.saveFRSEntriesRequest();
+            inValue.Body = new IPadKioskWebService.FRSWS.saveFRSEntriesRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
@@ -1391,7 +1391,7 @@ namespace ReadFacilityReservationService.FRSWS {
             inValue.Body.arg18 = arg18;
             inValue.Body.arg19 = arg19;
             inValue.Body.arg20 = arg20;
-            return ((ReadFacilityReservationService.FRSWS.WSfrs)(this)).saveFRSEntriesAsync(inValue);
+            return ((IPadKioskWebService.FRSWS.WSfrs)(this)).saveFRSEntriesAsync(inValue);
         }
     }
 }

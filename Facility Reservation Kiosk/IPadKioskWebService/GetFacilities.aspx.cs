@@ -18,7 +18,6 @@ namespace IPadKioskWebService
                 : base("name=FacilityReservationKioskEntities")
             {
             }
-            public DbSet<Department> Departments { get; set; }
             public DbSet<Facility> Facilitys { get; set; }
         }
 

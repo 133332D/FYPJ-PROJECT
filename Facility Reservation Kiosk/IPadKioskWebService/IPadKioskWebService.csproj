@@ -53,6 +53,7 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,11 +72,56 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CreateReservation.aspx" />
+    <Content Include="GetDepartmentFilters.aspx" />
     <Content Include="GetFacilities.aspx" />
     <Content Include="GetFacilityReservations.aspx" />
+    <None Include="Service References\FRSWS\configuration91.svcinfo" />
+    <None Include="Service References\FRSWS\configuration.svcinfo" />
+    <Content Include="Service References\FRSWS\IPadKioskWebService.FRSWS.delFRSEntriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FRSWS\IPadKioskWebService.FRSWS.getFRSBookingXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FRSWS\IPadKioskWebService.FRSWS.getFRSCodeXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FRSWS\IPadKioskWebService.FRSWS.getFRSEntriesXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FRSWS\IPadKioskWebService.FRSWS.getFRSListXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FRSWS\IPadKioskWebService.FRSWS.getFRSLocationXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FRSWS\IPadKioskWebService.FRSWS.getFRSSubCodeXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FRSWS\IPadKioskWebService.FRSWS.getFRSTypeXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FRSWS\IPadKioskWebService.FRSWS.getFRSUserXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FRSWS\IPadKioskWebService.FRSWS.saveFRSEntriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\FRSWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateReservation.aspx.cs">
+      <DependentUpon>CreateReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateReservation.aspx.designer.cs">
+      <DependentUpon>CreateReservation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Department.cs">
       <DependentUpon>IPadKioskModel.tt</DependentUpon>
     </Compile>
@@ -87,6 +133,13 @@
     </Compile>
     <Compile Include="FacilityReservation.cs">
       <DependentUpon>IPadKioskModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetDepartmentFilters.aspx.cs">
+      <DependentUpon>GetDepartmentFilters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetDepartmentFilters.aspx.designer.cs">
+      <DependentUpon>GetDepartmentFilters.aspx</DependentUpon>
     </Compile>
     <Compile Include="GetFacilities.aspx.cs">
       <DependentUpon>GetFacilities.aspx</DependentUpon>
@@ -118,6 +171,11 @@
       <DependentUpon>IPadKioskModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\FRSWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="IPadKioskModel.edmx">
@@ -138,6 +196,10 @@
       <LastGenOutput>IPadKioskModel.cs</LastGenOutput>
     </Content>
     <Content Include="packages.config" />
+    <None Include="Service References\FRSWS\frs.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FRSWS\WSfrs.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,6 +209,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FRSWS\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
