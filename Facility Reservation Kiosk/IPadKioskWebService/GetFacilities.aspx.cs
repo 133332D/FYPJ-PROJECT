@@ -22,6 +22,11 @@ namespace IPadKioskWebService
             public DbSet<Facility> Facilitys { get; set; }
         }
 
+        public class FacList
+        {
+            public List<FacObject> Facilities;
+        }
+
         public class FacObject
         {
             public string facilityID { get; set; }
@@ -63,12 +68,13 @@ namespace IPadKioskWebService
             string level = Request.QueryString["Level"];
             string name = Request.QueryString["Name"];
 
-            //creates a list of fac object
-            List<FacObject> sqlFacList = new List<FacObject>();
             //test if correct 
             //Only select from a certain department
             //select the database for the list of facility that contains 
             //block, level, name (%)
+            var sqlFacList = new FacList();
+            sqlFacList.Facilities = new List<FacObject>();
+
             using (var db = new KioskContext())
             {
                 var facilitys = from f in db.Facilitys
@@ -84,7 +90,8 @@ namespace IPadKioskWebService
                 {
                     FacObject facobject = new FacObject(fac.FacilityID, fac.DepartmentID, fac.Description, fac.Block, fac.Level,
                         fac.Name, fac.OpenHours, fac.CloseHours, fac.MaxBkTime, fac.MaxBkUnits, fac.MinBkTime, fac.MinBkUnits);
-                    sqlFacList.Add(facobject);
+                    
+                    sqlFacList.Facilities.Add(facobject);
                 }
             }
 
