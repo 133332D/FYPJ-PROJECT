@@ -1,4 +1,6 @@
-﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Device.Master" AutoEventWireup="true" CodeBehind="DeviceSecurity.aspx.cs" Inherits="Facility_Reservation_Kiosk.DeviceSecurity" %>
+﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="DeviceSecurity.aspx.cs" Inherits="Facility_Reservation_Kiosk.DeviceSecurity" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
     .auto-style1 {
@@ -6,6 +8,7 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <table class="nav-justified">
     <tr>
         <td class="auto-style1">Search By DeviceID:
