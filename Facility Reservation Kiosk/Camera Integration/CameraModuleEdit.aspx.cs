@@ -37,11 +37,13 @@ namespace Camera_Integration
             {
 
                 Camera c = new Camera();
-                    
-                        c.FacilityID = "L.426";
-                        c.IPAddress = "10.213.11.1";
-                        c.MinimumDensity = float.Parse(txtMinDensity.Text);
-                        c.MaximumDensity = float.Parse(txtMaxDensity.Text);
+
+                        c.CameraID = 1;
+                        c.FacilityID = facilityname;
+                        c.IPAddress = IPAddress;
+                        c.MinimumDensity = MinDensity;
+                        c.MaximumDensity = MaxDensity;
+                        c.DepartmentID = "SIT";
                         db.Cameras.Add(c);
                         db.SaveChanges();
              }         

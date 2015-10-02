@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Camera_Integration
 {
-    public partial class Camera : System.Web.UI.MasterPage
+    public partial class Main : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

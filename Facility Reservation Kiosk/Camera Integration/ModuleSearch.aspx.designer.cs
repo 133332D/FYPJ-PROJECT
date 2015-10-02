@@ -10,7 +10,7 @@
 namespace Camera_Integration {
     
     
-    public partial class CameraModuleSearch {
+    public partial class ModuleSearch {
         
         /// <summary>
         /// btnCreate control.

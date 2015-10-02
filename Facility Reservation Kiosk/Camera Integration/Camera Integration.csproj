@@ -75,7 +75,7 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\npm.js" />
     <Content Include="CameraModuleEdit.aspx" />
-    <Content Include="CameraModuleSearch.aspx" />
+    <Content Include="ModuleSearch.aspx" />
     <Content Include="packages\AjaxControlToolkit.15.1.2.0\lib\net40\AjaxControlToolkit.dll" />
     <Content Include="packages\AjaxControlToolkit.15.1.2.0\readme.txt" />
     <Content Include="packages\GoogleMaps.LocationServices.0.9.8.5\content\GoogleMaps.LocationServices.readme.txt" />
@@ -786,6 +786,7 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="UpdateDetailsPage.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -798,19 +799,11 @@
     </Compile>
     <Compile Include="Camera.cs">
       <DependentUpon>Camera.tt</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Camera.Designer.cs">
+    <Compile Include="CameraModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Camera.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Camera.Master.cs">
-      <DependentUpon>Camera.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Camera.Master.designer.cs">
-      <DependentUpon>Camera.Master</DependentUpon>
+      <DependentUpon>CameraModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Camera1.cs">
       <AutoGen>True</AutoGen>
@@ -824,20 +817,34 @@
     <Compile Include="CameraModuleEdit.aspx.designer.cs">
       <DependentUpon>CameraModuleEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CameraModuleSearch.aspx.cs">
-      <DependentUpon>CameraModuleSearch.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CameraModuleSearch.aspx.designer.cs">
-      <DependentUpon>CameraModuleSearch.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Department.cs">
       <DependentUpon>Camera.tt</DependentUpon>
     </Compile>
     <Compile Include="Facility.cs">
       <DependentUpon>Camera.tt</DependentUpon>
     </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleSearch.aspx.cs">
+      <DependentUpon>ModuleSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleSearch.aspx.designer.cs">
+      <DependentUpon>ModuleSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateDetailsPage.aspx.cs">
+      <DependentUpon>UpdateDetailsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateDetailsPage.aspx.designer.cs">
+      <DependentUpon>UpdateDetailsPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VideoAnalytic.cs">
       <DependentUpon>Camera.tt</DependentUpon>
     </Compile>
@@ -869,29 +876,29 @@
     <Content Include="plugins\datatables\extensions\TableTools\Readme.md" />
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
-    <Content Include="Camera.Master" />
     <Content Include="packages\AjaxControlToolkit.15.1.2.0\AjaxControlToolkit.15.1.2.0.nupkg" />
     <Content Include="packages\AjaxControlToolkit.15.1.2.0\Content\Web.config.transform" />
     <Content Include="packages\GoogleMaps.LocationServices.0.9.8.5\GoogleMaps.LocationServices.0.9.8.5.nupkg" />
     <Content Include="packages\repositories.config" />
-    <EntityDeploy Include="Camera.edmx">
+    <EntityDeploy Include="CameraModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Camera.Designer.cs</LastGenOutput>
+      <LastGenOutput>CameraModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Camera.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Camera.edmx</DependentUpon>
+      <DependentUpon>CameraModel.edmx</DependentUpon>
       <LastGenOutput>Camera.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Camera.edmx.diagram">
-      <DependentUpon>Camera.edmx</DependentUpon>
+    <Content Include="CameraModel.edmx.diagram">
+      <DependentUpon>CameraModel.edmx</DependentUpon>
     </Content>
     <Content Include="Camera.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Camera.edmx</DependentUpon>
+      <DependentUpon>CameraModel.edmx</DependentUpon>
       <LastGenOutput>Camera1.cs</LastGenOutput>
     </Content>
     <Content Include="packages.config" />
+    <Content Include="Main.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

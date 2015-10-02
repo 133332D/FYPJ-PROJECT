@@ -10,7 +10,7 @@
 namespace Camera_Integration {
     
     
-    public partial class Camera {
+    public partial class Main {
         
         /// <summary>
         /// head control.
