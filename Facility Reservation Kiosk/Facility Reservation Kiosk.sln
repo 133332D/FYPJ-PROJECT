@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationListWebService",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPadKioskWebService", "IPadKioskWebService\IPadKioskWebService.csproj", "{A222E0C2-B850-4DDD-9A4C-BF558A1FD7BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{702EE1C2-DE69-4102-B684-9F498ACB96BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A222E0C2-B850-4DDD-9A4C-BF558A1FD7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A222E0C2-B850-4DDD-9A4C-BF558A1FD7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A222E0C2-B850-4DDD-9A4C-BF558A1FD7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{702EE1C2-DE69-4102-B684-9F498ACB96BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{702EE1C2-DE69-4102-B684-9F498ACB96BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{702EE1C2-DE69-4102-B684-9F498ACB96BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{702EE1C2-DE69-4102-B684-9F498ACB96BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

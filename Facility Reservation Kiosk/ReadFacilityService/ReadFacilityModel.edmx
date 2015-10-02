@@ -47,13 +47,37 @@
           <Key>
             <PropertyRef Name="FacilityReservationID" />
           </Key>
-          <Property Name="FacilityReservationID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="FacilityReservationID" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="FacilityID" Type="varchar" MaxLength="10" />
           <Property Name="StartDateTime" Type="datetime" />
           <Property Name="EndDateTime" Type="datetime" />
           <Property Name="UseShortDescription" Type="nvarchar" MaxLength="50" />
           <Property Name="UseDescription" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <Association Name="FK_Department_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Department1" Type="Self.Department" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentFilters_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="DepartmentFilters" Type="Self.DepartmentFilters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="DepartmentFilters">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Facility_Department">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Facility" Type="Self.Facility" Multiplicity="*" />
@@ -83,6 +107,14 @@
           <EntitySet Name="DepartmentFilters" EntityType="Self.DepartmentFilters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facility" EntityType="Self.Facility" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FacilityReservation" EntityType="Self.FacilityReservation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Department_Department" Association="Self.FK_Department_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Department1" EntitySet="Department" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentFilters_Department" Association="Self.FK_DepartmentFilters_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="DepartmentFilters" EntitySet="DepartmentFilters" />
+          </AssociationSet>
           <AssociationSet Name="FK_Facility_Department" Association="Self.FK_Facility_Department">
             <End Role="Department" EntitySet="Department" />
             <End Role="Facility" EntitySet="Facility" />
@@ -104,6 +136,8 @@
           <NavigationProperty Name="DepartmentFilters" Relationship="Self.FK_DepartmentFilters_Department" FromRole="Department" ToRole="DepartmentFilters" />
           <NavigationProperty Name="Facilities" Relationship="Self.FK_Facility_Department" FromRole="Department" ToRole="Facility" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Department1" Relationship="FacilityReservationKioskModel.FK_Department_Department" FromRole="Department" ToRole="Department1" />
+          <NavigationProperty Name="Department2" Relationship="FacilityReservationKioskModel.FK_Department_Department" FromRole="Department1" ToRole="Department" />
         </EntityType>
         <EntityType Name="DepartmentFilter">
           <Key>
@@ -143,7 +177,7 @@
           <Key>
             <PropertyRef Name="FacilityReservationID" />
           </Key>
-          <Property Name="FacilityReservationID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FacilityReservationID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FacilityID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="StartDateTime" Type="DateTime" Precision="3" />
           <Property Name="EndDateTime" Type="DateTime" Precision="3" />
@@ -204,7 +238,23 @@
             <End Role="Facility" EntitySet="Facilities" />
             <End Role="FacilityReservation" EntitySet="FacilityReservations" />
           </AssociationSet>
+          <AssociationSet Name="FK_Department_Department" Association="FacilityReservationKioskModel.FK_Department_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Department1" EntitySet="Departments" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Department_Department">
+          <End Type="FacilityReservationKioskModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="FacilityReservationKioskModel.Department" Role="Department1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
