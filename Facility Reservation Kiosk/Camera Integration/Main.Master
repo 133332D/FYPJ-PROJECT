@@ -1,5 +1,7 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Camera.master.cs" Inherits="Camera_Integration.Camera" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Camera_Integration.Main" %>
 
+
+<!DOCTYPE html>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">

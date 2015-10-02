@@ -1,4 +1,4 @@
-﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Camera.Master" AutoEventWireup="true" CodeBehind="CameraModuleSearch.aspx.cs" Inherits="Camera_Integration.CameraModuleSearch" %>
+﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="ModuleSearch.aspx.cs" Inherits="Camera_Integration.ModuleSearch" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -108,7 +108,7 @@
                                 <asp:Label ID="lblResult" runat="server"></asp:Label>
                             </div>
                         </div>
-                        <asp:GridView ID="grdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="258px" Width="647px" OnPageIndexChanging="GrdCamera_PageIndexChanging" OnRowCancelingEdit="GrdCamera_RowCancelingEdit" OnRowDeleting="GrdCamera_RowDeleting" OnRowEditing="GrdCamera_RowEditing" OnRowUpdating="GrdCamera_RowUpdating" OnSelectedIndexChanged="GrdCamera_SelectedIndexChanged" OnSorting="GrdCamera_Sorting" OnRowCommand="grdCamera_RowCommand">
+                        <asp:GridView ID="grdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="262px" Width="649px" OnPageIndexChanging="GrdCamera_PageIndexChanging" OnRowCancelingEdit="GrdCamera_RowCancelingEdit" OnRowDeleting="GrdCamera_RowDeleting" OnRowEditing="GrdCamera_RowEditing" OnRowUpdating="GrdCamera_RowUpdating" OnSelectedIndexChanged="GrdCamera_SelectedIndexChanged" OnSorting="GrdCamera_Sorting" OnRowCommand="grdCamera_RowCommand">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
                                 <asp:BoundField DataField="FacilityID" HeaderText=" Facility Name" />
@@ -116,7 +116,7 @@
                                 <asp:BoundField DataField="MinimumDensity" HeaderText="Minimum Density" />
                                 <asp:BoundField DataField="MaximumDensity" HeaderText="Maximum Density" />
                                 <asp:CommandField ShowDeleteButton="True" />
-                                <asp:CommandField ShowEditButton="True" />
+                                <asp:ButtonField ButtonType="Button" CommandName="Update" Text="Update" />
                             </Columns>
                             <EditRowStyle BackColor="#999999" />
                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
