@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RejectPage.aspx.cs" Inherits="Facility_Reservation_Kiosk.RejectPage" %>
+﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RejectPage.aspx.cs" Inherits="Facility_Reservation_Kiosk.RejectPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style2 {
@@ -39,7 +39,7 @@
         </tr>
         <tr>
             <td class="auto-style4">
-                <asp:Button ID="btnConfirm" runat="server" Text="Confirm" />
+                <asp:Button ID="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" />
             </td>
             <td>
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
