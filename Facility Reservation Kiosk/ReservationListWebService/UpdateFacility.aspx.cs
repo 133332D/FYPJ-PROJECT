@@ -81,23 +81,23 @@ namespace ReservationListWebService
                     {
                         db.SaveChanges();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        exceptionCount = ex.LineNumber();
+                        exceptionCount += 1;
                     }
                 }
                 Response.Write("{");
                 Response.Write("     Result: \"OK\"");
-                Response.Write("     Message: \"The record is received and inserted into database successfully." +
-                    "\"");
+                Response.Write("     Message: \"The record is received and inserted into database successfully. " +
+                    exceptionCount + " records not inserted possibly due to duplicate primary key or some other errors.\"");
                 Response.Write("}");
                 Response.End();
             }
             else 
             {
                 Response.Write("{");
-                Response.Write("     Result: ERROR");
-                Response.Write("     Message: There is an error occured and data cannot be received.");
+                Response.Write("     Result: \"ERROR\"");
+                Response.Write("     Message: \"There is an error occured and data cannot be received.\"");
                 Response.Write("}");
                 Response.End();
             }
