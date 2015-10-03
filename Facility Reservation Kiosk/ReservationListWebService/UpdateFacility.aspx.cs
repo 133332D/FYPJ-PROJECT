@@ -86,6 +86,7 @@ namespace ReservationListWebService
                         exceptionCount += 1;
                     }
                 }
+                //returns in Json format
                 Response.Write("{");
                 Response.Write("     Result: \"OK\"");
                 Response.Write("     Message: \"The record is received and inserted into database successfully. " +
