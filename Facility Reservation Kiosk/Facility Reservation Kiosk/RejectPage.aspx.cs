@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -20,12 +22,18 @@ namespace Facility_Reservation_Kiosk
             using (var db = new FacilityReservationKioskEntities())
             {
                 //Basic select query from a single table 
-                var description = from b in db.Devices 
-                                  where b.DeviceID == ID 
-                                  select new { b.Description };
+                //var description = from b in db.Devices
+                //                  where b.DeviceID == ID
+                //                  select new { b.Description };
+                string strConnectionString = ConfigurationManager.ConnectionStrings["FacilityReservationKioskEntities"].ConnectionString;
+                SqlConnection myConnect = new SqlConnection(strConnectionString);
 
+                string strCommandText = "Select description from Devices where DeviceID= "+lbDeviceID.Text +"";
                 //Loop through to print out
-                lbDescription.Text = description.ToString();
+                //lbDescription.Text = description.ToString();
+
+                //string sDescription = db.Devices.FirstOrDefault().Description.ToString();
+                
 
            }
         }
