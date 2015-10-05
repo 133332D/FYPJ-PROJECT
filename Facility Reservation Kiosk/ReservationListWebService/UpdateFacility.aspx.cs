@@ -44,6 +44,9 @@ namespace ReservationListWebService
             string departmentID = Request.QueryString["DepartmentID"];
             string json = Request.Form["Json"];
 
+            //count the number of exception catch from db.SaveChanges
+            int exceptionCount = 0;
+
             if (departmentID != null && json != null)
             {
 
@@ -54,7 +57,7 @@ namespace ReservationListWebService
                 {
                     //delete the whole FacilityReservation Table
                     db.Database.ExecuteSqlCommand(
-                        "DELETE FacilityReservation FROM Department INNER JOIN Facility ON Department.DepartmentID = Facility.DepartmentID" +
+                        "DELETE FacilityReservation FROM Department INNER JOIN Facility ON Department.DepartmentID = Facility.DepartmentID " +
                             "INNER JOIN FacilityReservation ON Facility.FacilityID = FacilityReservation.FacilityID WHERE Department.DepartmentID = '" + departmentID + "'");
 
                     //loop through each reservations and insert into the database
@@ -74,19 +77,28 @@ namespace ReservationListWebService
                         db.Reservations.Add(reser);
                     }
 
-                    db.SaveChanges();
+                    try
+                    {
+                        db.SaveChanges();
+                    }
+                    catch (Exception)
+                    {
+                        exceptionCount += 1;
+                    }
                 }
+                //returns in Json format
                 Response.Write("{");
-                Response.Write("     Result: OK");
-                Response.Write("     Message: The record is received and inserted into database successfully");
+                Response.Write("     Result: \"OK\"");
+                Response.Write("     Message: \"The record is received and inserted into database successfully. " +
+                    exceptionCount + " records not inserted possibly due to duplicate primary key or some other errors.\"");
                 Response.Write("}");
                 Response.End();
             }
             else 
             {
                 Response.Write("{");
-                Response.Write("     Result: ERROR");
-                Response.Write("     Message: There is an error occured and data cannot be received.");
+                Response.Write("     Result: \"ERROR\"");
+                Response.Write("     Message: \"There is an error occured and data cannot be received.\"");
                 Response.Write("}");
                 Response.End();
             }

@@ -12,6 +12,7 @@
         <AssociationConnector Association="FacilityReservationKioskModel.FK_DepartmentFilters_Department" ManuallyRouted="false" />
         <AssociationConnector Association="FacilityReservationKioskModel.FK_Facility_Department" ManuallyRouted="false" />
         <AssociationConnector Association="FacilityReservationKioskModel.FK_FacilityReservation_Facility" ManuallyRouted="false" />
+        <AssociationConnector Association="FacilityReservationKioskModel.FK_Department_Department" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
