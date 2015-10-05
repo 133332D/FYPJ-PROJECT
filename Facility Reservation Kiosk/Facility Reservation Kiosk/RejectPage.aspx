@@ -16,7 +16,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="nav-justified">
         <tr>
-            <td colspan="2">Please enter a reason for rejected/revoking the device:</td>
+            <td colspan="2" class="auto-style3"><strong>Please enter a reason for rejected/revoking the device:</strong></td>
         </tr>
         <tr>
             <td class="auto-style2">Device ID:</td>

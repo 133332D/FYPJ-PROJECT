@@ -40,9 +40,23 @@ namespace Facility_Reservation_Kiosk
         {
         }
 
+        protected void LinkBtnApprove_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ApprovalPage.aspx?searchID=" + txtSearch.Text);
+        }
+
+        protected void LinkBtnReject_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RejectPage.aspx?searchID=" + txtSearch.Text);
+        }
+
+        protected void LinkBtnRevoke_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Revoke.aspx?searchID=" + txtSearch.Text);
+        }
         protected void GridViewSearch_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.CompareTo("Approve") == 0)
+            /*if (e.CommandName.CompareTo("Approve") == 0)
             {
                 Response.Redirect("ApprovalPage.aspx?searchID=" + txtSearch.Text);
                
@@ -51,7 +65,7 @@ namespace Facility_Reservation_Kiosk
             if (e.CommandName.CompareTo("Reject") == 0)
             {
                 Response.Redirect("RejectPage.aspx?searchID=" + txtSearch.Text);
-            }
+            }*/
 
         }
 	}

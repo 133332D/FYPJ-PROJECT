@@ -25,8 +25,8 @@
                 <Columns>
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
-                            <asp:LinkButton ID="LinkBtnApprove" runat="server">Approve</asp:LinkButton>
-                            &nbsp;<asp:LinkButton ID="LinkBtnReject" runat="server">Reject</asp:LinkButton>
+                            <asp:LinkButton ID="LinkBtnApprove" runat="server" OnClick="LinkBtnApprove_Click">Approve</asp:LinkButton>
+                            &nbsp;<asp:LinkButton ID="LinkBtnReject" runat="server" OnClick="LinkBtnReject_Click">Reject</asp:LinkButton>
                             <br />
                             <asp:LinkButton ID="LinkBtnEdit" runat="server">Edit</asp:LinkButton>
                             &nbsp;<asp:LinkButton ID="LinkBtnRevoke" runat="server">Revoke</asp:LinkButton>
