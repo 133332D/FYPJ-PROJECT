@@ -48,9 +48,9 @@ namespace Facility_Reservation_Kiosk
             }
         }
 
-        protected void btnConfirm_Click(object sender, EventArgs e)
-        {
+        //protected void btnConfirm_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
     }
 }

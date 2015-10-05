@@ -23,8 +23,15 @@
             <asp:GridView ID="GridViewSearch" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridViewSearch_SelectedIndexChanged" OnRowCommand="GridViewSearch_RowCommand">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:ButtonField ButtonType="Button" CommandName="Approve" Text="Approve" />
-                    <asp:ButtonField ButtonType="Button" CommandName="Reject" Text="Reject" />
+                    <asp:TemplateField HeaderText="Actions">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="LinkBtnApprove" runat="server">Approve</asp:LinkButton>
+                            &nbsp;<asp:LinkButton ID="LinkBtnReject" runat="server">Reject</asp:LinkButton>
+                            <br />
+                            <asp:LinkButton ID="LinkBtnEdit" runat="server">Edit</asp:LinkButton>
+                            &nbsp;<asp:LinkButton ID="LinkBtnRevoke" runat="server">Revoke</asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
