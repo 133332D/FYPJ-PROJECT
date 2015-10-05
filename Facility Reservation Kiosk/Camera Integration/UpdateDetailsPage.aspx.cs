@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using System.Data.Entity;
-//using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Camera_Integration
 {
@@ -13,20 +13,21 @@ namespace Camera_Integration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //lblFacilityID.Text = Request.QueryString["searchID"];
+            lblFacilityID.Text = Request.QueryString["facility"];
+         
         }
 
         protected void btnConfirm_Click1(object sender, EventArgs e)
         {
-             string ID = lblFacilityID.Text;
-
+            string FacilityID = lblFacilityID.Text;
+           
            
             using (var db = new FacilityReservationKioskEntities())
             {
                 //update
-                // try
-                // {
-                     Camera camera = db.Cameras.Find(ID);
+                 try
+                 {
+                     Camera camera = db.Cameras.Find(FacilityID);
 
                     //modify fields
                     camera.IPAddress = txtIpAddress.Text;
@@ -35,20 +36,20 @@ namespace Camera_Integration
 
                     db.SaveChanges();
 
-                // }
-                 //catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-                // {
+                 }
+                catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+                 {
                     //retrieve error messages
-                    //var errMessage = ex.EntityValidationErrors
-                       // .SelectMany(x => x.ValidationErrors)
-                       // .Select(x => x.ErrorMessage);
+                    var errMessage = ex.EntityValidationErrors
+                        .SelectMany(x => x.ValidationErrors)
+                       .Select(x => x.ErrorMessage);
 
                     //join list to a single string
-                    //var fullerrMessage = string.Join(";", errMessage);
+                    var fullerrMessage = string.Join(";", errMessage);
 
                     //combine the original exception message with the new one.
-                   // var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullerrMessage);
-                // }
+                    var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullerrMessage);
+                 }
 
                  lblUpdate.Text = "Record Update Successfully";
                 

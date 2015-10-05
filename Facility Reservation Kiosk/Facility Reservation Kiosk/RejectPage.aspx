@@ -39,7 +39,7 @@
         </tr>
         <tr>
             <td class="auto-style4">
-                <asp:Button ID="btnConfirm" runat="server" Text="Confirm" />
+                <asp:Button ID="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" />
             </td>
             <td>
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />

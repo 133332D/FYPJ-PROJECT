@@ -34,7 +34,8 @@ namespace Camera_Integration
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            string search = txtSearch.Text;
+
+            string  search = txtSearch.Text;
             using (var db = new FacilityReservationKioskEntities())
             {
                 var result = from b in db.Cameras
@@ -51,7 +52,7 @@ namespace Camera_Integration
         {
             if (e.CommandName.CompareTo("Update") == 0)
             {
-                Response.Redirect("UpdateDetailsPage.aspx?searchID=" + txtSearch.Text);
+                Response.Redirect("UpdateDetailsPage.aspx?facility=" + txtSearch.Text);
 
             }
         }
