@@ -26,7 +26,8 @@ namespace Facility_Reservation_Kiosk
 
                 //Loop through to print out
                 lbDescription.Text = description.ToString();
-            }
+
+           }
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
