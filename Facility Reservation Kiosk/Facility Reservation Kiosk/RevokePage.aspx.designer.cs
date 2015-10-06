@@ -10,7 +10,7 @@
 namespace Facility_Reservation_Kiosk {
     
     
-    public partial class Revoke {
+    public partial class RevokePage {
         
         /// <summary>
         /// lblDeviceID control.

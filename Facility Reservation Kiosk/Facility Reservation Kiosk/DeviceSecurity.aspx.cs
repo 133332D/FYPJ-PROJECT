@@ -38,8 +38,8 @@ namespace Facility_Reservation_Kiosk
         {
         }
 
-        
-       
+
+
         protected void LinkBtnRevoke_Click(object sender, EventArgs e)
         {
             Response.Redirect("Revoke.aspx?searchID=" + txtSearch.Text);
@@ -58,32 +58,12 @@ namespace Facility_Reservation_Kiosk
             }*/
 
         }
-        protected void lbapp (object sender, GridViewRowEventArgs e) 
-        {
-
-            Response.Redirect("ApprovalPage.aspx?searchID=" + txtSearch.Text);
-        }
-
-        protected void lbrej (object sender, GridViewRowEventArgs e)
-        {
-            Response.Redirect("RejectPage.aspx?searchID=" + txtSearch.Text);
-        }
-
-        /*protected void lbedit (object sender, GridViewRowEventArgs e)
-        {
-            Response.Redirect("");
-        }*/
-
-        protected void lbrevoke (object sender, GridViewRowEventArgs e)
-        {
-            Response.Redirect("Revoke.aspx?searchID=" + txtSearch.Text);
-        }
-
+      
         protected void GridViewSearch_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             string status = e.Row.Cells[1].Text;
-        
-            if (status == "New") 
+
+            if (status == "NEW")
             {
                 LinkButton lbapp = (LinkButton)(e.Row.FindControl("lbapp"));
                 LinkButton lbrej = (LinkButton)(e.Row.FindControl("lbrej"));
@@ -91,50 +71,66 @@ namespace Facility_Reservation_Kiosk
                 LinkButton lbrevoke = (LinkButton)(e.Row.FindControl("lbrevoke"));
                 lbapp.Visible = true;
                 lbrej.Visible = true;
-             
+
             }
-            else if (status == "APP") 
+            else if (status == "APP")
             {
                 LinkButton lbapp = (LinkButton)(e.Row.FindControl("lbapp"));
                 LinkButton lbrej = (LinkButton)(e.Row.FindControl("lbrej"));
                 LinkButton lbedit = (LinkButton)(e.Row.FindControl("lbedit"));
                 LinkButton lbrevoke = (LinkButton)(e.Row.FindControl("lbrevoke"));
-             
-                
+
+
 
                 lbedit.Visible = true;
                 lbrevoke.Visible = true;
             }
-            else 
+            else
             {
-            
+
             }
         }
 
-       /* protected void GridViewSearch_DataBound(object sender, EventArgs e)
+        protected void lbapp_Click(object sender, EventArgs e)
         {
-            if (GridViewSearch.Columns.Count > 0)
-            {
-                foreach (GridViewRow gvr in GridViewSearch.Rows)
-                {
-                    if (gvr.Cells[1].Text == "New")
-                    {
-                        gvr.Cells[6].Text = "Approve";
-                        gvr.Cells[7].Text = "Reject";
-                    }
-                    else if (gvr.Cells[1].Text == "APP")
-                    {
-                        gvr.Cells[6].Text = "Edit";
-                        gvr.Cells[7].Text = "Revoke";
-                    }
-                    else
-                    {
-                        gvr.Cells[6].Text = "";
-                        gvr.Cells[7].Text = "";
-                    }
-                }
-            }
-        }*/
+            Response.Redirect("ApprovalPage.aspx?searchID=" + txtSearch.Text);
+        }
+
+        protected void lbrej_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RejectPage.aspx?searchID=" + txtSearch.Text);
+        }
+
+        protected void lbrevoke_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RevokePage.aspx?searchID=" + txtSearch.Text);
+        }
+
+
+        /* protected void GridViewSearch_DataBound(object sender, EventArgs e)
+         {
+             if (GridViewSearch.Columns.Count > 0)
+             {
+                 foreach (GridViewRow gvr in GridViewSearch.Rows)
+                 {
+                     if (gvr.Cells[1].Text == "New")
+                     {
+                         gvr.Cells[6].Text = "Approve";
+                         gvr.Cells[7].Text = "Reject";
+                     }
+                     else if (gvr.Cells[1].Text == "APP")
+                     {
+                         gvr.Cells[6].Text = "Edit";
+                         gvr.Cells[7].Text = "Revoke";
+                     }
+                     else
+                     {
+                         gvr.Cells[6].Text = "";
+                         gvr.Cells[7].Text = "";
+                     }
+                 }
+             }
+         }*/
 
 
 
@@ -148,10 +144,10 @@ namespace Facility_Reservation_Kiosk
         //    if (e.Row.RowType == DataControlRowType.DataRow)
         //    {
         //        {
-                    
+
         //            foreach (GridViewRow row in GridViewSearch.Rows)
         //            {
-                        
+
         //                if (row.Cells[1].Text == "New")
         //                {
         //                    lnk1.Enabled = true;
@@ -178,5 +174,7 @@ namespace Facility_Reservation_Kiosk
         //        }
         //    }
         //}
+
+       
     }
 }

@@ -16,18 +16,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="nav-justified">
         <tr>
-            <td colspan="2" class="auto-style3"><strong>Please enter a reason for rejected/revoking the device:</strong></td>
+            <td colspan="2" class="auto-style3"><strong>Please enter a reason for rejecting the device:</strong></td>
         </tr>
         <tr>
             <td class="auto-style2">Device ID:</td>
             <td class="auto-style3">
                 <asp:Label ID="lbDeviceID" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style4">Description:</td>
-            <td>
-                <asp:Label ID="lbDescription" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -44,8 +38,7 @@
             <td>
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="lblDateTime" runat="server"></asp:Label>
-            </td>
+                </td>
         </tr>
     </table>
 </asp:Content>

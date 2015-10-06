@@ -31,14 +31,12 @@
                     <asp:BoundField DataField="Description" HeaderText="Description" />
                     <asp:TemplateField HeaderText="" ShowHeader="False">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbapp" runat="server" Text="Approve" Visible="false" ></asp:LinkButton>
-                                <asp:LinkButton ID="lbrej" runat="server" Text="Reject" Visible="false" ></asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField ShowHeader="False">
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lbedit" runat="server" Text="Edit" Visible="false"></asp:LinkButton>
-                             <asp:LinkButton ID="lbrevoke" runat="server" Text="Revoke" Visible="false" ></asp:LinkButton>
+                            <asp:LinkButton ID="lbapp" runat="server" Text="Approve" Visible="false" OnClick="lbapp_Click"  ></asp:LinkButton>
+                                <asp:LinkButton ID="lbrej" runat="server" Text="Reject" Visible="false" OnClick="lbrej_Click"  ></asp:LinkButton>
+                              <asp:LinkButton ID="lbedit" runat="server" Text="Edit" Visible="false"  ></asp:LinkButton>
+                               <asp:LinkButton ID="lbrevoke" runat="server" Text="Revoke" Visible="false" OnClick="lbrevoke_Click"  ></asp:LinkButton>
+
+
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

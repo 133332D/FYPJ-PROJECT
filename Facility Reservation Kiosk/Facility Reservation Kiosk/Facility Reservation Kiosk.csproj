@@ -787,7 +787,7 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="RejectPage.aspx" />
-    <Content Include="Revoke.aspx" />
+    <Content Include="RevokePage.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -847,12 +847,12 @@
     <Compile Include="RejectPage.aspx.designer.cs">
       <DependentUpon>RejectPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Revoke.aspx.cs">
-      <DependentUpon>Revoke.aspx</DependentUpon>
+    <Compile Include="RevokePage.aspx.cs">
+      <DependentUpon>RevokePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Revoke.aspx.designer.cs">
-      <DependentUpon>Revoke.aspx</DependentUpon>
+    <Compile Include="RevokePage.aspx.designer.cs">
+      <DependentUpon>RevokePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

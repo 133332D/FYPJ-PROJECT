@@ -1,13 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Revoke.aspx.cs" Inherits="Facility_Reservation_Kiosk.Revoke" %>
+﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RevokePage.aspx.cs" Inherits="Facility_Reservation_Kiosk.RevokePage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            width: 146px
-        }
-        .auto-style2 {
-            color: #FF0000;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="nav-justified">

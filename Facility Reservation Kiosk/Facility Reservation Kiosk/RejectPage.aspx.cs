@@ -14,7 +14,7 @@ namespace Facility_Reservation_Kiosk
         protected void Page_Load(object sender, EventArgs e)
         {
             lbDeviceID.Text = Request.QueryString["searchID"];
-            lblDateTime.Text = DateTime.Now.ToString("M/dd/yy");
+           
 
             int ID = System.Convert.ToInt32(lbDeviceID.Text);
 
@@ -25,12 +25,11 @@ namespace Facility_Reservation_Kiosk
                 //var description = from b in db.Devices
                 //                  where b.DeviceID == ID
                 //                  select new { b.Description };
-                string strConnectionString = ConfigurationManager.ConnectionStrings["FacilityReservationKioskEntities"].ConnectionString;
-                SqlConnection myConnect = new SqlConnection(strConnectionString);
 
-                string strCommandText = "Select description from Devices where DeviceID= "+lbDeviceID.Text +"";
+                var device = db.Devices.Find(ID);
+                
                 //Loop through to print out
-                //lbDescription.Text = description.ToString();
+                lbDescription.Text = device.Description;
 
                 //string sDescription = db.Devices.FirstOrDefault().Description.ToString();
                 
