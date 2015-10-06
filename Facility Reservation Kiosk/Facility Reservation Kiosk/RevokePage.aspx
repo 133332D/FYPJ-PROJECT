@@ -32,5 +32,12 @@
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
             </td>
         </tr>
+        <tr>
+            <td class="auto-style1">
+                <asp:Label ID="lblMsg" runat="server" ForeColor="Red"></asp:Label>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
     </table>
 </asp:Content>

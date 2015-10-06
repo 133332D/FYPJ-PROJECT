@@ -40,7 +40,13 @@
             <td class="auto-style2">Department<asp:Label ID="Label4" runat="server" ForeColor="Red" Text="*"></asp:Label>
                 :</td>
             <td class="auto-style3">
-                <asp:TextBox ID="tbDepartment" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="ddlDepartment" runat="server">
+                    <asp:ListItem Value="SIT">School Of Information Technology (SIT)</asp:ListItem>
+                    <asp:ListItem Value="SEG">School Of Engineering (SEG)</asp:ListItem>
+                    <asp:ListItem Value="SCL">School Of Chemical Life Science (SCL)</asp:ListItem>
+                    <asp:ListItem Value="SHS">School Of Health Science (SHS)</asp:ListItem>
+                    <asp:ListItem Value="SBM">School Of Business Management (SBM)</asp:ListItem>
+                </asp:DropDownList>
             </td>
         </tr>
         <tr>
@@ -62,7 +68,7 @@
         </tr>
         <tr>
             <td class="auto-style4" colspan="2">
-                <asp:Label ID="lblUpdate" runat="server"></asp:Label>
+                <asp:Label ID="lblUpdate" runat="server" ForeColor="Red"></asp:Label>
             </td>
         </tr>
     </table>

@@ -18,7 +18,6 @@ namespace Facility_Reservation_Kiosk
             using (var db = new FacilityReservationKioskEntities())
             {
                 //Basic select query from a single table 
-
                 var device = db.Devices.Find(ID);
 
                 //Loop through to print out
@@ -28,6 +27,7 @@ namespace Facility_Reservation_Kiosk
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
+
             int ID = System.Convert.ToInt32(lblDeviceID.Text);
 
             using (var db = new FacilityReservationKioskEntities())
@@ -35,12 +35,14 @@ namespace Facility_Reservation_Kiosk
                 Device device = db.Devices.Find(ID);
 
                 //Modify fields
-                device.Status = "Revoked";
+                device.Status = "Rev";
                 device.RejectedOrRevokedDateTime = DateTime.Now;
                 device.RejectedOrRevokedReason = tbReason.Text;
 
                 db.SaveChanges();
             }
+
+            lblMsg.Text = "Device revoked successfully";
         }
     }
 }

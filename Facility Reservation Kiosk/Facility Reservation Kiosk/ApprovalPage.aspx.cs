@@ -32,7 +32,7 @@ namespace Facility_Reservation_Kiosk
 
                     //Modify fields
                     device.Description = tbDescription.Text;
-                    device.DepartmentID = tbDepartment.Text;
+                    device.DepartmentID = ddlDepartment.SelectedValue.ToString();
                     device.DefaultDepartmentFilterID = System.Convert.ToInt32(tbDefaultFilter.Text);
                     //device.PublicKey = "";
                     //device.DeviceGeneratedUniqueID = "";
