@@ -41,11 +41,14 @@
                 :</td>
             <td class="auto-style3">
                 <asp:DropDownList ID="ddlDepartment" runat="server">
-                    <asp:ListItem Value="SIT">School Of Information Technology (SIT)</asp:ListItem>
-                    <asp:ListItem Value="SEG">School Of Engineering (SEG)</asp:ListItem>
-                    <asp:ListItem Value="SCL">School Of Chemical Life Science (SCL)</asp:ListItem>
-                    <asp:ListItem Value="SHS">School Of Health Science (SHS)</asp:ListItem>
+                    <asp:ListItem Value="NYP">Nanyang Polytechnic (NYP)</asp:ListItem>
                     <asp:ListItem Value="SBM">School Of Business Management (SBM)</asp:ListItem>
+                    <asp:ListItem Value="SCL">School Of Chemical Life Science (SCL)</asp:ListItem>
+                    <asp:ListItem Value="SDN">School Of Design (SDN)</asp:ListItem>
+                    <asp:ListItem Value="SEG">School Of Engineering (SEG)</asp:ListItem>
+                    <asp:ListItem Value="SHS">School Of Health Science (SHS)</asp:ListItem>
+                    <asp:ListItem Value="SIDM">School Of Interactive Media Design (SIDM)</asp:ListItem>
+                    <asp:ListItem Value="SIT">School Of Information Technology (SIT)</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>

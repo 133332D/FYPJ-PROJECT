@@ -20,7 +20,7 @@
     </tr>
     <tr>
         <td class="auto-style1" colspan="2">
-            <asp:GridView ID="GridViewSearch" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridViewSearch_SelectedIndexChanged" OnRowCommand="GridViewSearch_RowCommand" Width="50%" AutoGenerateColumns="False" OnRowDataBound="GridViewSearch_RowDataBound">
+            <asp:GridView ID="GridViewSearch" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridViewSearch_SelectedIndexChanged" OnRowCommand="GridViewSearch_RowCommand" Width="86%" AutoGenerateColumns="False" OnRowDataBound="GridViewSearch_RowDataBound" Height="111px">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="DeviceID" HeaderText="Device ID" />
