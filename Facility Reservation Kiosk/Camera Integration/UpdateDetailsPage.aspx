@@ -9,35 +9,48 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="nav-justified">
         <tr>
+            <td class="auto-style1">CameraID:</td>
+            <td>
+                <asp:Label ID="lblCam" runat="server" Text="Label"></asp:Label>
+            </td>
+        </tr>
+        <tr>
             <td class="auto-style1">Facility ID:</td>
             <td>
                 <asp:Label ID="lblFacilityID" runat="server" ForeColor="#CC0000"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td class="auto-style1">Camera&nbsp; IP Address:<asp:Label ID="Label1" runat="server" ForeColor="Red" Text="*"></asp:Label>
-                :</td>
+            <td class="auto-style1">Camera&nbsp; IP Address:</td>
             <td class="auto-style3">
                 <asp:TextBox ID="txtIpAddress" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
-            <td class="auto-style1">MinimumDensity<asp:Label ID="Label4" runat="server" ForeColor="Red" Text="*"></asp:Label>
-                :</td>
+            <td class="auto-style1">MinimumDensity:</td>
             <td class="auto-style3">
                 <asp:TextBox ID="txtMinDensity" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
-            <td class="auto-style1">MaximumDensity<asp:Label ID="Label5" runat="server" ForeColor="Red" Text="*"></asp:Label>
-                :</td>
+            <td class="auto-style1">MaximumDensity:</td>
             <td>
                 <asp:TextBox ID="txtMaxDensity" runat="server"></asp:TextBox>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style1">&nbsp;</td>
+            <td>
+                <asp:DropDownList ID="ddl1" runat="server" AutoPostBack="True">
+                    <asp:ListItem>-Select-</asp:ListItem>
+                </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">
-                &nbsp;</td>
+                <br />
+            </td>
             <td class="auto-style5">
 &nbsp;&nbsp;&nbsp;<asp:Button ID="btnConfirm" runat="server" OnClick="btnConfirm_Click1" Text="Update Confirm" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

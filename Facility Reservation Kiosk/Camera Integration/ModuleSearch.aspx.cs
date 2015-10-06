@@ -23,7 +23,7 @@ namespace Camera_Integration
             using (var db = new FacilityReservationKioskEntities())
             {
                 var result = from b in db.Cameras
-                             select new { b.FacilityID, b.IPAddress, b.MinimumDensity, b.MaximumDensity };
+                             select new {b.CameraID, b.FacilityID, b.IPAddress, b.MinimumDensity, b.MaximumDensity };
 
                 grdCamera.DataSource = result.ToList();
                 grdCamera.DataBind();
@@ -52,7 +52,9 @@ namespace Camera_Integration
         {
             if (e.CommandName.CompareTo("Update") == 0)
             {
-                Response.Redirect("UpdateDetailsPage.aspx?facility=" + txtSearch.Text);
+                string Row = (string)e.CommandArgument;
+                string CamID = grdCamera.DataKeys[Convert.ToInt32(Row)][0].ToString();
+                Response.Redirect("UpdateDetailsPage.aspx?CameraID=" + CamID);
 
             }
         }

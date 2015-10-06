@@ -35,7 +35,9 @@
                                     <div class="form-group">
                                          &nbsp;<asp:Label ID="Label4" runat="server" Font-Bold="False" Font-Size="Large" Text="Facility Name:"></asp:Label>
                                          <br />
-                                         <asp:TextBox ID="txtFacilityName" runat="server"></asp:TextBox>
+                                         <asp:DropDownList ID="ddlName" runat="server" AutoPostBack="True">
+                                             <asp:ListItem>-SELECT-</asp:ListItem>
+                                         </asp:DropDownList>
                                          <br />
                                          <br />
                                         </div>

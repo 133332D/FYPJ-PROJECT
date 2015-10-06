@@ -4,8 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
+
 
 namespace Camera_Integration
 {
@@ -13,47 +12,61 @@ namespace Camera_Integration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblFacilityID.Text = Request.QueryString["facility"];
-         
+            if (!IsPostBack)
+            {
+                lblCam.Text = Request.QueryString["CameraID"];
+
+                BindDDL();
+
+                using (var db = new FacilityReservationKioskEntities())
+                {
+                    Camera camera = db.Cameras.Find(Convert.ToInt32(lblCam.Text));
+                    txtIpAddress.Text = camera.IPAddress;
+                    txtMinDensity.Text = camera.MinimumDensity.ToString();
+                    txtMaxDensity.Text = camera.MaximumDensity.ToString();
+                    lblFacilityID.Text = camera.FacilityID;
+
+                }
+
+            }
         }
 
+        private void BindDDL()
+        {
+            using (var db = new FacilityReservationKioskEntities())
+            {
+                var facility = (from b in db.Cameras
+                                select new { b.FacilityID }).ToList();
+
+                ddl1.DataValueField = "FacilityID";
+                ddl1.DataTextField = "FacilityID";
+                ddl1.DataSource = facility;
+                ddl1.DataBind();
+            }
+
+        }
         protected void btnConfirm_Click1(object sender, EventArgs e)
         {
-            string FacilityID = lblFacilityID.Text;
-           
+            string ID = Request.QueryString["CameraID"];
+        
            
             using (var db = new FacilityReservationKioskEntities())
             {
                 //update
-                 try
-                 {
-                     Camera camera = db.Cameras.Find(FacilityID);
+                
+                 Camera camera = db.Cameras.Find(Convert.ToInt32(ID));
 
-                    //modify fields
-                    camera.IPAddress = txtIpAddress.Text;
-                    camera.MinimumDensity = float.Parse(txtMinDensity.Text);
-                    camera.MaximumDensity = float.Parse(txtMaxDensity.Text);
+                  //modify fields
+                  camera.IPAddress = txtIpAddress.Text;
+                  camera.MinimumDensity = float.Parse(txtMinDensity.Text);
+                  camera.MaximumDensity = float.Parse(txtMaxDensity.Text);
 
-                    db.SaveChanges();
+                  db.SaveChanges();
 
-                 }
-                catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-                 {
-                    //retrieve error messages
-                    var errMessage = ex.EntityValidationErrors
-                        .SelectMany(x => x.ValidationErrors)
-                       .Select(x => x.ErrorMessage);
-
-                    //join list to a single string
-                    var fullerrMessage = string.Join(";", errMessage);
-
-                    //combine the original exception message with the new one.
-                    var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullerrMessage);
-                 }
+                 }              
 
                  lblUpdate.Text = "Record Update Successfully";
                 
             }
         }
     }
-}
