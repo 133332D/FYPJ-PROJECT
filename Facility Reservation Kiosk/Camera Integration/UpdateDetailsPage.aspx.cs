@@ -38,10 +38,10 @@ namespace Camera_Integration
                 var facility = (from b in db.Cameras
                                 select new { b.FacilityID }).ToList();
 
-                ddl1.DataValueField = "FacilityID";
-                ddl1.DataTextField = "FacilityID";
-                ddl1.DataSource = facility;
-                ddl1.DataBind();
+                ddlFacility.DataValueField = "FacilityID";
+                ddlFacility.DataTextField = "FacilityID";
+                ddlFacility.DataSource = facility;
+                ddlFacility.DataBind();
             }
 
         }

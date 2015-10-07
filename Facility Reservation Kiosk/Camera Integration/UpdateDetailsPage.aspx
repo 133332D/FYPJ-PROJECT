@@ -11,7 +11,7 @@
         <tr>
             <td class="auto-style1">CameraID:</td>
             <td>
-                <asp:Label ID="lblCam" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblCam" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -41,7 +41,7 @@
         <tr>
             <td class="auto-style1">&nbsp;</td>
             <td>
-                <asp:DropDownList ID="ddl1" runat="server" AutoPostBack="True">
+                <asp:DropDownList ID="ddlFacility" runat="server" AutoPostBack="True">
                     <asp:ListItem>-Select-</asp:ListItem>
                 </asp:DropDownList>
             </td>
