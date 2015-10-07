@@ -11,13 +11,7 @@ using System.Configuration;
 
 namespace RetrieveCameraData
 {
-   // public class KioskContext 
-
-        //using FacilityReservationKioskEntities Connection String
-        //public KioskContext() : base ("name= FacilityReservationKioskEntities")
-        //{
-        //}
-
+   
     class Program
     {
         static void Main(string[] args)

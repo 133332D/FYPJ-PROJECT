@@ -24,7 +24,7 @@ namespace Camera_Integration
                     txtIpAddress.Text = camera.IPAddress;
                     txtMinDensity.Text = camera.MinimumDensity.ToString();
                     txtMaxDensity.Text = camera.MaximumDensity.ToString();
-                    lblFacilityID.Text = camera.FacilityID;
+                    // lblFacilityID.Text = camera.FacilityID;
 
                 }
 

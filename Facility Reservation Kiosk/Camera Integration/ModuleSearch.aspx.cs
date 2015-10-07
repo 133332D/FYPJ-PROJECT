@@ -40,7 +40,7 @@ namespace Camera_Integration
             {
                 var result = from b in db.Cameras
                              where b.FacilityID == search
-                             select new { b.FacilityID, b.IPAddress, b.MinimumDensity, b.MaximumDensity };
+                             select new {b.CameraID, b.FacilityID, b.IPAddress, b.MinimumDensity, b.MaximumDensity };
 
                 //loop through to print out
                 grdCamera.DataSource = result.ToList();

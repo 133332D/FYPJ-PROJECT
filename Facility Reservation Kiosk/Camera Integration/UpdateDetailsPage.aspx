@@ -36,7 +36,6 @@
             <td class="auto-style1">MaximumDensity:</td>
             <td>
                 <asp:TextBox ID="txtMaxDensity" runat="server"></asp:TextBox>
-                <br />
             </td>
         </tr>
         <tr>
