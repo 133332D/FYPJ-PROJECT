@@ -43,23 +43,23 @@ namespace IPadKioskWebService
             //else -1~ERRORMESSAGE....., error
             string[] tokens = result.Split(new[] { "~" }, StringSplitOptions.None);
             //if successfully return OK
-            if( tokens[0] == "0")
+            if (tokens[0] == "0")
             {
                 //trigger a refresh of the cache database!!! **
 
                 //returns ok/error message to caller
                 Response.Write("{");
-                Response.Write("     Result: OK");
-                Response.Write("     Message: The facility reservation is received and inserted into NYP's database successfully");
+                Response.Write("     Result: \"OK\",");
+                Response.Write("     Message: \"The facility reservation is received and inserted into NYP's database successfully\"");
                 Response.Write("}");
                 Response.End();
             }
-            else 
+            else
             {
                 //returns ok/error message to caller
                 Response.Write("{");
-                Response.Write("     Result: ERROR");
-                Response.Write("     " + tokens[1]);
+                Response.Write("     Result: \"ERROR\",");
+                Response.Write("     Message: \"" + tokens[1] + "\"");
                 Response.Write("}");
                 Response.End();
             }
