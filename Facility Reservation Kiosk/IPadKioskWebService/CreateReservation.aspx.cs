@@ -22,10 +22,10 @@ namespace IPadKioskWebService
             
             //change the date and time info if necessary
             // see what is passed in to to the startDateTime & endDateTime
-            DateTime startDate = DateTime.ParseExact(startDateTime, "yyyy-MMM-dd", CultureInfo.InvariantCulture);
-            DateTime startTime = DateTime.ParseExact(startDateTime, "HH:MM:SS", CultureInfo.InvariantCulture);
-            DateTime endDate = DateTime.ParseExact(startDateTime, "yyyy-MMM-dd", CultureInfo.InvariantCulture);
-            DateTime endTime = DateTime.ParseExact(startDateTime, "HH:MM:SS", CultureInfo.InvariantCulture);
+            DateTime startDate = DateTime.ParseExact(startDateTime, "dd-mmm-yyyy", CultureInfo.InvariantCulture);
+            DateTime startTime = DateTime.ParseExact(startDateTime, "HH:MM", CultureInfo.InvariantCulture);
+            DateTime endDate = DateTime.ParseExact(startDateTime, "dd-mmm-yyyy", CultureInfo.InvariantCulture);
+            DateTime endTime = DateTime.ParseExact(startDateTime, "HH:MM", CultureInfo.InvariantCulture);
 
             string startDateString = startDate.ToString();
             string startTimeString = startTime.ToString();
@@ -35,7 +35,7 @@ namespace IPadKioskWebService
             FRSWS.WSfrsClient ws = new FRSWS.WSfrsClient();
 
             //call the NYP saveFRSEntries method to insert to database
-            string result = HttpUtility.UrlDecode(ws.saveFRSEntries(userType, userID, userType, userID, facilityID, "", "",
+            string result = HttpUtility.UrlDecode(ws.saveFRSEntries("STAFF", "S1999557YF", "STAFF", "S1999557YF", facilityID, "", "",
                 startDateString, endDateString, startTimeString, endTimeString, "Y", "Y", description, "N", "", "", "", "", "", ""));
             
             //split the string result
