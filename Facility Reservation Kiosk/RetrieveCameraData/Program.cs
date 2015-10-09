@@ -23,9 +23,23 @@ namespace RetrieveCameraData
                    Console.WriteLine(cam.CameraID);
 
                    //insert into VideoAnalytics Table
-                  // var video = from b in db.VideoAnalytics;
+                   VideoAnalytic video = new VideoAnalytic();
+                   video.VideoAnalyticsID = 1;
+                   video.CameraID = 1;
+                   video.IPAddress = "12.213.10.1";
+                   video.CrowdDensity = 0;
+                   video.SnapshotFile = "";
+                   db.VideoAnalytics.Add(video);
+                                
+                                        
                }
+               Console.WriteLine("VideoAnalytics Record Added");
            }
+
+            DateTime time = DateTime.Now; //use current time 
+            string format = "d MMM yyyy ddd HH:mm"; //use this format
+            Console.WriteLine(time.ToString(format));
+            
         }
 
         //public class KioskContext : DbContext

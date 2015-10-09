@@ -13,6 +13,7 @@ namespace Camera_Integration
         protected void Page_Load(object sender, EventArgs e)
         {
             BindDDL();
+
             if (Request.QueryString["CameraID"] == null)
             {
                 if (!IsPostBack)
@@ -26,7 +27,7 @@ namespace Camera_Integration
                         txtIpAddress.Text = camera.IPAddress;
                         txtMinDensity.Text = camera.MinimumDensity.ToString();
                         txtMaxDensity.Text = camera.MaximumDensity.ToString();
-                        // lblFacilityID.Text = camera.FacilityID;
+                        lblFacilityID.Text = camera.FacilityID;
 
                     }
 
@@ -70,6 +71,7 @@ namespace Camera_Integration
                   camera.MaximumDensity = float.Parse(txtMaxDensity.Text);
 
                   db.SaveChanges();
+                
 
                  }              
 
