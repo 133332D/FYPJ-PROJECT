@@ -33,7 +33,7 @@
                         <ItemTemplate>
                             <asp:LinkButton ID="lbapp" runat="server" Text="Approve" Visible="false" OnClick="lbapp_Click"  ></asp:LinkButton>
                                 <asp:LinkButton ID="lbrej" runat="server" Text="Reject" Visible="false" OnClick="lbrej_Click"  ></asp:LinkButton>
-                              <asp:LinkButton ID="lbedit" runat="server" Text="Edit" Visible="false"  ></asp:LinkButton>
+                              <asp:LinkButton ID="lbedit" runat="server" Text="Edit" Visible="false" OnClick="lbedit_Click"></asp:LinkButton>
                                <asp:LinkButton ID="lbrevoke" runat="server" Text="Revoke" Visible="false" OnClick="lbrevoke_Click"  ></asp:LinkButton>
 
 

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Facility_Reservation_Kiosk
 {
-    public partial class RevokePage : System.Web.UI.Page
+    public partial class EditPage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,11 +21,13 @@ namespace Facility_Reservation_Kiosk
                 var device = db.Devices.Find(ID);
 
                 //Loop through to print out
-                lblDescription.Text = device.Description;
+                tbDescription.Text = device.Description;
+                ddlDepartment.Text = device.DepartmentID;
+                tbFilter.Text = device.DefaultDepartmentFilterID.ToString();
             }
         }
 
-        protected void btnConfirm_Click(object sender, EventArgs e)
+        protected void btnUpdate_Click(object sender, EventArgs e)
         {
 
             int ID = System.Convert.ToInt32(lblDeviceID.Text);
@@ -35,14 +37,14 @@ namespace Facility_Reservation_Kiosk
                 Device device = db.Devices.Find(ID);
 
                 //Modify fields
-                device.Status = "REV";
-                device.RejectedOrRevokedDateTime = DateTime.Now;
-                device.RejectedOrRevokedReason = tbReason.Text;
+                device.Description = tbDescription.Text;
+                device.DepartmentID = ddlDepartment.SelectedValue.ToString();
+                device.DefaultDepartmentFilterID = System.Convert.ToInt32(tbFilter.Text); 
 
                 db.SaveChanges();
             }
 
-            lblMsg.Text = "Device revoked successfully";
+            lbUpdate.Text = "Records update successfully";
         }
     }
 }

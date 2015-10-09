@@ -76,6 +76,7 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\npm.js" />
     <Content Include="DeviceSecurity.aspx" />
+    <Content Include="EditPage.aspx" />
     <Content Include="packages\AjaxControlToolkit.15.1.2.0\lib\net40\AjaxControlToolkit.dll" />
     <Content Include="packages\AjaxControlToolkit.15.1.2.0\readme.txt" />
     <Content Include="packages\GoogleMaps.LocationServices.0.9.8.5\content\GoogleMaps.LocationServices.readme.txt" />
@@ -791,7 +792,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="WebForm1.aspx" />
+    <Content Include="Registration.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApprovalPage.aspx.cs">
@@ -832,6 +833,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeviceSecurity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EditPage.aspx.cs">
+      <DependentUpon>EditPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPage.aspx.designer.cs">
+      <DependentUpon>EditPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -854,12 +862,12 @@
     <Compile Include="RevokePage.aspx.designer.cs">
       <DependentUpon>RevokePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

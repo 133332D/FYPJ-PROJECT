@@ -34,14 +34,9 @@ namespace Facility_Reservation_Kiosk
                     device.Description = tbDescription.Text;
                     device.DepartmentID = ddlDepartment.SelectedValue.ToString();
                     device.DefaultDepartmentFilterID = System.Convert.ToInt32(tbDefaultFilter.Text);
-                    //device.PublicKey = "";
-                    //device.DeviceGeneratedUniqueID = "";
                     device.Status = "APP";
                     device.ApprovedDateTime = DateTime.Now;
-                    //device.RejectedOrRevokedDateTime = DateTime.Now;
-                    //device.RejectedOrRevokedReason = "";
-
-
+                 
                     db.SaveChanges();
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException ex)

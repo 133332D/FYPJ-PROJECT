@@ -106,6 +106,10 @@ namespace Facility_Reservation_Kiosk
             Response.Redirect("RevokePage.aspx?searchID=" + txtSearch.Text);
         }
 
+        protected void lbedit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditPage.aspx?searchID=" + txtSearch.Text);
+        }
 
         /* protected void GridViewSearch_DataBound(object sender, EventArgs e)
          {

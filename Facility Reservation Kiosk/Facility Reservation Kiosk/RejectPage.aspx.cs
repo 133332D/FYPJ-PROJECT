@@ -28,7 +28,7 @@ namespace Facility_Reservation_Kiosk
                 Device device = db.Devices.Find(ID);
 
                 //Modify fields
-                device.Status = "Reject";
+                device.Status = "REJ";
                 device.RejectedOrRevokedDateTime = DateTime.Now;
                 device.RejectedOrRevokedReason = tbReason.Text;
 
