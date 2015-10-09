@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net; //For email use 
+using System.Net.Mail; //For email use
 
 namespace Facility_Reservation_Kiosk
 {
