@@ -12,23 +12,31 @@ namespace Camera_Integration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            BindDDL();
+            if (Request.QueryString["CameraID"] == null)
             {
-                lblCam.Text = Request.QueryString["CameraID"];
-
-                BindDDL();
-
-                using (var db = new FacilityReservationKioskEntities())
+                if (!IsPostBack)
                 {
-                    Camera camera = db.Cameras.Find(Convert.ToInt32(lblCam.Text));
-                    txtIpAddress.Text = camera.IPAddress;
-                    txtMinDensity.Text = camera.MinimumDensity.ToString();
-                    txtMaxDensity.Text = camera.MaximumDensity.ToString();
-                  // lblFacilityID.Text = camera.FacilityID;
+                    lblCam.Text = Request.QueryString["CameraID"];
+
+                   
+                    using (var db = new FacilityReservationKioskEntities())
+                    {
+                        Camera camera = db.Cameras.Find(Convert.ToInt32(lblCam.Text));
+                        txtIpAddress.Text = camera.IPAddress;
+                        txtMinDensity.Text = camera.MinimumDensity.ToString();
+                        txtMaxDensity.Text = camera.MaximumDensity.ToString();
+                        // lblFacilityID.Text = camera.FacilityID;
+
+                    }
 
                 }
+            }
+            else
+            {
 
             }
+            
         }
 
         private void BindDDL()

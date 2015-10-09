@@ -41,7 +41,7 @@
         <tr>
             <td class="auto-style1">&nbsp;</td>
             <td>
-                <asp:DropDownList ID="ddlFacility" runat="server" AutoPostBack="True">
+                <asp:DropDownList ID="ddlFacility" runat="server">
                     <asp:ListItem>-Select-</asp:ListItem>
                 </asp:DropDownList>
             </td>

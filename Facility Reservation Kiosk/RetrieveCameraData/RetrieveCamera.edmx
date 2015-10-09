@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FacilityReservationKioskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Camera">
+          <Key>
+            <PropertyRef Name="CameraID" />
+          </Key>
+          <Property Name="CameraID" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="varchar" MaxLength="10" />
+          <Property Name="FacilityID" Type="varchar" MaxLength="10" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="MinimumDensity" Type="float" />
+          <Property Name="MaximumDensity" Type="float" />
+        </EntityType>
+        <EntityType Name="CameraReferenceImage">
+          <Key>
+            <PropertyRef Name="cameraReferenceImageID" />
+          </Key>
+          <Property Name="cameraReferenceImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cameraID" Type="int" />
+          <Property Name="referenceImageURL" Type="varbinary(max)" />
+          <Property Name="ReferenceURL" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="VideoAnalytics">
+          <Key>
+            <PropertyRef Name="VideoAnalyticsID" />
+          </Key>
+          <Property Name="VideoAnalyticsID" Type="int" Nullable="false" />
+          <Property Name="CameraID" Type="int" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="CrowdDensity" Type="float" />
+          <Property Name="SnapshotFile" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_VideoAnalytics_Camera">
+          <End Role="Camera" Type="Self.Camera" Multiplicity="0..1" />
+          <End Role="VideoAnalytics" Type="Self.VideoAnalytics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Camera">
+              <PropertyRef Name="CameraID" />
+            </Principal>
+            <Dependent Role="VideoAnalytics">
+              <PropertyRef Name="CameraID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FacilityReservationKioskModelStoreContainer">
+          <EntitySet Name="Camera" EntityType="Self.Camera" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CameraReferenceImage" EntityType="Self.CameraReferenceImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VideoAnalytics" EntityType="Self.VideoAnalytics" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_VideoAnalytics_Camera" Association="Self.FK_VideoAnalytics_Camera">
+            <End Role="Camera" EntitySet="Camera" />
+            <End Role="VideoAnalytics" EntitySet="VideoAnalytics" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FacilityReservationKioskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Camera">
+          <Key>
+            <PropertyRef Name="CameraID" />
+          </Key>
+          <Property Name="CameraID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FacilityID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MinimumDensity" Type="Double" />
+          <Property Name="MaximumDensity" Type="Double" />
+          <NavigationProperty Name="VideoAnalytics" Relationship="Self.FK_VideoAnalytics_Camera" FromRole="Camera" ToRole="VideoAnalytics" />
+        </EntityType>
+        <EntityType Name="CameraReferenceImage">
+          <Key>
+            <PropertyRef Name="cameraReferenceImageID" />
+          </Key>
+          <Property Name="cameraReferenceImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cameraID" Type="Int32" />
+          <Property Name="referenceImageURL" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ReferenceURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VideoAnalytic">
+          <Key>
+            <PropertyRef Name="VideoAnalyticsID" />
+          </Key>
+          <Property Name="VideoAnalyticsID" Type="Int32" Nullable="false" />
+          <Property Name="CameraID" Type="Int32" />
+          <Property Name="IPAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CrowdDensity" Type="Double" />
+          <Property Name="SnapshotFile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Camera" Relationship="Self.FK_VideoAnalytics_Camera" FromRole="VideoAnalytics" ToRole="Camera" />
+        </EntityType>
+        <Association Name="FK_VideoAnalytics_Camera">
+          <End Role="Camera" Type="Self.Camera" Multiplicity="0..1" />
+          <End Role="VideoAnalytics" Type="Self.VideoAnalytic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Camera">
+              <PropertyRef Name="CameraID" />
+            </Principal>
+            <Dependent Role="VideoAnalytics">
+              <PropertyRef Name="CameraID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FacilityReservationKioskEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cameras" EntityType="Self.Camera" />
+          <EntitySet Name="CameraReferenceImages" EntityType="Self.CameraReferenceImage" />
+          <EntitySet Name="VideoAnalytics" EntityType="Self.VideoAnalytic" />
+          <AssociationSet Name="FK_VideoAnalytics_Camera" Association="Self.FK_VideoAnalytics_Camera">
+            <End Role="Camera" EntitySet="Cameras" />
+            <End Role="VideoAnalytics" EntitySet="VideoAnalytics" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FacilityReservationKioskModelStoreContainer" CdmEntityContainer="FacilityReservationKioskEntities1">
+          <EntitySetMapping Name="Cameras">
+            <EntityTypeMapping TypeName="FacilityReservationKioskModel.Camera">
+              <MappingFragment StoreEntitySet="Camera">
+                <ScalarProperty Name="CameraID" ColumnName="CameraID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="MinimumDensity" ColumnName="MinimumDensity" />
+                <ScalarProperty Name="MaximumDensity" ColumnName="MaximumDensity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CameraReferenceImages">
+            <EntityTypeMapping TypeName="FacilityReservationKioskModel.CameraReferenceImage">
+              <MappingFragment StoreEntitySet="CameraReferenceImage">
+                <ScalarProperty Name="cameraReferenceImageID" ColumnName="cameraReferenceImageID" />
+                <ScalarProperty Name="cameraID" ColumnName="cameraID" />
+                <ScalarProperty Name="referenceImageURL" ColumnName="referenceImageURL" />
+                <ScalarProperty Name="ReferenceURL" ColumnName="ReferenceURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VideoAnalytics">
+            <EntityTypeMapping TypeName="FacilityReservationKioskModel.VideoAnalytic">
+              <MappingFragment StoreEntitySet="VideoAnalytics">
+                <ScalarProperty Name="VideoAnalyticsID" ColumnName="VideoAnalyticsID" />
+                <ScalarProperty Name="CameraID" ColumnName="CameraID" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="CrowdDensity" ColumnName="CrowdDensity" />
+                <ScalarProperty Name="SnapshotFile" ColumnName="SnapshotFile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
