@@ -36,6 +36,8 @@ namespace RetrieveCameraData
                Console.WriteLine("VideoAnalytics Record Added");
            }
 
+
+
             DateTime time = DateTime.Now; //use current time 
             string format = "d MMM yyyy ddd HH:mm"; //use this format
             Console.WriteLine(time.ToString(format));

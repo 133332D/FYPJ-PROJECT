@@ -22,13 +22,13 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.Label lblCam;
         
         /// <summary>
-        /// lblFacilityID control.
+        /// ddlFacility control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFacilityID;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFacility;
         
         /// <summary>
         /// txtIpAddress control.
@@ -56,15 +56,6 @@ namespace Camera_Integration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMaxDensity;
-        
-        /// <summary>
-        /// ddlFacility control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFacility;
         
         /// <summary>
         /// btnConfirm control.

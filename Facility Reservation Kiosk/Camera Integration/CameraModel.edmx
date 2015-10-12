@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="CameraID" />
           </Key>
-          <Property Name="CameraID" Type="int" Nullable="false" />
+          <Property Name="CameraID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DepartmentID" Type="varchar" MaxLength="10" />
           <Property Name="FacilityID" Type="varchar" MaxLength="10" />
           <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
@@ -149,7 +149,7 @@
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Cameras" Relationship="Self.FK_Camera_Department" FromRole="Department" ToRole="Camera" />
           <NavigationProperty Name="Facilities" Relationship="Self.FK_Facility_Department" FromRole="Department" ToRole="Facility" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="Facility">
           <Key>
             <PropertyRef Name="FacilityID" />

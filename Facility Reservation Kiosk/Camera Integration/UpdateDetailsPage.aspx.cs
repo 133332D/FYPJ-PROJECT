@@ -14,37 +14,38 @@ namespace Camera_Integration
         {
             BindDDL();
 
-            if (Request.QueryString["CameraID"] == null)
+            if (Request.QueryString["CameraID"] != null)
             {
                 if (!IsPostBack)
                 {
                     lblCam.Text = Request.QueryString["CameraID"];
 
-                   
+
                     using (var db = new FacilityReservationKioskEntities())
                     {
                         Camera camera = db.Cameras.Find(Convert.ToInt32(lblCam.Text));
                         txtIpAddress.Text = camera.IPAddress;
                         txtMinDensity.Text = camera.MinimumDensity.ToString();
                         txtMaxDensity.Text = camera.MaximumDensity.ToString();
-                        lblFacilityID.Text = camera.FacilityID;
-
+                        //lblFacilityID.Text = camera.FacilityID;
+                       // ddlFacility.Items.FindByValue(camera.FacilityID);
+                        ddlFacility.SelectedValue = camera.FacilityID;
                     }
 
                 }
             }
-            else
-            {
+            //else
+            //{
 
-            }
-            
+            //}
+
         }
 
         private void BindDDL()
         {
             using (var db = new FacilityReservationKioskEntities())
             {
-                var facility = (from b in db.Cameras
+                var facility = (from b in db.Facilities
                                 select new { b.FacilityID }).ToList();
 
                 ddlFacility.DataValueField = "FacilityID";
@@ -57,26 +58,45 @@ namespace Camera_Integration
         protected void btnConfirm_Click1(object sender, EventArgs e)
         {
             string ID = Request.QueryString["CameraID"];
-        
-           
-            using (var db = new FacilityReservationKioskEntities())
+
+            if (Request.QueryString["CameraID"] != null)
             {
-                //update
-                
-                 Camera camera = db.Cameras.Find(Convert.ToInt32(ID));
+                using (var db = new FacilityReservationKioskEntities())
+                {
+                    //update
 
-                  //modify fields
-                  camera.IPAddress = txtIpAddress.Text;
-                  camera.MinimumDensity = float.Parse(txtMinDensity.Text);
-                  camera.MaximumDensity = float.Parse(txtMaxDensity.Text);
+                    Camera camera = db.Cameras.Find(Convert.ToInt32(ID));
 
-                  db.SaveChanges();
-                
+                    //modify fields
+                    camera.FacilityID = ddlFacility.SelectedValue;
+                    camera.IPAddress = txtIpAddress.Text;
+                    camera.MinimumDensity = float.Parse(txtMinDensity.Text);
+                    camera.MaximumDensity = float.Parse(txtMaxDensity.Text);
 
-                 }              
+                    db.SaveChanges();
 
-                 lblUpdate.Text = "Record Update Successfully";
-                
+
+                }
+
+                lblUpdate.Text = "Record Update Successfully";
             }
+            else
+            {
+                using (var db = new FacilityReservationKioskEntities())
+                {
+                    Camera camera = new Camera();
+                    camera.FacilityID = ddlFacility.SelectedValue;
+                    camera.IPAddress = txtIpAddress.Text;
+                    camera.MinimumDensity = float.Parse(txtMinDensity.Text);
+                    camera.MaximumDensity = float.Parse(txtMaxDensity.Text);
+                    db.Cameras.Add(camera);
+                    db.SaveChanges();
+
+                }
+                lblUpdate.Text = "Record Update Successfully";
+            }
+
+
         }
     }
+}

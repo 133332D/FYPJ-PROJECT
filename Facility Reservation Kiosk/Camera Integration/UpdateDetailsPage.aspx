@@ -17,7 +17,9 @@
         <tr>
             <td class="auto-style1">Facility ID:</td>
             <td>
-                <asp:Label ID="lblFacilityID" runat="server" ForeColor="#CC0000"></asp:Label>
+                <asp:DropDownList ID="ddlFacility" runat="server">
+                    <asp:ListItem>-Select-</asp:ListItem>
+                </asp:DropDownList>
             </td>
         </tr>
         <tr>
@@ -41,10 +43,7 @@
         <tr>
             <td class="auto-style1">&nbsp;</td>
             <td>
-                <asp:DropDownList ID="ddlFacility" runat="server">
-                    <asp:ListItem>-Select-</asp:ListItem>
-                </asp:DropDownList>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style1">
