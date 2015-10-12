@@ -18,19 +18,38 @@ namespace Facility_Reservation_Kiosk
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-
-            int search = System.Convert.ToInt32(txtSearch.Text);
-
-
-            using (var db = new FacilityReservationKioskEntities())
+            if (txtSearch.Text == "")
             {
-                //Basic select query from a single table
-                var Search = from b in db.Devices where b.DeviceID == search orderby b.DeviceID + "%" select new { b.DeviceID, b.Status, b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason, b.Description };
+                                
+                using (var db = new FacilityReservationKioskEntities())
+                {
+                    //Basic select query from a single table 
+                    var Search = from b in db.Devices select new { b.DeviceID, b.Status, b.Description, b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason };
 
-                //Loop through to print out 
-                GridViewSearch.DataSource = Search.ToList();
-                GridViewSearch.DataBind();
+                    //Loop through to print out
+                    GridViewSearch.DataSource = Search.ToList();
+                    GridViewSearch.DataBind();
+                }
+            }
 
+            else
+            {
+                {
+
+                    int search = System.Convert.ToInt32(txtSearch.Text);
+
+
+                    using (var db = new FacilityReservationKioskEntities())
+                    {
+                        //Basic select query from a single table
+                        var Search = from b in db.Devices where b.DeviceID == search orderby b.DeviceID select new { b.DeviceID, b.Status, b.Description , b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason };
+
+                        //Loop through to print out 
+                        GridViewSearch.DataSource = Search.ToList();
+                        GridViewSearch.DataBind();
+
+                    }
+                }
             }
         }
 

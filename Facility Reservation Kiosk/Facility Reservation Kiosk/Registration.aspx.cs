@@ -20,7 +20,7 @@ namespace Facility_Reservation_Kiosk
             //If DeviceID not registered, insert new record 
             using (var db = new FacilityReservationKioskEntities())
             {
-                var register = new Device { Status = "NEW" };
+                var register = new Device { Status = "NEW", DeviceGeneratedUniqueID = UniqueID, PublicKey = PublicKey };
                 db.Devices.Add(register);
                 db.SaveChanges();
             }
