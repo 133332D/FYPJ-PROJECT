@@ -10,12 +10,11 @@ using System.Data.Entity;
 
 namespace RetrieveCameraData
 {
-   
     class Program
     {
         static void Main(string[] args)
         {
-           using (var db = new RetrieveCameraData.FacilityReservationKioskEntities1())
+            using (var db = new FacilityReservationKioskEntities1())
            {
                var camera = db.Cameras.ToList();
                foreach (var cam in camera)
@@ -23,11 +22,12 @@ namespace RetrieveCameraData
                    Console.WriteLine(cam.CameraID);
 
                    //insert into VideoAnalytics Table
+                   //Console.WriteLine("Create New VideoAnalytics Record");
+                   
                    VideoAnalytic video = new VideoAnalytic();
-                   video.VideoAnalyticsID = 1;
-                   video.CameraID = 1;
-                   video.IPAddress = "12.213.10.1";
-                   video.CrowdDensity = 0;
+                   video.CameraID = cam.CameraID;
+                   video.IPAddress = cam.IPAddress;
+                   video.CrowdDensity = 15;
                    video.SnapshotFile = "";
                    db.VideoAnalytics.Add(video);
                                 

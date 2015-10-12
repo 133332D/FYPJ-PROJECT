@@ -34,11 +34,7 @@ namespace Camera_Integration
 
                 }
             }
-            //else
-            //{
-
-            //}
-
+          
         }
 
         private void BindDDL()
@@ -84,6 +80,7 @@ namespace Camera_Integration
             {
                 using (var db = new FacilityReservationKioskEntities())
                 {
+                    //create new camera
                     Camera camera = new Camera();
                     camera.FacilityID = ddlFacility.SelectedValue;
                     camera.IPAddress = txtIpAddress.Text;

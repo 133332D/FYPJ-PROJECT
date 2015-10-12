@@ -80,7 +80,7 @@ namespace Camera_Integration
             //int selectedRow = e.RowIndex;
             //Label FacilityID = (Label)grdCamera.Rows[selectedRow].FindControl("cameraID1");
             //string facilityID = FacilityID.Text;
-            //  BindGridView();
+             // BindGridView();
         }
 
         protected void GrdCamera_RowEditing(object sender, GridViewEditEventArgs e)

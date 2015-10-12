@@ -92,7 +92,7 @@
                             <div class="col-sm-12">
 
                                 <div class="form-group">
-                                    Search by Facility / Camera IP Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                    Search by Facility:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
                                     <br />
                                     <asp:TextBox ID="txtSearch" runat="server" Height="24px" Width="128px"></asp:TextBox>
                                     <br />
