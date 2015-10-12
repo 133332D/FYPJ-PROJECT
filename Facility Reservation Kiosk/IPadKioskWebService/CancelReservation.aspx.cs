@@ -19,7 +19,7 @@ namespace IPadKioskWebService
             FRSWS.WSfrsClient ws = new FRSWS.WSfrsClient();
 
             //call the NYP delFRSEntries method to insert to database
-            string result = HttpUtility.UrlDecode(ws.delFRSEntries("", userID, facilityResevationID, reason));
+            string result = HttpUtility.UrlDecode(ws.delFRSEntries(facilityResevationID, "S1999557YF", "S1999557YF", reason));
 
             //split the string result
             //if 0~ , success
@@ -33,7 +33,7 @@ namespace IPadKioskWebService
                 //returns ok/error message to caller
                 Response.Write("{");
                 Response.Write("    \"Result: OK\",");
-                Response.Write("    \"Message: The facility reservation is cancelled from NYP's database successfully\"");
+                Response.Write("    \"Message: The facility reservation is cancelled from NYP's database successfully.\"");
                 Response.Write("}");
                 Response.End();
             }

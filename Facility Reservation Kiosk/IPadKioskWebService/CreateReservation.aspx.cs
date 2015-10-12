@@ -50,7 +50,7 @@ namespace IPadKioskWebService
                 //returns ok/error message to caller
                 Response.Write("{");
                 Response.Write("     Result: \"OK\",");
-                Response.Write("     Message: \"The facility reservation is received and inserted into NYP's database successfully\"");
+                Response.Write("     Message: \"The facility reservation is received and inserted into NYP's database successfully.\"");
                 Response.Write("}");
                 Response.End();
             }
