@@ -67,6 +67,15 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.TextBox txtIpAddress;
         
         /// <summary>
+        /// RequiredIpAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredIpAddress;
+        
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.TextBox txtMinDensity;
         
         /// <summary>
+        /// RequiredMinDensity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredMinDensity;
+        
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -101,6 +119,15 @@ namespace Camera_Integration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMaxDensity;
+        
+        /// <summary>
+        /// RequiredMaxDensity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredMaxDensity;
         
         /// <summary>
         /// btnConfirm control.

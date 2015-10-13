@@ -91,7 +91,7 @@
                             <div class="col-sm-12">
                                 <asp:Label ID="Label1" runat="server" Text="Camera ID :"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Label ID="lblCam" runat="server"></asp:Label>
+                                <asp:Label ID="lblCam" runat="server" ForeColor="Red"></asp:Label>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label2" runat="server" Text="Facility ID : "></asp:Label>
@@ -105,18 +105,24 @@
 &nbsp;
                                 <asp:TextBox ID="txtIpAddress" runat="server"></asp:TextBox>
                                 <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:RequiredFieldValidator ID="RequiredIpAddress" runat="server" ControlToValidate="txtIpAddress" ErrorMessage="Field is compulsory. IP Address must not be duplicated across all camera  record" ForeColor="Red"></asp:RequiredFieldValidator>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label4" runat="server" Text="Minimum Density :"></asp:Label>
 &nbsp;&nbsp;&nbsp;
                                 <asp:TextBox ID="txtMinDensity" runat="server"></asp:TextBox>
                                 <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:RequiredFieldValidator ID="RequiredMinDensity" runat="server" ControlToValidate="txtMinDensity" ErrorMessage="Field is compulsory. Please enter a valid number between 1 - 100" ForeColor="Red"></asp:RequiredFieldValidator>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label5" runat="server" Text="Maximum Density :"></asp:Label>
 &nbsp;&nbsp;
-                                <asp:TextBox ID="txtMaxDensity" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtMaxDensity" runat="server" OnTextChanged="txtMaxDensity_TextChanged"></asp:TextBox>
                                 <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:RequiredFieldValidator ID="RequiredMaxDensity" runat="server" ControlToValidate="txtMaxDensity" ErrorMessage="Field is compulsory. Please enter a valid number between 1 - 100" ForeColor="Red"></asp:RequiredFieldValidator>
                                 <br />
                                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -124,7 +130,7 @@
                                 <br />
                                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Label ID="lblUpdate" runat="server"></asp:Label>
+                                <asp:Label ID="lblUpdate" runat="server" ForeColor="Red"></asp:Label>
      </div>
       </div>
       </div>

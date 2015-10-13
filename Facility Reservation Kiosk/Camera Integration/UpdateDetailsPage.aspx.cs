@@ -95,5 +95,7 @@ namespace Camera_Integration
                 lblUpdate.Text = "Record Update Successfully";
             }
         }
+
+        
     }
 }
