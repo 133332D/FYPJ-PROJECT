@@ -24,17 +24,18 @@
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="DeviceID" HeaderText="Device ID" />
+                    <asp:BoundField DataField="DeviceGeneratedUniqueID" HeaderText="Unique ID" />
                     <asp:BoundField DataField="Status" HeaderText="Status" />
-                    <asp:BoundField DataField="ApprovedDateTime" HeaderText="ApprovedDateTime" />
-                    <asp:BoundField DataField="RejectedOrRevokedDateTime" HeaderText="RejectedOrRevokedDateTime" />
-                    <asp:BoundField DataField="RejectedOrRevokedReason" HeaderText="RejectedOrRevokedReason" />
+                    <asp:BoundField DataField="ApprovedDateTime" HeaderText="Approved Date Time" />
+                    <asp:BoundField DataField="RejectedOrRevokedDateTime" HeaderText="Rejected/Revoked Date Time" />
+                    <asp:BoundField DataField="RejectedOrRevokedReason" HeaderText="Rejected/Revoked Reason" />
                     <asp:BoundField DataField="Description" HeaderText="Description" />
                     <asp:TemplateField HeaderText="" ShowHeader="False">
                         <ItemTemplate>
                             <asp:LinkButton ID="lbapp" runat="server" Text="Approve" Visible="false" OnClick="lbapp_Click"  ></asp:LinkButton>
-                                <asp:LinkButton ID="lbrej" runat="server" Text="Reject" Visible="false" OnClick="lbrej_Click"  ></asp:LinkButton>
-                              <asp:LinkButton ID="lbedit" runat="server" Text="Edit" Visible="false" OnClick="lbedit_Click"></asp:LinkButton>
-                               <asp:LinkButton ID="lbrevoke" runat="server" Text="Revoke" Visible="false" OnClick="lbrevoke_Click"  ></asp:LinkButton>
+                                &nbsp;<asp:LinkButton ID="lbrej" runat="server" Text="Reject" Visible="false" OnClick="lbrej_Click"  ></asp:LinkButton>
+                              &nbsp;<asp:LinkButton ID="lbedit" runat="server" Text="Edit" Visible="false" OnClick="lbedit_Click"></asp:LinkButton>
+                               &nbsp;<asp:LinkButton ID="lbrevoke" runat="server" Text="Revoke" Visible="false" OnClick="lbrevoke_Click"  ></asp:LinkButton>
 
 
                         </ItemTemplate>

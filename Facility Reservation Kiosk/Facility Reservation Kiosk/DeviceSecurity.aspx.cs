@@ -24,7 +24,7 @@ namespace Facility_Reservation_Kiosk
                 using (var db = new FacilityReservationKioskEntities())
                 {
                     //Basic select query from a single table 
-                    var Search = from b in db.Devices select new { b.DeviceID, b.Status, b.Description, b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason };
+                    var Search = from b in db.Devices select new { b.DeviceID, b.DeviceGeneratedUniqueID, b.Status, b.Description, b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason };
 
                     //Loop through to print out
                     GridViewSearch.DataSource = Search.ToList();
@@ -36,13 +36,13 @@ namespace Facility_Reservation_Kiosk
             {
                 {
 
-                    int search = System.Convert.ToInt32(txtSearch.Text);
+                    //int search = System.Convert.ToInt32(txtSearch.Text);
 
 
                     using (var db = new FacilityReservationKioskEntities())
                     {
                         //Basic select query from a single table
-                        var Search = from b in db.Devices where b.DeviceID == search orderby b.DeviceID select new { b.DeviceID, b.Status, b.Description , b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason };
+                        var Search = from b in db.Devices where b.DeviceGeneratedUniqueID.Contains(txtSearch.Text) orderby b.DeviceGeneratedUniqueID select new { b.DeviceID, b.DeviceGeneratedUniqueID, b.Status, b.Description , b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason };
 
                         //Loop through to print out 
                         GridViewSearch.DataSource = Search.ToList();
