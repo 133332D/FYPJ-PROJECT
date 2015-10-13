@@ -96,10 +96,34 @@
                                     <br />
                                     <asp:TextBox ID="txtSearch" runat="server" Height="24px" Width="128px"></asp:TextBox>
                                     <br />
+                                    <br />
 
-                                </div>
-                                <div class="form-group">
                                     <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="Search" />
+                                    <br />
+                                    <br />
+                                    <asp:GridView ID="grdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="262px" Width="649px" OnPageIndexChanging="GrdCamera_PageIndexChanging" OnRowCancelingEdit="GrdCamera_RowCancelingEdit" OnRowDeleting="GrdCamera_RowDeleting" OnRowEditing="GrdCamera_RowEditing" OnRowUpdating="GrdCamera_RowUpdating" OnSelectedIndexChanged="GrdCamera_SelectedIndexChanged" OnSorting="GrdCamera_Sorting" OnRowCommand="grdCamera_RowCommand" DataKeyNames="CameraID">
+                                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                        <Columns>
+                                            <asp:BoundField DataField="CameraID" HeaderText="CameraID" />
+                                            <asp:BoundField DataField="FacilityID" HeaderText=" Facility Name" />
+                                            <asp:BoundField DataField="IPAddress" HeaderText="Camera IP Address" />
+                                            <asp:BoundField DataField="MinimumDensity" HeaderText="Minimum Density" />
+                                            <asp:BoundField DataField="MaximumDensity" HeaderText="Maximum Density" />
+                                            <asp:CommandField ShowDeleteButton="True" />
+                                            <asp:ButtonField ButtonType="Button" CommandName="Update" Text="Update" />
+                                        </Columns>
+                                        <EditRowStyle BackColor="#999999" />
+                                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                                    </asp:GridView>
+
                                 </div>
                             </div>
                         </div>
@@ -109,28 +133,6 @@
                             </div>
                         </div>
                         <br />
-                        <asp:GridView ID="grdCamera" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="262px" Width="649px" OnPageIndexChanging="GrdCamera_PageIndexChanging" OnRowCancelingEdit="GrdCamera_RowCancelingEdit" OnRowDeleting="GrdCamera_RowDeleting" OnRowEditing="GrdCamera_RowEditing" OnRowUpdating="GrdCamera_RowUpdating" OnSelectedIndexChanged="GrdCamera_SelectedIndexChanged" OnSorting="GrdCamera_Sorting" OnRowCommand="grdCamera_RowCommand" DataKeyNames="CameraID">
-                            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                            <Columns>
-                                <asp:BoundField DataField="CameraID" HeaderText="CameraID" />
-                                <asp:BoundField DataField="FacilityID" HeaderText=" Facility Name" />
-                                <asp:BoundField DataField="IPAddress" HeaderText="Camera IP Address" />
-                                <asp:BoundField DataField="MinimumDensity" HeaderText="Minimum Density" />
-                                <asp:BoundField DataField="MaximumDensity" HeaderText="Maximum Density" />
-                                <asp:CommandField ShowDeleteButton="True" />
-                                <asp:ButtonField ButtonType="Button" CommandName="Update" Text="Update" />
-                            </Columns>
-                            <EditRowStyle BackColor="#999999" />
-                            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                            <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                            <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                            <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                        </asp:GridView>
                         <br />
 
                     </div>

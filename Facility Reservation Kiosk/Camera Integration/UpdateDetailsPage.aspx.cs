@@ -51,7 +51,9 @@ namespace Camera_Integration
             }
 
         }
-        protected void btnConfirm_Click1(object sender, EventArgs e)
+      
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
         {
             string ID = Request.QueryString["CameraID"];
 
@@ -92,8 +94,8 @@ namespace Camera_Integration
                 }
                 lblUpdate.Text = "Record Update Successfully";
             }
-
-
         }
+
+        
     }
 }
