@@ -21,27 +21,51 @@ namespace RetrieveCameraData
                {
                    Console.WriteLine(cam.CameraID);
 
-                   //insert into VideoAnalytics Table
-                   //Console.WriteLine("Create New VideoAnalytics Record");
-                   
+                   //insert into VideoAnalytics Table                                   
                    VideoAnalytic video = new VideoAnalytic();
                    video.CameraID = cam.CameraID;
                    video.IPAddress = cam.IPAddress;
                    video.CrowdDensity = 15;
                    video.SnapshotFile = "";
                    db.VideoAnalytics.Add(video);
-                                
+                   db.SaveChanges();             
                                         
                }
                Console.WriteLine("VideoAnalytics Record Added");
+
            }
 
 
-
-            DateTime time = DateTime.Now; //use current time 
-            string format = "d MMM yyyy ddd HH:mm"; //use this format
+           
+            DateTime time = DateTime.Now; 
+            string format = "d MMM yyyy ddd HH:mm"; 
             Console.WriteLine(time.ToString(format));
-            
+
+             //Logging 
+            string year = DateTime.Now.Year.ToString();
+            string month = DateTime.Now.Month.ToString();
+            string day = DateTime.Now.Day.ToString();
+
+            string datetime =  DateTime.Now.ToString();
+            string full = "[Executed on " + datetime + " ]";
+
+            string path = "c:\\Log\\RetrieveCameraData-" + year + "-" + month + "-" + day + ".txt";
+
+            StreamWriter log;
+
+            if (!File.Exists("RetrieveCameraData-" + year + "-" + month + "-" + day + ".txt") )
+            {
+                log = new StreamWriter("RetrieveCameraData-" + year + "-" + month + "-" + day + ".txt");
+            }
+            else
+            {
+                log = File.AppendText("RetrieveCameraData-" + year + "-" + month + "-" + day + ".txt");
+            }
+
+            log.WriteLine(DateTime.Now);
+            log.WriteLine();
+
+            log.Close();
         }
 
         //public class KioskContext : DbContext
