@@ -67,13 +67,13 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.TextBox txtIpAddress;
         
         /// <summary>
-        /// RequiredIpAddress control.
+        /// IPAddressValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredIpAddress;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator IPAddressValidator;
         
         /// <summary>
         /// Label4 control.
@@ -94,13 +94,22 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.TextBox txtMinDensity;
         
         /// <summary>
-        /// RequiredMinDensity control.
+        /// MinDenValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredMinDensity;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator MinDenValidator;
+        
+        /// <summary>
+        /// MinRangeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator MinRangeValidator;
         
         /// <summary>
         /// Label5 control.
@@ -121,13 +130,22 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.TextBox txtMaxDensity;
         
         /// <summary>
-        /// RequiredMaxDensity control.
+        /// MaxDenValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredMaxDensity;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator MaxDenValidator;
+        
+        /// <summary>
+        /// MaxRangeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator MaxRangeValidator;
         
         /// <summary>
         /// btnConfirm control.

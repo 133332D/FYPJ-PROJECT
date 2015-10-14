@@ -12,11 +12,12 @@ namespace Camera_Integration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindDDL();
-
-            if (Request.QueryString["CameraID"] != null)
+          
+            if (!IsPostBack)           
             {
-                if (!IsPostBack)
+                BindDDL();
+
+                if (Request.QueryString["CameraID"] != null)
                 {
                     lblCam.Text = Request.QueryString["CameraID"];
 
