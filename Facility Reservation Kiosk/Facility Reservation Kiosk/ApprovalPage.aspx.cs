@@ -20,7 +20,7 @@ namespace Facility_Reservation_Kiosk
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            int ID = System.Convert.ToInt32(lblDeviceID.Text);
+            //int ID = System.Convert.ToInt32(lblDeviceID.Text);
           
             using (var db = new FacilityReservationKioskEntities())
             {
@@ -28,7 +28,7 @@ namespace Facility_Reservation_Kiosk
 
                 try
                 {
-                    Device device = db.Devices.Find(ID);
+                    Device device = db.Devices.Find(lblDeviceID.Text);
 
                     //Modify fields
                     device.Description = tbDescription.Text;

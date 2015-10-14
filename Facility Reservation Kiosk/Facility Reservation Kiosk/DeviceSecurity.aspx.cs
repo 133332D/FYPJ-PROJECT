@@ -20,11 +20,11 @@ namespace Facility_Reservation_Kiosk
         {
             if (txtSearch.Text == "")
             {
-                                
+
                 using (var db = new FacilityReservationKioskEntities())
                 {
                     //Basic select query from a single table 
-                    var Search = from b in db.Devices select new { b.DeviceID, b.DeviceGeneratedUniqueID, b.Status, b.Description, b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason };
+                    var Search = from b in db.Devices select new { b.DeviceID, b.Status, b.Description, b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason };
 
                     //Loop through to print out
                     GridViewSearch.DataSource = Search.ToList();
@@ -36,13 +36,13 @@ namespace Facility_Reservation_Kiosk
             {
                 {
 
-                    //int search = System.Convert.ToInt32(txtSearch.Text);
+                    int search = System.Convert.ToInt32(txtSearch.Text);
 
 
                     using (var db = new FacilityReservationKioskEntities())
                     {
                         //Basic select query from a single table
-                        var Search = from b in db.Devices where b.DeviceGeneratedUniqueID.Contains(txtSearch.Text) orderby b.DeviceGeneratedUniqueID select new { b.DeviceID, b.DeviceGeneratedUniqueID, b.Status, b.Description , b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason };
+                        var Search = from b in db.Devices where b.DeviceID == search orderby b.DeviceID select new { b.DeviceID, b.Status, b.ApprovedDateTime, b.RejectedOrRevokedDateTime, b.RejectedOrRevokedReason, b.Description };
 
                         //Loop through to print out 
                         GridViewSearch.DataSource = Search.ToList();
@@ -52,32 +52,9 @@ namespace Facility_Reservation_Kiosk
                 }
             }
         }
-
-        protected void GridViewSearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-
-
-        protected void LinkBtnRevoke_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Revoke.aspx?searchID=" + txtSearch.Text);
-        }
-        protected void GridViewSearch_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            /*if (e.CommandName.CompareTo("Approve") == 0)
-            {
-                Response.Redirect("ApprovalPage.aspx?searchID=" + txtSearch.Text);
-               
-            }
             
-            if (e.CommandName.CompareTo("Reject") == 0)
-            {
-                Response.Redirect("RejectPage.aspx?searchID=" + txtSearch.Text);
-            }*/
+       
 
-        }
-      
         protected void GridViewSearch_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             string status = e.Row.Cells[1].Text;
@@ -198,6 +175,6 @@ namespace Facility_Reservation_Kiosk
         //    }
         //}
 
-       
+
     }
 }
