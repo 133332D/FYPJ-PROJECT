@@ -33,6 +33,7 @@ namespace RetrieveCameraData
                }
                Console.WriteLine("VideoAnalytics Record Added");
 
+
            }
 
 
