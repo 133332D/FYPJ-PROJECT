@@ -15,10 +15,18 @@ namespace AutoCancelReservation
         {
             using (var db = new FacilityReservationKioskEntities())
             {
-                if( !db.FacilityReservations.Any())
-                {
+                var reservations = from r in db.FacilityReservations
+                          where r.StartDateTime<DateTime.Now.AddMinutes(-15) && DateTime.Now < r.EndDateTime
+                          select r;
 
+                foreach (var facreservation in db.FacilityReservations)
+                {
+                    
                 }
+
+                          
+                        
+                                     
             }
 
             DateTime time = DateTime.Now;

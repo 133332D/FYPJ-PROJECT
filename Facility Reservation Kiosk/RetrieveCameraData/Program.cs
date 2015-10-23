@@ -14,22 +14,25 @@ namespace RetrieveCameraData
     {
         static void Main(string[] args)
         {
+            Random rnd = new Random();
+
             using (var db = new FacilityReservationKioskEntities1())
            {
                var camera = db.Cameras.ToList();
                foreach (var cam in camera)
                {
-                   Console.WriteLine(cam.CameraID);
+                   Console.WriteLine("CameraID:" + cam.CameraID);
 
-                   //insert into VideoAnalytics Table                                   
+                   //insert into VideoAnalytics Table                
                    VideoAnalytic video = new VideoAnalytic();
                    video.CameraID = cam.CameraID;
                    video.IPAddress = cam.IPAddress;
-                   video.CrowdDensity = 15;
+                   float CrowdDensity = rnd.Next((int)(cam.MinimumDensity ?? 0) , (int)(cam.MaximumDensity ?? 0));
                    video.SnapshotFile = "";
                    db.VideoAnalytics.Add(video);
-                   db.SaveChanges();             
-                                        
+                   db.SaveChanges();
+                   
+
                }
                Console.WriteLine("VideoAnalytics Record Added");
 
