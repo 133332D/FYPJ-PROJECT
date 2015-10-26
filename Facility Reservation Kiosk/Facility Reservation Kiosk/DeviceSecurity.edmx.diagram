@@ -9,6 +9,8 @@
         <EntityTypeShape EntityType="FacilityReservationKioskModel.DepartmentFilter" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="FacilityReservationKioskModel.Device" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="FacilityReservationKioskModel.FK_Device_DepartmentFilters" ManuallyRouted="false" />
+        <AssociationConnector Association="FacilityReservationKioskModel.FK_DepartmentFilters_Department" />
+        <AssociationConnector Association="FacilityReservationKioskModel.FK_Device_Department" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
