@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.SqlServer;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -67,8 +68,6 @@ namespace IPadKioskWebService
             {
                 DateTime dateToday = DateTime.Today;
 
-                //not sure if it really retuns a result
-                //don't work
                 using (var db = new KioskContext())
                 {
                     var facilityRes = from fr in db.FacilityReservations
@@ -144,7 +143,25 @@ namespace IPadKioskWebService
 
                 //Serialize into json format output (string)
                 string json = JsonConvert.SerializeObject(sqlResList, Formatting.Indented);
+                
+                //logging
+                string year = DateTime.Now.Year.ToString();
+                string month = DateTime.Now.Month.ToString();
+                string day = DateTime.Now.Day.ToString();
 
+                string fulldateTime = DateTime.Now.ToString();
+                string full = "[Executed on " + fulldateTime + " ]";
+
+                string path = "c:\\LogTest\\GetFacilityReservations-" + year + "-" + month + "-" + day + ".txt";
+                string line = "-----------------------------------------------------";
+
+                using (StreamWriter file = (File.Exists(path)) ? File.AppendText(path) : File.CreateText(path))
+                {
+                    file.WriteLine(full);
+                    file.WriteLine(line);
+
+                    file.Close();
+                }
 
                 //codes to pass back the json string to the iPad
                 Response.Write(json);
