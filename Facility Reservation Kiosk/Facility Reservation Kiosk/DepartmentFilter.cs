@@ -29,5 +29,6 @@ namespace Facility_Reservation_Kiosk
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Device> Devices { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

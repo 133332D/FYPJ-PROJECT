@@ -79,22 +79,7 @@ namespace Camera_Integration
 
                 lblUpdate.Text = "Record Update Successfully";
             }
-            else
-            {
-                using (var db = new FacilityReservationKioskEntities())
-                {
-                    //create new camera
-                    Camera camera = new Camera();
-                    camera.FacilityID = ddlFacility.SelectedValue;
-                    camera.IPAddress = txtIpAddress.Text;
-                    camera.MinimumDensity = float.Parse(txtMinDensity.Text);
-                    camera.MaximumDensity = float.Parse(txtMaxDensity.Text);
-                    db.Cameras.Add(camera);
-                    db.SaveChanges();
-
-                }
-                lblUpdate.Text = "Record Update Successfully";
-            }
+            
         }
 
         

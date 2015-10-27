@@ -1,6 +1,6 @@
-﻿<%@ Page  EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="UpdateDetailsPage.aspx.cs" Inherits="Camera_Integration.UpdateDetailsPage" %>
+﻿<%@ Page  EnableEventValidation="false"  Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Create Details.aspx.cs" Inherits="Camera_Integration.Create_Details" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    </asp:Content>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager runat="server"></asp:ScriptManager>
 
@@ -69,7 +69,7 @@
                 <!-- /.sidebar -->
             </aside>
      <section class="content-header">
-        <h1>Update&nbsp; Camera
+        <h1>Create Camera
             &nbsp;
           &nbsp;
           &nbsp;
@@ -89,10 +89,6 @@
                     <div class="box-body">
                         <div class="row">
                             <div class="col-sm-12">
-                                <asp:Label ID="Label1" runat="server" Text="Camera ID :"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Label ID="lblCam" runat="server" ForeColor="#0033CC" Font-Bold="True"></asp:Label>
-                                <br />
                                 <br />
                                 <asp:Label ID="Label2" runat="server" Text="Facility ID : "></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -106,6 +102,8 @@
                                 <asp:TextBox ID="txtIpAddress" runat="server"></asp:TextBox>
                                 <br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:RequiredFieldValidator ID="IPAddressValidator" runat="server" ControlToValidate="txtIpAddress" ErrorMessage="Camera IP Address cannot be blank." ForeColor="Red"></asp:RequiredFieldValidator>
+                                <br />
                                 <br />
                                 <br />
                                 <asp:Label ID="Label4" runat="server" Text="Minimum Density :"></asp:Label>
@@ -113,23 +111,29 @@
                                 <asp:TextBox ID="txtMinDensity" runat="server"></asp:TextBox>
                                 <br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:RequiredFieldValidator ID="MinDenValidator" runat="server" ControlToValidate="txtMinDensity" ErrorMessage="Minimum Density cannot be blank." ForeColor="Red"></asp:RequiredFieldValidator>
                                 <br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:RangeValidator ID="MinRangeValidator" runat="server" ControlToValidate="txtMinDensity" ErrorMessage="Please enter a valid number between 1 - 100." ForeColor="Red" MaximumValue="100" MinimumValue="1" Type="Double"></asp:RangeValidator>
+                                <br />
                                 <br />
                                 <asp:Label ID="Label5" runat="server" Text="Maximum Density :"></asp:Label>
 &nbsp;&nbsp;
                                 <asp:TextBox ID="txtMaxDensity" runat="server"></asp:TextBox>
                                 <br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:RequiredFieldValidator ID="MaxDenValidator" runat="server" ControlToValidate="txtMaxDensity" ErrorMessage="Maximum Density cannot be blank." ForeColor="Red"></asp:RequiredFieldValidator>
                                 <br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:RangeValidator ID="MaxRangeValidator" runat="server" ControlToValidate="txtMaxDensity" ErrorMessage="Please enter a valid number between 1 - 100." ForeColor="Red" MaximumValue="100" MinimumValue="1" Type="Double"></asp:RangeValidator>
+                                <br />
                                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="btnConfirm" runat="server" OnClick="btnConfirm_Click" Text="Update Confirm" Width="159px" />
+                                <asp:Button ID="btnCreate" runat="server" OnClick="btnCreate_Click" Text="Create Confirm" Width="152px" />
                                 <br />
                                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Label ID="lblUpdate" runat="server" ForeColor="#0033CC" Font-Bold="True"></asp:Label>
+                                <asp:Label ID="lblCreate" runat="server" ForeColor="#0033CC" Font-Bold="True"></asp:Label>
      </div>
       </div>
       </div>
@@ -137,4 +141,6 @@
      </div>
  </div>
 </section>
+
+
 </asp:Content>

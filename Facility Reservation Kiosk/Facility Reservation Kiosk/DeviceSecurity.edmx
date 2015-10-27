@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FacilityReservationKioskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FacilityReservationKioskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Department">
           <Key>
             <PropertyRef Name="DepartmentID" />
@@ -38,6 +38,30 @@
           <Property Name="RejectedOrRevokedReason" Type="nvarchar" MaxLength="255" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <Association Name="FK_DepartmentFilters_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="DepartmentFilters" Type="Self.DepartmentFilters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="DepartmentFilters">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Device_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Device" Type="Self.Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Device_DepartmentFilters">
           <End Role="DepartmentFilters" Type="Self.DepartmentFilters" Multiplicity="0..1" />
           <End Role="Device" Type="Self.Device" Multiplicity="*" />
@@ -54,13 +78,20 @@
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DepartmentFilters" EntityType="Self.DepartmentFilters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DepartmentFilters_Department" Association="Self.FK_DepartmentFilters_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="DepartmentFilters" EntitySet="DepartmentFilters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Device_Department" Association="Self.FK_Device_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Device" EntitySet="Device" />
+          </AssociationSet>
           <AssociationSet Name="FK_Device_DepartmentFilters" Association="Self.FK_Device_DepartmentFilters">
             <End Role="DepartmentFilters" EntitySet="DepartmentFilters" />
             <End Role="Device" EntitySet="Device" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FacilityReservationKioskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -70,6 +101,8 @@
           </Key>
           <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DepartmentFilters" Relationship="FacilityReservationKioskModel.FK_DepartmentFilters_Department" FromRole="Department" ToRole="DepartmentFilter" />
+          <NavigationProperty Name="Devices" Relationship="FacilityReservationKioskModel.FK_Device_Department" FromRole="Department" ToRole="Device" />
         </EntityType>
         <EntityType Name="DepartmentFilter">
           <Key>
@@ -82,6 +115,7 @@
           <Property Name="Level" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Devices" Relationship="Self.FK_Device_DepartmentFilters" FromRole="DepartmentFilters" ToRole="Device" />
+          <NavigationProperty Name="Department" Relationship="FacilityReservationKioskModel.FK_DepartmentFilters_Department" FromRole="DepartmentFilter" ToRole="Department" />
         </EntityType>
         <EntityType Name="Device">
           <Key>
@@ -98,6 +132,7 @@
           <Property Name="RejectedOrRevokedReason" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DepartmentFilter" Relationship="Self.FK_Device_DepartmentFilters" FromRole="Device" ToRole="DepartmentFilters" />
+          <NavigationProperty Name="Department" Relationship="FacilityReservationKioskModel.FK_Device_Department" FromRole="Device" ToRole="Department" />
         </EntityType>
         <Association Name="FK_Device_DepartmentFilters">
           <End Role="DepartmentFilters" Type="Self.DepartmentFilter" Multiplicity="0..1" />
@@ -119,7 +154,39 @@
             <End Role="DepartmentFilters" EntitySet="DepartmentFilters" />
             <End Role="Device" EntitySet="Devices" />
           </AssociationSet>
+          <AssociationSet Name="FK_DepartmentFilters_Department" Association="FacilityReservationKioskModel.FK_DepartmentFilters_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="DepartmentFilter" EntitySet="DepartmentFilters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Device_Department" Association="FacilityReservationKioskModel.FK_Device_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Device" EntitySet="Devices" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_DepartmentFilters_Department">
+          <End Type="FacilityReservationKioskModel.Department" Role="Department" Multiplicity="0..1" />
+          <End Type="FacilityReservationKioskModel.DepartmentFilter" Role="DepartmentFilter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="DepartmentFilter">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Device_Department">
+          <End Type="FacilityReservationKioskModel.Department" Role="Department" Multiplicity="0..1" />
+          <End Type="FacilityReservationKioskModel.Device" Role="Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

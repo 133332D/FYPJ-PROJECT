@@ -74,6 +74,7 @@
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\npm.js" />
+    <Content Include="Create Details.aspx" />
     <Content Include="UpdateDetailsPage.aspx" />
     <Content Include="ModuleSearch.aspx" />
     <Content Include="packages\AjaxControlToolkit.15.1.2.0\lib\net40\AjaxControlToolkit.dll" />
@@ -808,6 +809,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Camera.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Create Details.aspx.cs">
+      <DependentUpon>Create Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create Details.aspx.designer.cs">
+      <DependentUpon>Create Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateDetailsPage.aspx.cs">
       <DependentUpon>UpdateDetailsPage.aspx</DependentUpon>

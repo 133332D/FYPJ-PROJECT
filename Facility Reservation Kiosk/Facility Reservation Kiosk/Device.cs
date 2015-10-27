@@ -26,5 +26,6 @@ namespace Facility_Reservation_Kiosk
         public string Description { get; set; }
     
         public virtual DepartmentFilter DepartmentFilter { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

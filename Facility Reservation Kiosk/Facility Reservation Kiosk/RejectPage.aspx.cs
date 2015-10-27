@@ -19,24 +19,30 @@ namespace Facility_Reservation_Kiosk
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-
-
-            int ID = System.Convert.ToInt32(lbDeviceID.Text);
-
-            using (var db = new FacilityReservationKioskEntities())
+            if (tbReason.Text == "")
             {
-                Device device = db.Devices.Find(ID);
-
-                //Modify fields
-                device.Status = "REJ";
-                device.RejectedOrRevokedDateTime = DateTime.Now;
-                device.RejectedOrRevokedReason = tbReason.Text;
-
-
-                db.SaveChanges();
+                lblMsg.Text = "Please enter reject reason!";
             }
 
-            lblMsg.Text = "Device rejected";
+            else
+            {
+                int ID = System.Convert.ToInt32(lbDeviceID.Text);
+
+                using (var db = new FacilityReservationKioskEntities())
+                {
+                    Device device = db.Devices.Find(ID);
+
+                    //Modify fields
+                    device.Status = "REJ";
+                    device.RejectedOrRevokedDateTime = DateTime.Now;
+                    device.RejectedOrRevokedReason = tbReason.Text;
+
+
+                    db.SaveChanges();
+                }
+
+                lblMsg.Text = "Device rejected";
+            }
             
         }
     }

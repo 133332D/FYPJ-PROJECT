@@ -14,7 +14,19 @@ namespace Facility_Reservation_Kiosk
     
     public partial class Department
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Department()
+        {
+            this.DepartmentFilters = new HashSet<DepartmentFilter>();
+            this.Devices = new HashSet<Device>();
+        }
+    
         public string DepartmentID { get; set; }
         public string Description { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DepartmentFilter> DepartmentFilters { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Device> Devices { get; set; }
     }
 }

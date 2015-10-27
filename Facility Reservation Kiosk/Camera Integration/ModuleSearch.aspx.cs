@@ -61,7 +61,7 @@ namespace Camera_Integration
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            Response.Redirect("UpdateDetailsPage.aspx");
+            Response.Redirect("Create Details.aspx");
         }
 
         protected void GrdCamera_PageIndexChanging(object sender, GridViewPageEventArgs e)

@@ -29,10 +29,10 @@
           <Key>
             <PropertyRef Name="VideoAnalyticsID" />
           </Key>
-          <Property Name="VideoAnalyticsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VideoAnalyticsID" Type="int" Nullable="false" />
           <Property Name="CameraID" Type="int" />
-          <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
           <Property Name="CrowdDensity" Type="float" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
           <Property Name="SnapshotFile" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <Association Name="FK_VideoAnalytics_Camera">
