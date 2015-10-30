@@ -28,5 +28,6 @@ namespace AutoCancelReservation
         public virtual DbSet<Facility> Facilities { get; set; }
         public virtual DbSet<FacilityReservation> FacilityReservations { get; set; }
         public virtual DbSet<VideoAnalytic> VideoAnalytics { get; set; }
+        public virtual DbSet<Camera> Cameras { get; set; }
     }
 }

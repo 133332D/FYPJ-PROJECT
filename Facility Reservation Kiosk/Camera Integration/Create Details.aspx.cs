@@ -11,7 +11,11 @@ namespace Camera_Integration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindDDL();
+            if (!IsPostBack)
+            {
+                BindDDL();
+            }
+           
         }
 
         private void BindDDL()
@@ -30,6 +34,7 @@ namespace Camera_Integration
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
+          
             using (var db = new FacilityReservationKioskEntities())
             {
                 //create new camera
@@ -43,5 +48,11 @@ namespace Camera_Integration
             }
             lblCreate.Text = "Create Record Successful";
         }
+
+       
+      
+        
+     
+        
     }
 }

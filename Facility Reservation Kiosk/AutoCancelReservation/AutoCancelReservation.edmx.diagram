@@ -9,6 +9,9 @@
         <EntityTypeShape EntityType="FacilityReservationKioskModel.FacilityReservation" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FacilityReservationKioskModel.VideoAnalytic" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="FacilityReservationKioskModel.FK_FacilityReservation_Facility" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FacilityReservationKioskModel.Camera" Width="1.5" PointX="3" PointY="5.875" />
+        <AssociationConnector Association="FacilityReservationKioskModel.FK_Camera_Facility" />
+        <AssociationConnector Association="FacilityReservationKioskModel.FK_VideoAnalytics_Camera" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -25,6 +25,7 @@ namespace RetrieveCameraData
 
                    //insert into VideoAnalytics Table                
                    VideoAnalytic video = new VideoAnalytic();
+                   video.DateTime = DateTime.Now;
                    video.CameraID = cam.CameraID;
                    video.IPAddress = cam.IPAddress;
                    float CrowdDensity = rnd.Next((int)(cam.MinimumDensity ?? 0) , (int)(cam.MaximumDensity ?? 0));
@@ -38,8 +39,6 @@ namespace RetrieveCameraData
 
 
            }
-
-
            
             DateTime time = DateTime.Now; 
             string format = "d MMM yyyy ddd HH:mm"; 

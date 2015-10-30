@@ -21,8 +21,25 @@ namespace AutoCancelReservation
 
                 foreach (var facreservation in db.FacilityReservations)
                 {
-                    
+                    var listofcameras = from c in db.Cameras
+                                        where c.FacilityID == facreservation.FacilityID
+                                        select c;
+
+                    foreach (var camera in listofcameras)
+                    {
+                        var video = from v in db.VideoAnalytics
+                                    where v.CameraID == camera.CameraID && v.DateTime >= DateTime.Now.AddMinutes(-15)
+                                    select v;   
+
+                    }
+
+                    var avg = (from video in db.VideoAnalytics
+                               select video.CrowdDensity).Average();
+
+                   
+                                        
                 }
+                
 
                           
                         

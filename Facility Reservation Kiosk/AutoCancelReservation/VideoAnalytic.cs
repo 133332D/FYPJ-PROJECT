@@ -19,5 +19,8 @@ namespace AutoCancelReservation
         public string IPAddress { get; set; }
         public Nullable<double> CrowdDensity { get; set; }
         public string SnapshotFile { get; set; }
+        public Nullable<System.DateTime> DateTime { get; set; }
+    
+        public virtual Camera Camera { get; set; }
     }
 }
