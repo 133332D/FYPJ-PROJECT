@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace Camera_Integration
 {
@@ -34,7 +37,7 @@ namespace Camera_Integration
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-          
+               
             using (var db = new FacilityReservationKioskEntities())
             {
                 //create new camera
@@ -49,6 +52,7 @@ namespace Camera_Integration
             lblCreate.Text = "Create Record Successful";
         }
 
+        
        
       
         

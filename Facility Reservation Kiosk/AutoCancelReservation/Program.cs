@@ -33,15 +33,17 @@ namespace AutoCancelReservation
 
                     }
 
-                    var avg = (from video in db.VideoAnalytics
-                               select video.CrowdDensity).Average();
+                    var averageDensity = (from v in db.VideoAnalytics
+                                          select v.CrowdDensity).Average();
 
+                    var maxDensity = db.VideoAnalytics.Max(m => m.CrowdDensity);
+
+                    var distanceaverage = maxDensity - averageDensity;
+                     
                    
                                         
                 }
-                
-
-                          
+                                         
                         
                                      
             }

@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="CameraID" />
           </Key>
-          <Property Name="CameraID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CameraID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="DepartmentID" Type="varchar" MaxLength="10" />
           <Property Name="FacilityID" Type="varchar" MaxLength="10" />
           <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
