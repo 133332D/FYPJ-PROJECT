@@ -85,15 +85,6 @@ namespace Camera_Integration {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator MinDenValidator;
         
         /// <summary>
-        /// MinRangeValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator MinRangeValidator;
-        
-        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -119,15 +110,6 @@ namespace Camera_Integration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator MaxDenValidator;
-        
-        /// <summary>
-        /// MaxRangeValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator MaxRangeValidator;
         
         /// <summary>
         /// btnCreate control.

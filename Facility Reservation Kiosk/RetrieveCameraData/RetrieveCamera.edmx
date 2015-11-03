@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="CameraID" />
           </Key>
-          <Property Name="CameraID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CameraID" Type="int" Nullable="false" />
           <Property Name="DepartmentID" Type="varchar" MaxLength="10" />
           <Property Name="FacilityID" Type="varchar" MaxLength="10" />
           <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
@@ -34,6 +34,7 @@
           <Property Name="CrowdDensity" Type="float" />
           <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
           <Property Name="SnapshotFile" Type="nvarchar" MaxLength="100" />
+          <Property Name="DateTime" Type="datetime" />
         </EntityType>
         <Association Name="FK_VideoAnalytics_Camera">
           <End Role="Camera" Type="Self.Camera" Multiplicity="0..1" />
@@ -91,6 +92,7 @@
           <Property Name="CrowdDensity" Type="Double" />
           <Property Name="SnapshotFile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Camera" Relationship="Self.FK_VideoAnalytics_Camera" FromRole="VideoAnalytics" ToRole="Camera" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK_VideoAnalytics_Camera">
           <End Role="Camera" Type="Self.Camera" Multiplicity="0..1" />
@@ -144,6 +146,7 @@
           <EntitySetMapping Name="VideoAnalytics">
             <EntityTypeMapping TypeName="FacilityReservationKioskModel.VideoAnalytic">
               <MappingFragment StoreEntitySet="VideoAnalytics">
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
                 <ScalarProperty Name="VideoAnalyticsID" ColumnName="VideoAnalyticsID" />
                 <ScalarProperty Name="CameraID" ColumnName="CameraID" />
                 <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />

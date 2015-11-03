@@ -67,6 +67,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AutoCancelReservation.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Camera.cs">
+      <DependentUpon>AutoCancelReservation.tt</DependentUpon>
+    </Compile>
     <Compile Include="Facility.cs">
       <DependentUpon>AutoCancelReservation.tt</DependentUpon>
     </Compile>

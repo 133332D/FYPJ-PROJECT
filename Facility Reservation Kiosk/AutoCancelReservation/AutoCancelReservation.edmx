@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="FacilityReservationKioskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Camera">
+          <Key>
+            <PropertyRef Name="CameraID" />
+          </Key>
+          <Property Name="CameraID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentID" Type="varchar" MaxLength="10" />
+          <Property Name="FacilityID" Type="varchar" MaxLength="10" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="MinimumDensity" Type="float" />
+          <Property Name="MaximumDensity" Type="float" />
+        </EntityType>
         <EntityType Name="Facility">
           <Key>
             <PropertyRef Name="FacilityID" />
@@ -45,7 +56,20 @@
           <Property Name="CrowdDensity" Type="float" />
           <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
           <Property Name="SnapshotFile" Type="nvarchar" MaxLength="100" />
+          <Property Name="DateTime" Type="datetime" />
         </EntityType>
+        <Association Name="FK_Camera_Facility">
+          <End Role="Facility" Type="Self.Facility" Multiplicity="0..1" />
+          <End Role="Camera" Type="Self.Camera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facility">
+              <PropertyRef Name="FacilityID" />
+            </Principal>
+            <Dependent Role="Camera">
+              <PropertyRef Name="FacilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_FacilityReservation_Facility">
           <End Role="Facility" Type="Self.Facility" Multiplicity="0..1" />
           <End Role="FacilityReservation" Type="Self.FacilityReservation" Multiplicity="*" />
@@ -58,13 +82,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VideoAnalytics_Camera">
+          <End Role="Camera" Type="Self.Camera" Multiplicity="0..1" />
+          <End Role="VideoAnalytics" Type="Self.VideoAnalytics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Camera">
+              <PropertyRef Name="CameraID" />
+            </Principal>
+            <Dependent Role="VideoAnalytics">
+              <PropertyRef Name="CameraID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="FacilityReservationKioskModelStoreContainer">
+          <EntitySet Name="Camera" EntityType="Self.Camera" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facility" EntityType="Self.Facility" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FacilityReservation" EntityType="Self.FacilityReservation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VideoAnalytics" EntityType="Self.VideoAnalytics" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Camera_Facility" Association="Self.FK_Camera_Facility">
+            <End Role="Facility" EntitySet="Facility" />
+            <End Role="Camera" EntitySet="Camera" />
+          </AssociationSet>
           <AssociationSet Name="FK_FacilityReservation_Facility" Association="Self.FK_FacilityReservation_Facility">
             <End Role="Facility" EntitySet="Facility" />
             <End Role="FacilityReservation" EntitySet="FacilityReservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VideoAnalytics_Camera" Association="Self.FK_VideoAnalytics_Camera">
+            <End Role="Camera" EntitySet="Camera" />
+            <End Role="VideoAnalytics" EntitySet="VideoAnalytics" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -91,6 +136,7 @@
           <Property Name="MinBkTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MinBkUnits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="FacilityReservations" Relationship="Self.FK_FacilityReservation_Facility" FromRole="Facility" ToRole="FacilityReservation" />
+          <NavigationProperty Name="Cameras" Relationship="FacilityReservationKioskModel.FK_Camera_Facility" FromRole="Facility" ToRole="Camera" />
         </EntityType>
         <EntityType Name="FacilityReservation">
           <Key>
@@ -113,6 +159,8 @@
           <Property Name="IPAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="CrowdDensity" Type="Double" />
           <Property Name="SnapshotFile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Camera" Relationship="FacilityReservationKioskModel.FK_VideoAnalytics_Camera" FromRole="VideoAnalytic" ToRole="Camera" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK_FacilityReservation_Facility">
           <End Role="Facility" Type="Self.Facility" Multiplicity="0..1" />
@@ -134,7 +182,53 @@
             <End Role="Facility" EntitySet="Facilities" />
             <End Role="FacilityReservation" EntitySet="FacilityReservations" />
           </AssociationSet>
+          <EntitySet Name="Cameras" EntityType="FacilityReservationKioskModel.Camera" />
+          <AssociationSet Name="FK_Camera_Facility" Association="FacilityReservationKioskModel.FK_Camera_Facility">
+            <End Role="Facility" EntitySet="Facilities" />
+            <End Role="Camera" EntitySet="Cameras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VideoAnalytics_Camera" Association="FacilityReservationKioskModel.FK_VideoAnalytics_Camera">
+            <End Role="Camera" EntitySet="Cameras" />
+            <End Role="VideoAnalytic" EntitySet="VideoAnalytics" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Camera">
+          <Key>
+            <PropertyRef Name="CameraID" />
+          </Key>
+          <Property Name="CameraID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FacilityID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MinimumDensity" Type="Double" />
+          <Property Name="MaximumDensity" Type="Double" />
+          <NavigationProperty Name="Facility" Relationship="FacilityReservationKioskModel.FK_Camera_Facility" FromRole="Camera" ToRole="Facility" />
+          <NavigationProperty Name="VideoAnalytics" Relationship="FacilityReservationKioskModel.FK_VideoAnalytics_Camera" FromRole="Camera" ToRole="VideoAnalytic" />
+        </EntityType>
+        <Association Name="FK_Camera_Facility">
+          <End Type="FacilityReservationKioskModel.Facility" Role="Facility" Multiplicity="0..1" />
+          <End Type="FacilityReservationKioskModel.Camera" Role="Camera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facility">
+              <PropertyRef Name="FacilityID" />
+            </Principal>
+            <Dependent Role="Camera">
+              <PropertyRef Name="FacilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VideoAnalytics_Camera">
+          <End Type="FacilityReservationKioskModel.Camera" Role="Camera" Multiplicity="0..1" />
+          <End Type="FacilityReservationKioskModel.VideoAnalytic" Role="VideoAnalytic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Camera">
+              <PropertyRef Name="CameraID" />
+            </Principal>
+            <Dependent Role="VideoAnalytic">
+              <PropertyRef Name="CameraID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -177,11 +271,24 @@
           <EntitySetMapping Name="VideoAnalytics">
             <EntityTypeMapping TypeName="FacilityReservationKioskModel.VideoAnalytic">
               <MappingFragment StoreEntitySet="VideoAnalytics">
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
                 <ScalarProperty Name="VideoAnalyticsID" ColumnName="VideoAnalyticsID" />
                 <ScalarProperty Name="CameraID" ColumnName="CameraID" />
                 <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
                 <ScalarProperty Name="CrowdDensity" ColumnName="CrowdDensity" />
                 <ScalarProperty Name="SnapshotFile" ColumnName="SnapshotFile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cameras">
+            <EntityTypeMapping TypeName="FacilityReservationKioskModel.Camera">
+              <MappingFragment StoreEntitySet="Camera">
+                <ScalarProperty Name="MaximumDensity" ColumnName="MaximumDensity" />
+                <ScalarProperty Name="MinimumDensity" ColumnName="MinimumDensity" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="CameraID" ColumnName="CameraID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
