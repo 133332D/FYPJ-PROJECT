@@ -77,7 +77,7 @@ namespace IPadKioskWebService
                                     && DbFunctions.TruncateTime(fr.StartDateTime) <= dateToday
                                     && DbFunctions.TruncateTime(fr.EndDateTime) >= dateToday
 
-                                    orderby fr.FacilityReservationID
+                                    orderby fr.FacilityID,fr.StartDateTime
                                     select new
                                     {
                                         fr.FacilityReservationID,
@@ -121,7 +121,7 @@ namespace IPadKioskWebService
                                       && DbFunctions.TruncateTime(fr.StartDateTime) <= datePass
                                       && DbFunctions.TruncateTime(fr.EndDateTime) >= datePass
 
-                                      orderby fr.FacilityReservationID
+                                      orderby fr.FacilityID,fr.StartDateTime
                                       select new
                                       {
                                           fr.FacilityReservationID,
