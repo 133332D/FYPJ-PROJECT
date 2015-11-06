@@ -38,10 +38,11 @@ namespace AutoCancelReservation
 
                     var maxDensity = db.VideoAnalytics.Max(m => m.CrowdDensity);
 
-                    var distanceaverage = maxDensity - averageDensity;
-                     
-                   
-                                        
+                    var minDensity = db.VideoAnalytics.Min(a => a.CrowdDensity);
+
+                    var distanceaverage = maxDensity - averageDensity;  
+              
+                                      
                 }
                                          
                         
