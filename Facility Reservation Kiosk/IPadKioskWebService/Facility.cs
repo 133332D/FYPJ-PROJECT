@@ -18,6 +18,7 @@ namespace IPadKioskWebService
         public Facility()
         {
             this.FacilityReservations = new HashSet<FacilityReservation>();
+            this.Cameras = new HashSet<Camera>();
         }
     
         public string FacilityID { get; set; }
@@ -39,5 +40,7 @@ namespace IPadKioskWebService
         public virtual Department Department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FacilityReservation> FacilityReservations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Camera> Cameras { get; set; }
     }
 }

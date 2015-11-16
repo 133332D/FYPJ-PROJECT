@@ -45,9 +45,7 @@ namespace RetrieveCameraImage
 
             
                       
-            //Decode and Display Response
-           //Console.WriteLine("\nResponseReceived.", System.Text.Encoding.ASCII.GetString(responseArray));
-
+           
         }
     }
 }

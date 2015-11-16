@@ -74,6 +74,7 @@
   <ItemGroup>
     <Content Include="CancelReservation.aspx" />
     <Content Include="CreateReservation.aspx" />
+    <Content Include="GetCameraID.aspx" />
     <Content Include="GetDepartmentFilters.aspx" />
     <Content Include="GetFacilities.aspx" />
     <Content Include="GetFacilityReservations.aspx" />
@@ -116,6 +117,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera.cs">
+      <DependentUpon>IPadKioskModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CancelReservation.aspx.cs">
       <DependentUpon>CancelReservation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -141,6 +145,13 @@
     </Compile>
     <Compile Include="FacilityReservation.cs">
       <DependentUpon>IPadKioskModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCameraID.aspx.cs">
+      <DependentUpon>GetCameraID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetCameraID.aspx.designer.cs">
+      <DependentUpon>GetCameraID.aspx</DependentUpon>
     </Compile>
     <Compile Include="GetDepartmentFilters.aspx.cs">
       <DependentUpon>GetDepartmentFilters.aspx</DependentUpon>
