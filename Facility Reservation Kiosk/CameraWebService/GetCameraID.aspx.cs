@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,16 +17,28 @@ namespace CameraWebService
 
             using (var db = new FacilityReservationKioskEntities())
             {
-                //select from camera where FacilityID = L.431 [QueryString]
-                var camera = from cam in db.Cameras
-                             where cam.FacilityID == FacilityID
-                             select new { cam.FacilityID};
+                //select from camera where FacilityID = L.424 [QueryString]
+                var camera = from c in db.Cameras
+                             where c.FacilityID == FacilityID
+                             select new { c.CameraID};
 
-                //var c = db.Cameras.ToList();
-                //int[] array = { 1, 3, 6, 7 };
-                
-            }
-            
+                 List<string> cameraIDs = new List<string>();
+                foreach (var cam in camera)
+                {
+                    cameraIDs.Add(cam.CameraID.ToString());
+
+                }
+                string cameraIDString = String.Join(",", cameraIDs.ToArray());
+
+
+                //Serialize into json format output (string)
+                //string json = JsonConvert.SerializeObject(Formatting.Indented);
+
+                //return result
+                Response.Write(cameraIDString);
+                Response.End();
+                           
+            }            
         }
     }
 }
