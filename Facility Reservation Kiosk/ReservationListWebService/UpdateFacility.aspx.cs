@@ -57,8 +57,9 @@ namespace ReservationListWebService
                 {
                     //delete the whole FacilityReservation Table
                     db.Database.ExecuteSqlCommand(
-                        "DELETE FacilityReservation FROM Department INNER JOIN Facility ON Department.DepartmentID = Facility.DepartmentID " +
-                            "INNER JOIN FacilityReservation ON Facility.FacilityID = FacilityReservation.FacilityID WHERE Department.DepartmentID = '" + departmentID + "'");
+                        "DELETE FacilityReservation");
+                        //FROM Department INNER JOIN Facility ON Department.DepartmentID = Facility.DepartmentID " +
+                            //"INNER JOIN FacilityReservation ON Facility.FacilityID = FacilityReservation.FacilityID WHERE Department.DepartmentID = '" + departmentID + "'");
 
                     //loop through each reservations and insert into the database
                     //record by record

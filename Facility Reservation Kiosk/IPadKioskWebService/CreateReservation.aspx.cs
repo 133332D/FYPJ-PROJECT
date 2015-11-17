@@ -22,15 +22,13 @@ namespace IPadKioskWebService
             
             //change the date and time info if necessary
             // see what is passed in to to the startDateTime & endDateTime
-            DateTime startDate = DateTime.ParseExact(startDateTime, "dd-mmm-yyyy", CultureInfo.InvariantCulture);
-            DateTime startTime = DateTime.ParseExact(startDateTime, "HH:MM", CultureInfo.InvariantCulture);
-            DateTime endDate = DateTime.ParseExact(startDateTime, "dd-mmm-yyyy", CultureInfo.InvariantCulture);
-            DateTime endTime = DateTime.ParseExact(startDateTime, "HH:MM", CultureInfo.InvariantCulture);
+            DateTime startDate = DateTime.ParseExact(startDateTime, "dd-MMM-yyyy HH:mm", CultureInfo.InvariantCulture);
+            DateTime endDate = DateTime.ParseExact(endDateTime, "dd-MMM-yyyy HH:mm", CultureInfo.InvariantCulture);
 
-            string startDateString = startDate.ToString();
-            string startTimeString = startTime.ToString();
-            string endDateString = endDate.ToString();
-            string endTimeString = endTime.ToString();
+            string startDateString = startDate.ToString("dd-MMM-yyyy");
+            string startTimeString = startDate.ToString("HH:mm");
+            string endDateString = endDate.ToString("dd-MMM-yyyy");
+            string endTimeString = endDate.ToString("HH:mm");
 
             FRSWS.WSfrsClient ws = new FRSWS.WSfrsClient();
 

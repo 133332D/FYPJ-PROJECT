@@ -76,6 +76,8 @@ namespace IPadKioskWebService
                                     && fr.Facility.Name.Contains(name)
                                     && DbFunctions.TruncateTime(fr.StartDateTime) <= dateToday
                                     && DbFunctions.TruncateTime(fr.EndDateTime) >= dateToday
+                                    //set that date time is 8am-6pm
+
 
                                     orderby fr.FacilityID,fr.StartDateTime
                                     select new
@@ -120,6 +122,7 @@ namespace IPadKioskWebService
                                       && fr.Facility.Name.Contains(name)
                                       && DbFunctions.TruncateTime(fr.StartDateTime) <= datePass
                                       && DbFunctions.TruncateTime(fr.EndDateTime) >= datePass
+                                      
 
                                       orderby fr.FacilityID,fr.StartDateTime
                                       select new
