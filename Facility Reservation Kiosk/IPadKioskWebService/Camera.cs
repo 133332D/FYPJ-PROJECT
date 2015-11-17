@@ -20,6 +20,7 @@ namespace IPadKioskWebService
         public string IPAddress { get; set; }
         public Nullable<double> MinimumDensity { get; set; }
         public Nullable<double> MaximumDensity { get; set; }
+        public Nullable<double> CurrentDensity { get; set; }
     
         public virtual Department Department { get; set; }
         public virtual Facility Facility { get; set; }

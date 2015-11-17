@@ -15,6 +15,7 @@
           <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
           <Property Name="MinimumDensity" Type="float" />
           <Property Name="MaximumDensity" Type="float" />
+          <Property Name="CurrentDensity" Type="float" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -306,6 +307,7 @@
           <Property Name="MaximumDensity" Type="Double" />
           <NavigationProperty Name="Department" Relationship="FacilityReservationKioskModel.FK_Camera_Department" FromRole="Camera" ToRole="Department" />
           <NavigationProperty Name="Facility" Relationship="FacilityReservationKioskModel.FK_Camera_Facility" FromRole="Camera" ToRole="Facility" />
+          <Property Name="CurrentDensity" Type="Double" />
         </EntityType>
         <Association Name="FK_Camera_Department">
           <End Type="FacilityReservationKioskModel.Department" Role="Department" Multiplicity="0..1" />
@@ -393,6 +395,7 @@
           <EntitySetMapping Name="Cameras">
             <EntityTypeMapping TypeName="FacilityReservationKioskModel.Camera">
               <MappingFragment StoreEntitySet="Camera">
+                <ScalarProperty Name="CurrentDensity" ColumnName="CurrentDensity" />
                 <ScalarProperty Name="MaximumDensity" ColumnName="MaximumDensity" />
                 <ScalarProperty Name="MinimumDensity" ColumnName="MinimumDensity" />
                 <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
