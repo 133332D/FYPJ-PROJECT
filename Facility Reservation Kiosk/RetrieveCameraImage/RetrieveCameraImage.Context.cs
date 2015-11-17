@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IPadKioskWebService
+namespace RetrieveCameraImage
 {
     using System;
     using System.Data.Entity;
@@ -25,10 +25,7 @@ namespace IPadKioskWebService
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Department> Departments { get; set; }
-        public virtual DbSet<DepartmentFilter> DepartmentFilters { get; set; }
-        public virtual DbSet<Facility> Facilities { get; set; }
-        public virtual DbSet<FacilityReservation> FacilityReservations { get; set; }
         public virtual DbSet<Camera> Cameras { get; set; }
+        public virtual DbSet<CameraReferenceImage> CameraReferenceImages { get; set; }
     }
 }
