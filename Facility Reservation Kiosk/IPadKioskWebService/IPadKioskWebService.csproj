@@ -114,6 +114,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="UpdateCameraDensity.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +195,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCameraDensity.aspx.cs">
+      <DependentUpon>UpdateCameraDensity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateCameraDensity.aspx.designer.cs">
+      <DependentUpon>UpdateCameraDensity.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
