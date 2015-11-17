@@ -23,15 +23,23 @@ namespace IPadKioskWebService
 
                 List<string> cameraIDs = new List<string>();
 
+                float sum = 0;
                 foreach (var cam in camera)
                 {
-                    cameraIDs.Add(cam.CameraID.ToString());
+                    for (int i = 1; i <= 100; i++ )
+                    {
+                       sum =  sum + i;
+                    }
+                        cameraIDs.Add(cam.CameraID.ToString());
                 }
+                float avg = 0;
+                if (cameraIDs.Count() != 0)
+                    avg = sum / cameraIDs.Count();
 
                 string cameraIDString = String.Join(",", cameraIDs.ToArray());
 
                 //return result
-                Response.Write(cameraIDString);
+                Response.Write(cameraIDString + ",d" + avg.ToString());
                 Response.End();
             }
         }
