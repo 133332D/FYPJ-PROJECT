@@ -20,12 +20,33 @@ namespace Facility_Reservation_Kiosk
             //If DeviceID not registered, insert new record 
             using (var db = new FacilityReservationKioskEntities())
             {
-                var register = new Device { Status = "NEW", DeviceGeneratedUniqueID = UniqueID, PublicKey = PublicKey };
-                db.Devices.Add(register);
-                db.SaveChanges();
+                    var register = new Device { Status = "NEW", DeviceGeneratedUniqueID = UniqueID, PublicKey = PublicKey };
+                    db.Devices.Add(register);
+                    db.SaveChanges();
+             
+
+                //Check if data
+                if (db.SaveChanges() > 0)
+                {
+                    //returns ok/error message to caller
+                    Response.Write("{");
+                    Response.Write("     Result: \"OK\",");
+                    Response.Write("     Message: \"This iPad have been registered in the system database, awaiting for approval\"");
+                    Response.Write("}");
+                    Response.End();
+                }
+
+                else
+                {
+                    //returns ok/error message to caller
+                    Response.Write("{");
+                    Response.Write("     Result: \"ERROR\",");
+                    //Response.Write("     Message: \"" + tokens[1] + "\"");
+                    Response.Write("}");
+                    Response.End();
+                }
             }
 
-            //Send verification email to user 
+           }
         }
     }
-}
