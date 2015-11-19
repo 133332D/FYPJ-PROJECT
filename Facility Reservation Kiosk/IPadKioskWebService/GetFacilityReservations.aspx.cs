@@ -67,6 +67,8 @@ namespace IPadKioskWebService
             if( date == "" )
             {
                 DateTime dateToday = DateTime.Today;
+                DateTime dateStart = new DateTime(dateToday.Year, dateToday.Month, dateToday.Day, 08, 00, 00);
+                DateTime dateEnd = new DateTime(dateToday.Year, dateToday.Month, dateToday.Day, 18, 00, 00);
 
                 using (var db = new KioskContext())
                 {
@@ -74,9 +76,9 @@ namespace IPadKioskWebService
                                     where fr.Facility.Department.DepartmentID == departmentID
                                     && fr.Facility.Block.Contains(block) && fr.Facility.Level.Contains(level)
                                     && fr.Facility.Name.Contains(name)
-                                    && DbFunctions.TruncateTime(fr.StartDateTime) <= dateToday
-                                    && DbFunctions.TruncateTime(fr.EndDateTime) >= dateToday
-                                    //set that date time is 8am-6pm
+                                    && fr.StartDateTime >= dateStart
+                                    && fr.EndDateTime <= dateEnd
+                                    
 
 
                                     orderby fr.FacilityID,fr.StartDateTime
@@ -113,6 +115,8 @@ namespace IPadKioskWebService
             {
                 //convert string date to datetime
                 DateTime datePass = DateTime.ParseExact(date, "yyyy-MMM-dd", CultureInfo.InvariantCulture);
+                DateTime dateStart = new DateTime(datePass.Year, datePass.Month, datePass.Day, 08, 00, 00);
+                DateTime dateEnd = new DateTime(datePass.Year, datePass.Month, datePass.Day, 18, 00, 00);
 
                 using (var db = new KioskContext())
                 {
@@ -120,8 +124,8 @@ namespace IPadKioskWebService
                                       where fr.Facility.Department.DepartmentID == departmentID
                                       && fr.Facility.Block.Contains(block) && fr.Facility.Level.Contains(level)
                                       && fr.Facility.Name.Contains(name)
-                                      && DbFunctions.TruncateTime(fr.StartDateTime) <= datePass
-                                      && DbFunctions.TruncateTime(fr.EndDateTime) >= datePass
+                                      && fr.StartDateTime >= dateStart
+                                      && fr.EndDateTime <= dateEnd
                                       
 
                                       orderby fr.FacilityID,fr.StartDateTime
