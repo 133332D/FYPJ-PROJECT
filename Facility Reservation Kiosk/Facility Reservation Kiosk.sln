@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCancelReservation", "Au
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetrieveCameraImage", "RetrieveCameraImage\RetrieveCameraImage.csproj", "{F4A344BB-4287-40BD-A58A-AE3090566084}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetrieveCameraDensity", "RetrieveCameraDensity\RetrieveCameraDensity.csproj", "{F10E3AD7-201C-41B8-A566-0AFC336D324C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{F4A344BB-4287-40BD-A58A-AE3090566084}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4A344BB-4287-40BD-A58A-AE3090566084}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4A344BB-4287-40BD-A58A-AE3090566084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10E3AD7-201C-41B8-A566-0AFC336D324C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10E3AD7-201C-41B8-A566-0AFC336D324C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10E3AD7-201C-41B8-A566-0AFC336D324C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10E3AD7-201C-41B8-A566-0AFC336D324C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,17 +19,14 @@ namespace IPadKioskWebService
                 //select from camera where FacilityID = L.424[QueryString]
                 var camera = from c in db.Cameras
                              where c.FacilityID == FacilityID
-                             select new { c.CameraID };
+                             select new { c.CameraID, c.CurrentDensity };
 
                 List<string> cameraIDs = new List<string>();
 
                 float sum = 0;
                 foreach (var cam in camera)
                 {
-                    for (int i = 1; i <= 100; i++ )
-                    {
-                       sum =  sum + i;
-                    }
+                    sum += (float)(cam.CurrentDensity ?? 0);
                         cameraIDs.Add(cam.CameraID.ToString());
                 }
                 float avg = 0;
