@@ -12,6 +12,17 @@ namespace IPadKioskWebService
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!VerifyData.Verify(Request["_DeviceID"], Request.RawUrl, Request["_SIGN"], Request["_DT"]))
+            {
+                Response.Write("{");
+                Response.Write("     Result: \"ERROR\",");
+                Response.Write("     Message: \"" + "Unable to verify iPad" + "\"");
+                Response.Write("}");
+                Response.End();
+
+                return;
+            }
+
             //To get the string to create new reservation table
             string userType = Request.QueryString["UserType"];
             string userID = Request.QueryString["UserID"];
