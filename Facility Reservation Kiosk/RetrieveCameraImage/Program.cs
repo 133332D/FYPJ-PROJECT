@@ -27,7 +27,7 @@ namespace RetrieveCameraImage
 
                         string fileName = folder + "image-" + cam.CameraID + ".jpg";
                         WebClient client = new WebClient();
-                        client.DownloadFile("http://" + cam.IPAddress   + "/snap.jpg?JpegSize=M",fileName);
+                        client.DownloadFile("http://" + cam.IPAddress   + "/snap.jpg?JpegSize=L",fileName);
 
                         WebClient wc = new WebClient();
                         wc.UploadFile("http://crowd.sit.nyp.edu.sg/FRSIpad/UploadPicture.aspx", fileName);
