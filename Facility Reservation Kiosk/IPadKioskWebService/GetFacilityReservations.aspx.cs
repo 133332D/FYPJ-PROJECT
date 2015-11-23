@@ -59,6 +59,7 @@ namespace IPadKioskWebService
             string name = Request.QueryString["Name"];
             //format of date yyyy-MMM-dd
             string date = Request.QueryString["Date"];
+            string availability = Request.QueryString["Availability"];
 
             var sqlResList = new ResList();
             sqlResList.Reservations = new List<ResObject>();
@@ -70,36 +71,38 @@ namespace IPadKioskWebService
                 DateTime dateStart = new DateTime(dateToday.Year, dateToday.Month, dateToday.Day, 08, 00, 00);
                 DateTime dateEnd = new DateTime(dateToday.Year, dateToday.Month, dateToday.Day, 18, 00, 00);
 
-                using (var db = new KioskContext())
-                {
-                    var facilityRes = from fr in db.FacilityReservations
-                                    where fr.Facility.Department.DepartmentID == departmentID
-                                    && fr.Facility.Block.Contains(block) && fr.Facility.Level.Contains(level)
-                                    && fr.Facility.Name.Contains(name)
-                                    && fr.StartDateTime >= dateStart
-                                    && fr.EndDateTime <= dateEnd
-                                    
 
-
-                                    orderby fr.FacilityID,fr.StartDateTime
-                                    select new
-                                    {
-                                        fr.FacilityReservationID,
-                                        fr.FacilityID,
-                                        fr.StartDateTime,
-                                        fr.EndDateTime,
-                                        fr.UseShortDescription,
-                                        fr.UseDescription
-                                    };
-
-                    foreach (var res in facilityRes)
+                    using (var db = new KioskContext())
                     {
-                        ResObject resobject = new ResObject(res.FacilityReservationID, res.FacilityID, res.StartDateTime.Value, res.EndDateTime.Value, 
-                            res.UseShortDescription, res.UseDescription);
+                        var facilityRes = from fr in db.FacilityReservations
+                                          where fr.Facility.Department.DepartmentID == departmentID
+                                          && fr.Facility.Block.Contains(block) && fr.Facility.Level.Contains(level)
+                                          && fr.Facility.Name.Contains(name)
+                                          && fr.StartDateTime >= dateStart
+                                          && fr.EndDateTime <= dateEnd
 
-                        sqlResList.Reservations.Add(resobject);
+
+
+                                          orderby fr.FacilityID, fr.StartDateTime
+                                          select new
+                                          {
+                                              fr.FacilityReservationID,
+                                              fr.FacilityID,
+                                              fr.StartDateTime,
+                                              fr.EndDateTime,
+                                              fr.UseShortDescription,
+                                              fr.UseDescription
+                                          };
+
+                        foreach (var res in facilityRes)
+                        {
+                            ResObject resobject = new ResObject(res.FacilityReservationID, res.FacilityID, res.StartDateTime.Value, res.EndDateTime.Value,
+                                res.UseShortDescription, res.UseDescription);
+
+                            sqlResList.Reservations.Add(resobject);
+                        }
                     }
-                }
+               
 
                 //Serialize into json format output (string)
                 string json = JsonConvert.SerializeObject(sqlResList, Formatting.Indented);
@@ -110,6 +113,7 @@ namespace IPadKioskWebService
                 Response.End();
 
             }
+
             //else return only specified date
             else
             {
@@ -118,35 +122,36 @@ namespace IPadKioskWebService
                 DateTime dateStart = new DateTime(datePass.Year, datePass.Month, datePass.Day, 08, 00, 00);
                 DateTime dateEnd = new DateTime(datePass.Year, datePass.Month, datePass.Day, 18, 00, 00);
 
-                using (var db = new KioskContext())
-                {
-                    var facilityRes = from fr in db.FacilityReservations
-                                      where fr.Facility.Department.DepartmentID == departmentID
-                                      && fr.Facility.Block.Contains(block) && fr.Facility.Level.Contains(level)
-                                      && fr.Facility.Name.Contains(name)
-                                      && fr.StartDateTime >= dateStart
-                                      && fr.EndDateTime <= dateEnd
-                                      
-
-                                      orderby fr.FacilityID,fr.StartDateTime
-                                      select new
-                                      {
-                                          fr.FacilityReservationID,
-                                          fr.FacilityID,
-                                          fr.StartDateTime,
-                                          fr.EndDateTime,
-                                          fr.UseShortDescription,
-                                          fr.UseDescription
-                                      };
-
-                    foreach (var res in facilityRes)
+                    using (var db = new KioskContext())
                     {
-                        ResObject resobject = new ResObject(res.FacilityReservationID, res.FacilityID, res.StartDateTime.Value, res.EndDateTime.Value,
-                            res.UseShortDescription, res.UseDescription);
+                        var facilityRes = from fr in db.FacilityReservations
+                                          where fr.Facility.Department.DepartmentID == departmentID
+                                          && fr.Facility.Block.Contains(block) && fr.Facility.Level.Contains(level)
+                                          && fr.Facility.Name.Contains(name)
+                                          && fr.StartDateTime >= dateStart
+                                          && fr.EndDateTime <= dateEnd
 
-                        sqlResList.Reservations.Add(resobject);
+
+                                          orderby fr.FacilityID, fr.StartDateTime
+                                          select new
+                                          {
+                                              fr.FacilityReservationID,
+                                              fr.FacilityID,
+                                              fr.StartDateTime,
+                                              fr.EndDateTime,
+                                              fr.UseShortDescription,
+                                              fr.UseDescription
+                                          };
+
+                        foreach (var res in facilityRes)
+                        {
+                            ResObject resobject = new ResObject(res.FacilityReservationID, res.FacilityID, res.StartDateTime.Value, res.EndDateTime.Value,
+                                res.UseShortDescription, res.UseDescription);
+
+                            sqlResList.Reservations.Add(resobject);
+                        }
                     }
-                }
+                
 
                 //Serialize into json format output (string)
                 string json = JsonConvert.SerializeObject(sqlResList, Formatting.Indented);

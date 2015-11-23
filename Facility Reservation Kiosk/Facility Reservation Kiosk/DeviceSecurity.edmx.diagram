@@ -11,6 +11,8 @@
         <AssociationConnector Association="FacilityReservationKioskModel.FK_Device_DepartmentFilters" ManuallyRouted="false" />
         <AssociationConnector Association="FacilityReservationKioskModel.FK_DepartmentFilters_Department" />
         <AssociationConnector Association="FacilityReservationKioskModel.FK_Device_Department" />
+        <EntityTypeShape EntityType="FacilityReservationKioskModel.Camera" Width="1.5" PointX="7.25" PointY="1.125" />
+        <AssociationConnector Association="FacilityReservationKioskModel.FK_Camera_Department" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

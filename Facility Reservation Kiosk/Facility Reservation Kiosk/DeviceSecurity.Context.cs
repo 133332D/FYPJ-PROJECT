@@ -28,5 +28,6 @@ namespace Facility_Reservation_Kiosk
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<DepartmentFilter> DepartmentFilters { get; set; }
         public virtual DbSet<Device> Devices { get; set; }
+        public virtual DbSet<Camera> Cameras { get; set; }
     }
 }

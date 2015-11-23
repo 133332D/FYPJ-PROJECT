@@ -802,6 +802,9 @@
     <Compile Include="ApprovalPage.aspx.designer.cs">
       <DependentUpon>ApprovalPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Camera.cs">
+      <DependentUpon>DeviceSecurity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Department.cs">
       <DependentUpon>DeviceSecurity.tt</DependentUpon>
     </Compile>

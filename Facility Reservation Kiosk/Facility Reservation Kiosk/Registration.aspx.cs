@@ -32,7 +32,7 @@ namespace Facility_Reservation_Kiosk
                     Response.Write("     Result: \"OK\",");
                     Response.Write("     Message: \"This iPad have been registered in the system database, awaiting for approval\"");
                     Response.Write("}");
-                    Response.End();
+                    //
 
                     }
 
@@ -46,9 +46,9 @@ namespace Facility_Reservation_Kiosk
                       Response.Write("     Result: \"ERROR\",");
                       Response.Write("     Message: \"" + Message + "\"");
                       Response.Write("}");
-                      Response.End();
+                      //Response.End();
                 }
-                
+                Response.End();
             }
 
            }
