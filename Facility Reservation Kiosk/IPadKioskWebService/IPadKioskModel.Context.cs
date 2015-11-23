@@ -30,5 +30,6 @@ namespace IPadKioskWebService
         public virtual DbSet<Facility> Facilities { get; set; }
         public virtual DbSet<FacilityReservation> FacilityReservations { get; set; }
         public virtual DbSet<Camera> Cameras { get; set; }
+        public virtual DbSet<Device> Devices { get; set; }
     }
 }

@@ -141,6 +141,9 @@
     <Compile Include="DepartmentFilter.cs">
       <DependentUpon>IPadKioskModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Device.cs">
+      <DependentUpon>IPadKioskModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Facility.cs">
       <DependentUpon>IPadKioskModel.tt</DependentUpon>
     </Compile>
@@ -203,6 +206,7 @@
     <Compile Include="UpdateCameraDensity.aspx.designer.cs">
       <DependentUpon>UpdateCameraDensity.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Verify.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="IPadKioskModel.edmx">

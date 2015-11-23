@@ -14,6 +14,12 @@ namespace IPadKioskWebService
     
     public partial class DepartmentFilter
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DepartmentFilter()
+        {
+            this.Devices = new HashSet<Device>();
+        }
+    
         public int DepartmentFilterID { get; set; }
         public string DepartmentID { get; set; }
         public string FilterName { get; set; }
@@ -22,5 +28,7 @@ namespace IPadKioskWebService
         public string Name { get; set; }
     
         public virtual Department Department { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Device> Devices { get; set; }
     }
 }

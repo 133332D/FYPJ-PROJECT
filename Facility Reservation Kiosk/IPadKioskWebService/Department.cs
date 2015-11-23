@@ -20,6 +20,7 @@ namespace IPadKioskWebService
             this.DepartmentFilters = new HashSet<DepartmentFilter>();
             this.Facilities = new HashSet<Facility>();
             this.Cameras = new HashSet<Camera>();
+            this.Devices = new HashSet<Device>();
         }
     
         public string DepartmentID { get; set; }
@@ -33,5 +34,7 @@ namespace IPadKioskWebService
         public virtual ICollection<Facility> Facilities { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Camera> Cameras { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Device> Devices { get; set; }
     }
 }

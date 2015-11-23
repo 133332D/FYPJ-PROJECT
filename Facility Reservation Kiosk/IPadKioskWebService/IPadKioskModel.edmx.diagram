@@ -16,6 +16,9 @@
         <EntityTypeShape EntityType="FacilityReservationKioskModel.Camera" Width="1.5" PointX="5.25" PointY="2" />
         <AssociationConnector Association="FacilityReservationKioskModel.FK_Camera_Department" />
         <AssociationConnector Association="FacilityReservationKioskModel.FK_Camera_Facility" />
+        <EntityTypeShape EntityType="FacilityReservationKioskModel.Device" Width="1.5" PointX="8.25" PointY="2.125" />
+        <AssociationConnector Association="FacilityReservationKioskModel.FK_Device_Department" />
+        <AssociationConnector Association="FacilityReservationKioskModel.FK_Device_DepartmentFilters" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
