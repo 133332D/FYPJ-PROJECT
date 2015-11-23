@@ -32,6 +32,7 @@
                     <asp:BoundField DataField="RejectedOrRevokedReason" HeaderText="Rejected Or Revoked Reason" >
                     </asp:BoundField>
                     <asp:BoundField DataField="Description" HeaderText="Description" />
+                    <asp:BoundField DataField="DeviceGeneratedUniqueID" HeaderText="Unique ID" />
                     <asp:TemplateField HeaderText="Actions" ShowHeader="False">
                         <ItemTemplate>
                             <asp:LinkButton ID="lbapp" runat="server" Text="Approve" Visible="false" OnClick="lbapp_Click"  ></asp:LinkButton>

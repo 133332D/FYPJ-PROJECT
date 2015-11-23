@@ -42,8 +42,8 @@
           <Property Name="DeviceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DepartmentID" Type="varchar" MaxLength="10" />
           <Property Name="DefaultDepartmentFilterID" Type="int" />
-          <Property Name="DeviceGeneratedUniqueID" Type="nvarchar" MaxLength="30" />
-          <Property Name="PublicKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeviceGeneratedUniqueID" Type="nvarchar" MaxLength="100" />
+          <Property Name="PublicKey" Type="nvarchar" MaxLength="1000" />
           <Property Name="Status" Type="varchar" MaxLength="6" />
           <Property Name="ApprovedDateTime" Type="datetime" />
           <Property Name="RejectedOrRevokedDateTime" Type="datetime" />
@@ -154,8 +154,8 @@
           <Property Name="DeviceID" Type="Int32" Nullable="false" />
           <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="DefaultDepartmentFilterID" Type="Int32" />
-          <Property Name="DeviceGeneratedUniqueID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="PublicKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceGeneratedUniqueID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PublicKey" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="ApprovedDateTime" Type="DateTime" Precision="3" />
           <Property Name="RejectedOrRevokedDateTime" Type="DateTime" Precision="3" />
