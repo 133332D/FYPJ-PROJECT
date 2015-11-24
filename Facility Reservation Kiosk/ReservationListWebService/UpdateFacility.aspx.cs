@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -56,26 +57,73 @@ namespace ReservationListWebService
                 using (var db = new KioskContext())
                 {
                     //delete the whole FacilityReservation Table
-                    db.Database.ExecuteSqlCommand(
-                        "DELETE FacilityReservation");
+                    //db.Database.ExecuteSqlCommand(
+                    //    "DELETE FacilityReservation");
                         //FROM Department INNER JOIN Facility ON Department.DepartmentID = Facility.DepartmentID " +
                             //"INNER JOIN FacilityReservation ON Facility.FacilityID = FacilityReservation.FacilityID WHERE Department.DepartmentID = '" + departmentID + "'");
+
+                    
+                    // DELETE reservations records not found in the list
+                    //
+                    Hashtable listOfReservationIDs = new Hashtable();
+                    var reservationIDs = from r in db.Reservations
+                                         select new { r.FacilityReservationID };
+
+                    foreach(var reservationID in reservationIDs)
+                        listOfReservationIDs[reservationID.FacilityReservationID] = 1;
+
+                    foreach (Reservation res in list.Reservations)
+                        listOfReservationIDs.Remove(res.facilityReservationID);
+
+                    foreach (string reservationIDToDelete in listOfReservationIDs.Keys)
+                    {
+                        db.Database.ExecuteSqlCommand(
+                        "DELETE FacilityReservation WHERE FacilityReservationID = '" + reservationIDToDelete + "'");
+                    }
+                    db.SaveChanges();
+
 
                     //loop through each reservations and insert into the database
                     //record by record
                     foreach (Reservation res in list.Reservations)
                     {
-                        FacilityReservation reser = new FacilityReservation();
+                        var reservations = from r in db.Reservations
+                                           where r.FacilityReservationID == res.facilityReservationID
+                                           select r;
 
-                        //set all fields here
-                        reser.FacilityReservationID = res.facilityReservationID;
-                        reser.FacilityID = res.facilityID;
-                        reser.StartDateTime = res.startDateTime;
-                        reser.EndDateTime = res.endDateTime;
-                        reser.UseShortDescription = res.useShortDescription;
-                        reser.UseDescription = res.useDescription;
+                        if (reservations.Count() > 0)
+                        {
+                            // Record exists, just update.
 
-                        db.Reservations.Add(reser);
+                            foreach(var reservation in reservations)
+                            {
+                                reservation.FacilityID = res.facilityID;
+                                reservation.StartDateTime = res.startDateTime;
+                                reservation.EndDateTime = res.endDateTime;
+                                reservation.UseDescription = res.useDescription;
+                                reservation.UseShortDescription = res.useShortDescription;
+
+                                break;
+                            }
+
+                        }
+                        else
+                        {
+                            // Record does not exist, insert.
+
+                            FacilityReservation reser = new FacilityReservation();
+
+                            //set all fields here
+                            reser.FacilityReservationID = res.facilityReservationID;
+                            reser.FacilityID = res.facilityID;
+                            reser.StartDateTime = res.startDateTime;
+                            reser.EndDateTime = res.endDateTime;
+                            reser.UseShortDescription = res.useShortDescription;
+                            reser.UseDescription = res.useDescription;
+
+                            db.Reservations.Add(reser);
+                        }
+
                     }
 
                     try
@@ -87,6 +135,8 @@ namespace ReservationListWebService
                         exceptionCount += 1;
                     }
                 }
+
+
                 //returns in Json format
                 Response.Write("{");
                 Response.Write("     Result: \"OK\"");
@@ -105,4 +155,4 @@ namespace ReservationListWebService
             }
         }
     }
-}
+};

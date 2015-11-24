@@ -36,6 +36,7 @@ namespace IPadKioskWebService
                 Response.Write("    Message: \"The facility reservation is cancelled from NYP's database successfully.\"");
                 Response.Write("}");
                 Response.End();
+
             }
             else
             {
