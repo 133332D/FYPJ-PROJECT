@@ -1,11 +1,12 @@
-﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="DeviceSecurity.aspx.cs" Inherits="Facility_Reservation_Kiosk.DeviceSecurity" %>
-
-
+﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Security.aspx.cs" Inherits="Facility_Reservation_Kiosk.Security" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
     .auto-style1 {
     }
-</style>
+        .auto-style2 {
+            height: 180px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -15,12 +16,12 @@
             <asp:TextBox ID="txtSearch" runat="server" Height="22px"></asp:TextBox>
         </td>
         <td>
-            <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="Search" />
+            <asp:Button ID="btnSearch" runat="server"  Text="Search" OnClick="btnSearch_Click" />
         </td>
     </tr>
     <tr>
-        <td class="auto-style1" colspan="2">
-            <asp:GridView ID="GridViewSearch" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="99%" AutoGenerateColumns="False" OnRowDataBound="GridViewSearch_RowDataBound" Height="105px">
+        <td class="auto-style2" colspan="2">
+            <asp:GridView ID="GridViewSearch" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="99%" AutoGenerateColumns="False"  Height="105px" OnRowDataBound="GridViewSearch_RowDataBound">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>                   
                     <asp:BoundField DataField="DeviceID" HeaderText="Device ID" />                   
@@ -32,13 +33,20 @@
                     <asp:BoundField DataField="RejectedOrRevokedReason" HeaderText="Rejected Or Revoked Reason" >
                     </asp:BoundField>
                     <asp:BoundField DataField="Description" HeaderText="Description" />
-                    <asp:BoundField DataField="DeviceGeneratedUniqueID" HeaderText="Unique ID" />
+                    <asp:TemplateField HeaderText="Unique ID">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("DeviceGeneratedUniqueID") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblUniqueID" runat="server" Text='<%# Bind("DeviceGeneratedUniqueID") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="Actions" ShowHeader="False">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbapp" runat="server" Text="Approve" Visible="false" OnClick="lbapp_Click"  ></asp:LinkButton>
-                                <asp:LinkButton ID="lbrej" runat="server" Text="Reject" Visible="false" OnClick="lbrej_Click"  ></asp:LinkButton>
-                              <asp:LinkButton ID="lbedit" runat="server" Text="Edit" Visible="false" OnClick="lbedit_Click" ></asp:LinkButton>
-                               <asp:LinkButton ID="lbrevoke" runat="server" Text="Revoke" Visible="false" OnClick="lbrevoke_Click"  ></asp:LinkButton>
+                            <asp:LinkButton ID="lbapp" runat="server" Text="Approve" Visible="false" OnClick="lbapp_Click" CommandName="Select" ></asp:LinkButton>
+                                <asp:LinkButton ID="lbrej" runat="server" Text="Reject" Visible="false" OnClick="lbrej_Click"></asp:LinkButton>
+                              <asp:LinkButton ID="lbedit" runat="server" Text="Edit" Visible="false" OnClick="lbedit_Click"  ></asp:LinkButton>
+                               <asp:LinkButton ID="lbrevoke" runat="server" Text="Revoke" Visible="false" OnClick="lbrevoke_Click" ></asp:LinkButton>
 
 
                         </ItemTemplate>
@@ -55,7 +63,9 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
+            <asp:label runat="server" ID="lblTest" ></asp:label>
         </td>
     </tr>
 </table>
 </asp:Content>
+

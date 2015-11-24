@@ -115,6 +115,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="UpdateCameraDensity.aspx" />
+    <Content Include="VerifyIpad.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +208,13 @@
       <DependentUpon>UpdateCameraDensity.aspx</DependentUpon>
     </Compile>
     <Compile Include="Verify.cs" />
+    <Compile Include="VerifyIpad.aspx.cs">
+      <DependentUpon>VerifyIpad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerifyIpad.aspx.designer.cs">
+      <DependentUpon>VerifyIpad.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="IPadKioskModel.edmx">

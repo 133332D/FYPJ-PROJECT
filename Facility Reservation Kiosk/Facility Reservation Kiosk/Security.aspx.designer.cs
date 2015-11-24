@@ -10,7 +10,7 @@
 namespace Facility_Reservation_Kiosk {
     
     
-    public partial class DeviceSecurity {
+    public partial class Security {
         
         /// <summary>
         /// txtSearch control.
@@ -38,5 +38,14 @@ namespace Facility_Reservation_Kiosk {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewSearch;
+        
+        /// <summary>
+        /// lblTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTest;
     }
 }

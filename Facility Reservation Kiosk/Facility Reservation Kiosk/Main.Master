@@ -371,7 +371,7 @@
                         </li>
 
                           <li class="treeview">
-                            <a href="DeviceSecurity.aspx">
+                            <a href="Security.aspx">
                                 <i class="fa fa-user"></i><span>Device Security
                                                           </span> <%--<i class="fa fa-angle-left pull-right"></i>--%>
                             </a>
