@@ -12,6 +12,17 @@ namespace IPadKioskWebService
 {
     public partial class CreateReservation : System.Web.UI.Page
     {
+        public class KioskContext : DbContext
+        {
+            //using the FacilityReservationKioskEntities Connection string
+            public KioskContext()
+                : base("name=FacilityReservationKioskEntities")
+            {
+            }
+            public DbSet<Department> Departments { get; set; }
+            public DbSet<Facility> Facilitys { get; set; }
+            public DbSet<FacilityReservation> Reservations { get; set; }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,6 +59,22 @@ namespace IPadKioskWebService
             if (tokens[0] == "0")
             {
                 //trigger a refresh of the cache database!!! **
+                using (var db = new KioskContext())
+                {
+                    FacilityReservation reser = new FacilityReservation();
+
+                    Random r = new Random();
+
+                    //set all fields here
+                    reser.FacilityReservationID = "T" + DateTime.Now.ToString("MMddHHmmSS") + "_" + r.Next(9999).ToString("0000");
+                    reser.FacilityID = facilityID;
+                    reser.StartDateTime = startDate;
+                    reser.EndDateTime = endDate;
+                    reser.UseDescription = description;
+
+                    db.Reservations.Add(reser);
+                    db.SaveChanges();
+                }
 
                 //returns ok/error message to caller
                 Response.Write("{");
