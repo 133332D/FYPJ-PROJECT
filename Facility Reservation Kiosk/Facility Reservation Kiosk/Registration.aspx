@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="Facility_Reservation_Kiosk.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" ValidateRequest="false" Inherits="Facility_Reservation_Kiosk.WebForm1" %>
 
 <!DOCTYPE html>
 
