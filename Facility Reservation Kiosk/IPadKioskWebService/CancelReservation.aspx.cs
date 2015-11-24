@@ -32,8 +32,8 @@ namespace IPadKioskWebService
 
                 //returns ok/error message to caller
                 Response.Write("{");
-                Response.Write("    \"Result: OK\",");
-                Response.Write("    \"Message: The facility reservation is cancelled from NYP's database successfully.\"");
+                Response.Write("    Result: \"OK\",");
+                Response.Write("    Message: \"The facility reservation is cancelled from NYP's database successfully.\"");
                 Response.Write("}");
                 Response.End();
             }

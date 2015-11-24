@@ -12,7 +12,7 @@ namespace IPadKioskWebService
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!VerifyData.Verify(Request["_DeviceID"], Request.RawUrl, Request["_SIGN"], Request["_DT"]))
+            /*if (!VerifyData.Verify(Request["_DeviceID"], Request.RawUrl, Request["_SIGN"], Request["_DT"]))
             {
                 Response.Write("{");
                 Response.Write("     Result: \"ERROR\",");
@@ -21,7 +21,7 @@ namespace IPadKioskWebService
                 Response.End();
 
                 return;
-            }
+            }*/
 
             //To get the string to create new reservation table
             string userType = Request.QueryString["UserType"];

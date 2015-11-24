@@ -59,7 +59,6 @@ namespace IPadKioskWebService
             string name = Request.QueryString["Name"];
             //format of date yyyy-MMM-dd
             string date = Request.QueryString["Date"];
-            string availability = Request.QueryString["Availability"];
 
             var sqlResList = new ResList();
             sqlResList.Reservations = new List<ResObject>();
